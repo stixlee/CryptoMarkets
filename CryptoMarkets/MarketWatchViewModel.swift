@@ -9,4 +9,5 @@ import Foundation
 
 class MarketwatchViewModel: ObservableObject {
     var marketCapViewModel: MarketCapViewModel = MarketCapViewModel()
+    var marketVolumeViewModel: MarketVolumeViewModel = MarketVolumeViewModel()
 }

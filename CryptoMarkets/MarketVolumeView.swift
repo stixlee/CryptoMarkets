@@ -1,5 +1,5 @@
 //
-//  MarketCapInfoView.swift
+//  MarketVolumeView.swift
 //  CryptoMarkets
 //
 //  Created by Michael Lee on 12/31/23.
@@ -7,34 +7,32 @@
 
 import SwiftUI
 
-struct MarketCapView: View {
+struct MarketVolumeView: View {
     
-    @ObservedObject var marketCapViewModel: MarketCapViewModel
+    @ObservedObject var viewModel: MarketVolumeViewModel
     
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Text(
-                    marketCapViewModel.marketCap,
+                    viewModel.marketVolume,
                     format: .currency(code: "USD").precision(.fractionLength(0))
                 )
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundStyle(Color.primaryFG)
                 .padding(.bottom, 4)
-                MarketCapChangeView(viewModel: marketCapViewModel)
+                Text("24h Trading Volume")
+                    .font(.subheadline)
+                    .foregroundStyle(Color.primaryFG)
+
             }
             Spacer()
-
-            Image(systemName: marketCapViewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
-                            .foregroundStyle(marketCapViewModel.percentChange >= 0.0 ? Color.green : Color.red)
-                            .font(.title)
         }
         .padding(.leading, 24)
         .padding(.trailing, 24)
-    }
-}
+    }}
 
 #Preview {
-    MarketCapView(marketCapViewModel: MarketCapViewModel())
+    MarketVolumeView(viewModel: MarketVolumeViewModel())
 }

@@ -22,7 +22,7 @@ struct MarketWatchView: View {
                     VStack {
                         ScrollView {
                             // Market Cap View
-                            MarketCapView(marketCapInfoViewModel: viewModel.marketCapViewModel)
+                            MarketCapView(marketCapViewModel: viewModel.marketCapViewModel)
                                 .padding([.top, .bottom], 16)
                                 .overlay(
                                         RoundedRectangle(cornerRadius: 10)
@@ -31,6 +31,14 @@ struct MarketWatchView: View {
                                 .padding(.top, 24)
                             
                             // Volume View
+                            MarketVolumeView(viewModel: viewModel.marketVolumeViewModel)
+                                .padding([.top, .bottom], 16)
+                                .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.primaryFG, lineWidth: 0.5)
+                                    )
+                                .padding(.top, 24)
+
                             
                             // Volatility Index View
                             
