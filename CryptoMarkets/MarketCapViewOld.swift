@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarketCapViewOld: View {
     var body: some View {
-        MarketCapInfoView(marketCapInfoViewModel: MarketCapInfoViewModel())
+        MarketCapView(marketCapInfoViewModel: MarketCapViewModel())
     }
 }
 

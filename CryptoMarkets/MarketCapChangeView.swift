@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarketCapChangeView: View {
     
-    @ObservedObject var viewModel: MarketCapInfoViewModel
+    @ObservedObject var viewModel: MarketCapViewModel
     
     
     var body: some View {
@@ -32,5 +32,5 @@ struct MarketCapChangeView: View {
 }
 
 #Preview {
-    MarketCapChangeView(viewModel: MarketCapInfoViewModel())
+    MarketCapChangeView(viewModel: MarketCapViewModel())
 }

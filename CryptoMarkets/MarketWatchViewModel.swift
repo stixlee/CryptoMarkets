@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class MarketwatchViewModel: ObservableObject {
+    var marketCapViewModel: MarketCapViewModel = MarketCapViewModel()
+}

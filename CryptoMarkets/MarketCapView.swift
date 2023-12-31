@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarketCapView: View {
     
-    @ObservedObject var marketCapInfoViewModel: MarketCapInfoViewModel
+    @ObservedObject var marketCapInfoViewModel: MarketCapViewModel
     
     var body: some View {
         HStack(alignment: .center) {
@@ -36,5 +36,5 @@ struct MarketCapView: View {
 }
 
 #Preview {
-    MarketCapView(marketCapInfoViewModel: MarketCapInfoViewModel())
+    MarketCapView(marketCapInfoViewModel: MarketCapViewModel())
 }

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MarketWatchView: View {
+    
+    @StateObject var viewModel: MarketwatchViewModel = MarketwatchViewModel()
+    
     var body: some View {
         VStack {
             ZStack {
@@ -19,7 +22,7 @@ struct MarketWatchView: View {
                     VStack {
                         ScrollView {
                             // Market Cap View
-                            MarketCapInfoView(marketCapInfoViewModel: MarketCapInfoViewModel())
+                            MarketCapView(marketCapInfoViewModel: viewModel.marketCapViewModel)
                                 .padding([.top, .bottom], 16)
                                 .overlay(
                                         RoundedRectangle(cornerRadius: 10)
