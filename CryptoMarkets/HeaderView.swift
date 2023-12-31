@@ -18,16 +18,26 @@ struct HeaderView: View {
         VStack {
             ZStack {
                 HStack(alignment: .center) {
-                    Image(systemName: "bell.fill")
-                        .frame(width: 32, height: 32)
+                    Button {
+                        print("Notifications tapped!")
+                    } label: {
+                        Image(systemName: "bell.fill")
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(Color.primaryFG)
+                    }
                     Spacer()
                 }
                 .padding(.leading, 8)
 
                 HStack(alignment: .center) {
                     Spacer()
-                    Image(systemName: "ellipsis")
-                        .frame(width: 32, height: 32)
+                    Button {
+                        print("Three dot tapped!")
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .frame(width: 32, height: 32)
+                            .foregroundColor(Color.primaryFG)
+                    }
                 }
                 .padding(.trailing, 8)
                 HStack(alignment: .center) {
@@ -50,9 +60,6 @@ struct HeaderView: View {
             }
             .padding(.bottom, 2)
             .padding(.top, 56)
-            Divider()
-                .frame(height: 0.5)
-                .background(Color.primaryFG)
         }
     }
 }

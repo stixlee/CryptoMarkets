@@ -16,14 +16,29 @@ struct MarketWatchView: View {
                     // Header View
                     HeaderView(title: "Market Watch", icon: "arrowtriangle.up.fill", accentColor: .green)
                     
-                    // Market Cap View
-                    
-                    // Volume View
-                    
-                    // Trending View
-                    
-                    // Biggest Movers View
-                    
+                    VStack {
+                        ScrollView {
+                            // Market Cap View
+                            MarketCapInfoView(marketCapInfoViewModel: MarketCapInfoViewModel())
+                                .padding([.top, .bottom], 16)
+                                .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.primaryFG, lineWidth: 0.5)
+                                    )
+                                .padding(.top, 24)
+                            
+                            // Volume View
+                            
+                            // Volatility Index View
+                            
+                            // Trending View
+                            
+                            // Biggest Movers View
+         
+                        }
+                    }
+                    .padding([.leading, .trailing], 8)
+                   
                     Spacer()
                 }
             }
