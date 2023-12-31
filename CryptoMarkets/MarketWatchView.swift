@@ -9,7 +9,22 @@ import SwiftUI
 
 struct MarketWatchView: View {
     var body: some View {
-        Text("Market Watch")
+        VStack {
+            ZStack {
+                Color.primaryBG
+                VStack {
+                    HeaderView(title: "Market Watch", icon: "bitcoinsign.circle.fill")
+                    Spacer()
+                }
+            }
+            Spacer()
+            Divider()
+                .padding(0)
+        }
+        .edgesIgnoringSafeArea([.leading, .trailing, .top])
+
+        
+        // Header View
         
         // Market Cap View
         
