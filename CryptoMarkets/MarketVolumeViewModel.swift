@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import SwiftUI
 
 final class MarketVolumeViewModel: ObservableObject {
     
-    var marketVolume: Decimal = 56874655313.0
+    var tradingVolume: Decimal = 56874655313.0
     
 }

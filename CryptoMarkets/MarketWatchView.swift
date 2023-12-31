@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MarketWatchView: View {
     
-    @StateObject var viewModel: MarketwatchViewModel = MarketwatchViewModel()
+    @StateObject var viewModel: MarketwatchCompositeViewModel = MarketwatchCompositeViewModel()
     
     var body: some View {
         VStack {
@@ -17,7 +17,7 @@ struct MarketWatchView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Market Watch", icon: "arrowtriangle.up.fill", accentColor: .green)
+                    HeaderView(title: "Current Market", icon: "arrowtriangle.up.fill", accentColor: .green)
                     
                     VStack {
                         ScrollView {
@@ -31,7 +31,7 @@ struct MarketWatchView: View {
                                 .padding(.top, 24)
                             
                             // Volume View
-                            MarketVolumeView(viewModel: viewModel.marketVolumeViewModel)
+                            TradingVolumeView(viewModel: viewModel.marketVolumeViewModel)
                                 .padding([.top, .bottom], 16)
                                 .overlay(
                                         RoundedRectangle(cornerRadius: 10)
@@ -43,6 +43,15 @@ struct MarketWatchView: View {
                             // Volatility Index View
                             
                             // Trending View
+                            TrendingView(viewModel: viewModel.trendingViewModel)
+                                .padding([.top, .bottom], 16)
+                                .padding([.leading, .trailing], 18)
+                                .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.primaryFG, lineWidth: 0.5)
+                                    )
+                                .padding(.top, 24)
+
                             
                             // Biggest Movers View
          

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarketVolumeView: View {
+struct TradingVolumeView: View {
     
     @ObservedObject var viewModel: MarketVolumeViewModel
     
@@ -15,7 +15,7 @@ struct MarketVolumeView: View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Text(
-                    viewModel.marketVolume,
+                    viewModel.tradingVolume,
                     format: .currency(code: "USD").precision(.fractionLength(0))
                 )
                 .font(.headline)
@@ -34,5 +34,5 @@ struct MarketVolumeView: View {
     }}
 
 #Preview {
-    MarketVolumeView(viewModel: MarketVolumeViewModel())
+    TradingVolumeView(viewModel: MarketVolumeViewModel())
 }

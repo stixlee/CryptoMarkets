@@ -49,8 +49,8 @@ struct HeaderView: View {
                         },
                         icon: {
                             Image(systemName: icon)
-                                .resizable()
-                                .frame(width: 18.0, height: 18.0)
+//                                .resizable()
+                                .font(.headline)
                                 .foregroundColor(accentColor)
                                 .padding(.trailing, 4)
                         }
