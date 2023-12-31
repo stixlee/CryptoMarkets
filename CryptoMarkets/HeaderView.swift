@@ -12,6 +12,8 @@ struct HeaderView: View {
     var title: String
     var icon: String
     
+    @State var accentColor: Color
+    
     var body: some View {
         VStack {
             ZStack {
@@ -38,8 +40,9 @@ struct HeaderView: View {
                         icon: {
                             Image(systemName: icon)
                                 .resizable()
-                                .frame(width: 32.0, height: 32.0)
-                                .foregroundColor(.orange)
+                                .frame(width: 18.0, height: 18.0)
+                                .foregroundColor(accentColor)
+                                .padding(.trailing, 4)
                         }
                     )
                     Spacer()
@@ -55,5 +58,5 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView(title: "Market Watch", icon: "Bitcoinsign.circle.fill")
+    HeaderView(title: "Market Watch", icon: "Bitcoinsign.circle.fill", accentColor: .orange)
 }

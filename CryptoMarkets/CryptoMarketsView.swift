@@ -9,8 +9,24 @@ import SwiftUI
 
 struct CryptoMarketsView: View {
     var body: some View {
-        Text("Crypto Markets")
-    }
+        VStack {
+            ZStack {
+                Color.primaryBG
+                VStack {
+                    // Header View
+                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", accentColor: .orange)
+                    
+                    // Crypto List View
+                    
+                    
+                    Spacer()
+                }
+            }
+            Spacer()
+            Divider()
+                .padding(0)
+        }
+        .edgesIgnoringSafeArea([.leading, .trailing, .top])    }
 }
 
 #Preview {

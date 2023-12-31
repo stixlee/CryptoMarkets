@@ -13,7 +13,17 @@ struct MarketWatchView: View {
             ZStack {
                 Color.primaryBG
                 VStack {
-                    HeaderView(title: "Market Watch", icon: "bitcoinsign.circle.fill")
+                    // Header View
+                    HeaderView(title: "Market Watch", icon: "arrowtriangle.up.fill", accentColor: .green)
+                    
+                    // Market Cap View
+                    
+                    // Volume View
+                    
+                    // Trending View
+                    
+                    // Biggest Movers View
+                    
                     Spacer()
                 }
             }
@@ -24,15 +34,6 @@ struct MarketWatchView: View {
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
 
         
-        // Header View
-        
-        // Market Cap View
-        
-        // Volume View
-        
-        // Trending View
-        
-        // Biggest Movers View
     }
 }
 
