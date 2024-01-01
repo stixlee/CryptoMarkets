@@ -35,7 +35,8 @@ struct CryptoMarketsView: View {
             Divider()
                 .padding(0)
         }
-        .edgesIgnoringSafeArea([.leading, .trailing, .top])    }
+        .edgesIgnoringSafeArea([.leading, .trailing, .top])
+    }
 }
 
 #Preview {
