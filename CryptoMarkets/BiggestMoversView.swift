@@ -1,13 +1,13 @@
 //
-//  TrendingView.swift
+//  BiggestMoversView.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 12/31/23.
+//  Created by Michael Lee on 1/1/24.
 //
 
 import SwiftUI
 
-struct TrendingView: View {
+struct BiggestMoversView: View {
     
     @ObservedObject var viewModel: CryptoListViewModel
     
@@ -37,5 +37,5 @@ struct TrendingView: View {
 }
 
 #Preview {
-    TrendingView(viewModel: CryptoListViewModel(label: "Trending"))
+    BiggestMoversView(viewModel: CryptoListViewModel(label: "Biggest Movers"))
 }

@@ -17,8 +17,17 @@ struct CryptoMarketsView: View {
                     HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", accentColor: .orange)
                     
                     // Crypto List View
-                    
-                    
+                    VStack(alignment: .center) {
+                        Spacer()
+                        HStack(alignment: .center) {
+                            Spacer()
+                            Text("Coming Soon")
+                                .font(.title)
+                                .foregroundStyle(Color.primaryFG)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
                     Spacer()
                 }
             }
