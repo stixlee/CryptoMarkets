@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class LeadingIndicatorsViewModel: ObservableObject {
+@Observable final class LeadingIndicatorsViewModel: ObservableObject {
     let label: String = "Leading Indicators"
     let period: String = "last 24h"
 }

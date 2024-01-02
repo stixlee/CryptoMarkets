@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class MarketwatchCompositeViewModel: ObservableObject {
+@Observable final class MarketwatchCompositeViewModel: ObservableObject {
     var marketCapViewModel: MarketCapViewModel = MarketCapViewModel()
     var marketVolumeViewModel: MarketVolumeViewModel = MarketVolumeViewModel()
     var trendingViewModel: CryptoListViewModel = CryptoListViewModel(label: "Trending")

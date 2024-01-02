@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class MarketCapViewModel: ObservableObject {
+@Observable final class MarketCapViewModel: ObservableObject {
     
-    @Published var marketCap: Decimal = 1756943888889.0
-    @Published var percentChange: Decimal = 0.052
+    var marketCap: Decimal = 1756943888889.0
+    var percentChange: Decimal = 0.052
     
 }

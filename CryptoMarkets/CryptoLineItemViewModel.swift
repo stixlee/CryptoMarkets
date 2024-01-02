@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class CryptoLineItemViewModel: ObservableObject, Equatable, Hashable, Identifiable {
+@Observable final class CryptoLineItemViewModel: ObservableObject, Equatable, Hashable, Identifiable {
     static func == (lhs: CryptoLineItemViewModel, rhs: CryptoLineItemViewModel) -> Bool {
         return lhs.id == rhs.id
     }
