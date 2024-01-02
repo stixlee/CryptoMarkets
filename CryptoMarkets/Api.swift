@@ -15,3 +15,11 @@ final class Api {
     private init() { }
     
 }
+
+enum NetworkingError: Error {
+    case invalidUrl
+    case invalidRequest
+    case invalidResponse
+    case invalidJSON
+}
+
