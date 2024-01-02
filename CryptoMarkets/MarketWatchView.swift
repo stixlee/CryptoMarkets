@@ -22,7 +22,7 @@ struct MarketWatchView: View {
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
                             // Market Cap View
-                            MarketCapView(marketCapViewModel: viewModel.marketCapViewModel)
+                            MarketCapView(viewModel: viewModel.marketCapViewModel)
                                 .padding([.top, .bottom], 16)
                                 .overlay(
                                         RoundedRectangle(cornerRadius: 10)
@@ -83,8 +83,6 @@ struct MarketWatchView: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
-
-        
     }
 }
 

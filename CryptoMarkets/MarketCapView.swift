@@ -9,32 +9,45 @@ import SwiftUI
 
 struct MarketCapView: View {
     
-    @ObservedObject var marketCapViewModel: MarketCapViewModel
+    @ObservedObject var viewModel: MarketCapViewModel
     
     var body: some View {
         HStack(alignment: .center) {
             VStack(alignment: .leading) {
                 Text(
-                    marketCapViewModel.marketCap,
+                    viewModel.marketCap,
                     format: .currency(code: "USD").precision(.fractionLength(0))
                 )
                 .font(.headline)
                 .fontWeight(.bold)
                 .foregroundStyle(Color.primaryFG)
                 .padding(.bottom, 4)
-                MarketCapChangeView(viewModel: marketCapViewModel)
+                MarketCapChangeView(viewModel: viewModel)
             }
             Spacer()
 
-            Image(systemName: marketCapViewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
-                            .foregroundStyle(marketCapViewModel.percentChange >= 0.0 ? Color.green : Color.red)
+            Image(systemName: viewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
+                            .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
                             .font(.title)
         }
         .padding(.leading, 24)
         .padding(.trailing, 24)
+        .task {
+            do {
+                let (marketCap, percentChange) = try await marketDataService.marketCap()
+                DispatchQueue.main.async {
+                    viewModel.marketCap = marketCap ?? 0.0
+                    viewModel.percentChange = percentChange
+                    print()
+                }
+            } catch (let error) {
+                print(error)
+            }
+        }
+
     }
 }
 
 #Preview {
-    MarketCapView(marketCapViewModel: MarketCapViewModel())
+    MarketCapView(viewModel: MarketCapViewModel())
 }
