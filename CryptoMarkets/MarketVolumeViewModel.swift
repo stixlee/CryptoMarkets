@@ -9,6 +9,7 @@ import Foundation
 
 @Observable final class MarketVolumeViewModel: ObservableObject {
     
-    var tradingVolume: Decimal = 56874655313.0
+    var tradingVolume: Decimal = 0.0
+    var volumeChange: Decimal = 0.0
     
 }

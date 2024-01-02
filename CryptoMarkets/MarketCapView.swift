@@ -32,18 +32,6 @@ struct MarketCapView: View {
         }
         .padding(.leading, 24)
         .padding(.trailing, 24)
-        .task {
-            do {
-                let (marketCap, percentChange) = try await marketDataService.marketCap()
-                DispatchQueue.main.async {
-                    viewModel.marketCap = marketCap ?? 0.0
-                    viewModel.percentChange = percentChange
-                    print()
-                }
-            } catch (let error) {
-                print(error)
-            }
-        }
 
     }
 }

@@ -83,6 +83,20 @@ struct MarketWatchView: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
+        .task {
+            do {
+                let (marketCap, marketCapChange, volume, volumeChange) = try await marketDataService.marketWatch()
+                DispatchQueue.main.async {
+                    viewModel.marketCapViewModel.marketCap = marketCap
+                    viewModel.marketCapViewModel.percentChange = marketCapChange
+                    viewModel.marketVolumeViewModel.tradingVolume = volume
+                    viewModel.marketVolumeViewModel.volumeChange = volumeChange
+                }
+            } catch (let error) {
+                print(error)
+            }
+        }
+
     }
 }
 
