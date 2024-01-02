@@ -23,31 +23,14 @@ extension Api {
         print(String(data: data, encoding: .utf8) ?? "nil")
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            print("DEBUG: invalid Response")
             throw NetworkingError.invalidResponse
         }
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+
         var globalMarketDataResponse: GlobalMarketDataResponse
         do {
             globalMarketDataResponse = try JSONDecoder().decode(GlobalMarketDataResponse.self, from: data)
-        } catch let DecodingError.dataCorrupted(context) {
-            print(context)
-            throw NetworkingError.invalidJSON
-        } catch let DecodingError.keyNotFound(key, context) {
-            print("Key '\(key)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            throw NetworkingError.invalidJSON
-        } catch let DecodingError.valueNotFound(value, context) {
-            print("Value '\(value)' not found:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            throw NetworkingError.invalidJSON
-        } catch let DecodingError.typeMismatch(type, context)  {
-            print("Type '\(type)' mismatch:", context.debugDescription)
-            print("codingPath:", context.codingPath)
-            throw NetworkingError.invalidJSON
-        } catch {
-            print("error: ", error)
+        } catch let error {
+            print("DEBUG: \(error.localizedDescription)")
             throw NetworkingError.invalidJSON
         }
         return globalMarketDataResponse.data
