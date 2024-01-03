@@ -22,15 +22,10 @@ extension MarketDataService {
         }
     }
     
-    func marketWatch() async throws -> (Decimal, Decimal, Decimal, Decimal) {
+    func marketWatch() async throws -> GlobalMarketSnapshot {
         do {
             let quoteResponse = try await api.latestQuotes()
-            let marketCap = quoteResponse.data.quote.USD.totalMarketCap.decimalValue ?? 0.0
-            let marketCapChange = (quoteResponse.data.quote.USD.marketCapChange / 100.0).decimalValue ?? 0.0
-            let volume = quoteResponse.data.quote.USD.totalVolume.decimalValue ?? 0.0
-            let volumeChange = (quoteResponse.data.quote.USD.volumeChange / 100.0).decimalValue ?? 0.0
-
-            return (marketCap, marketCapChange, volume, volumeChange)
+            return GlobalMarketSnapshot(from: quoteResponse)
         } catch (let error) {
             print("DEBUG: \(error.localizedDescription)")
             throw error
