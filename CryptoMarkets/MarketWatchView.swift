@@ -92,6 +92,7 @@ struct MarketWatchView: View {
                     viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
                     viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
                     viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
+                    viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
                 }
             } catch (let error) {
                 print(error)

@@ -8,10 +8,10 @@
 import Foundation
 
 extension MarketDataService {
-    func trending() async throws -> [TrendingItemSnapshot] {
+    func trending() async throws -> TrendingItemsSnapshot {
         do {
             let trendingResponse = try await api.trending()
-            return TrendingItemsSnapshot(from: trendingResponse).trendingItems
+            return TrendingItemsSnapshot(from: trendingResponse)
         } catch (let error) {
             print("DEBUG: \(error.localizedDescription)")
             throw error

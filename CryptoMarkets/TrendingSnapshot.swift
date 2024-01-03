@@ -23,12 +23,14 @@ struct TrendingItemsSnapshot {
 struct TrendingItemSnapshot {
     
     let id: String
+    let imageUrlString: String
     let name: String
     let symbol: String
     let price: String
     
     init(from trendingItem: TrendingItem) {
         self.id = trendingItem.id
+        self.imageUrlString = trendingItem.thumbUrlString
         self.name = trendingItem.name
         self.symbol = trendingItem.symbol
         self.price = trendingItem.data.price
