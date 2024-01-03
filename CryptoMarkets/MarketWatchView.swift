@@ -86,6 +86,7 @@ struct MarketWatchView: View {
         .task {
             do {
                 let snapshot = try await marketDataService.marketWatch()
+                let trendingSnapshots = try await marketDataService.trending()
                 DispatchQueue.main.async {
                     viewModel.marketCapViewModel.marketCap = snapshot.marketCap
                     viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
