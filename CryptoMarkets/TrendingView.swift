@@ -22,7 +22,7 @@ struct TrendingView: View {
                     .foregroundStyle(Color.primaryFG)
                 Spacer()
                 Text(viewModel.secondaryLabel)
-                    .font(.caption)
+                    .font(.subheadline)
                     .foregroundStyle(Color.primaryFG)
                 
             }

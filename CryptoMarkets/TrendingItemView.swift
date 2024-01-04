@@ -31,7 +31,7 @@ struct TrendingItemView: View {
             }
             Spacer()
             Text(viewModel.price)
-                .font(.caption)
+                .font(.subheadline)
                 .foregroundStyle(Color.primaryFG)
         }
         

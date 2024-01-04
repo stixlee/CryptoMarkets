@@ -83,23 +83,31 @@ struct MarketWatchView: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
+        .refreshable {
+            await loadData()
+        }
         .task {
-            do {
-                let snapshot = try await marketDataService.marketWatch()
-                let trendingSnapshots = try await marketDataService.trending()
-                DispatchQueue.main.async {
-                    viewModel.marketCapViewModel.marketCap = snapshot.marketCap
-                    viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
-                    viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
-                    viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
-                    viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
-                }
-            } catch (let error) {
-                print(error)
-            }
+            await loadData()
         }
 
     }
+    
+    private func loadData() async -> Void {
+        do {
+            let snapshot = try await marketDataService.marketWatch()
+            let trendingSnapshots = try await marketDataService.trending()
+            DispatchQueue.main.async {
+                viewModel.marketCapViewModel.marketCap = snapshot.marketCap
+                viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
+                viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
+                viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
+                viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
+            }
+        } catch (let error) {
+            print(error)
+        }
+    }
+
 }
 
 #Preview {
