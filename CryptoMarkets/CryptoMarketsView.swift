@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CryptoMarketsView: View {
+    
+    @ObservedObject var viewModel: CryptoMarketsViewModel = CryptoMarketsViewModel()
+    
     var body: some View {
         VStack {
             ZStack {
@@ -16,18 +19,15 @@ struct CryptoMarketsView: View {
                     // Header View
                     HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", accentColor: .orange)
                     
-                    // Crypto List View
+                    // Coin market List View
                     VStack(alignment: .center) {
-                        Spacer()
-                        HStack(alignment: .center) {
-                            Spacer()
-                            Text("Coming Soon")
-                                .font(.title)
-                                .foregroundStyle(Color.primaryFG)
-                            Spacer()
+                        ForEach(viewModel.coinsMarketsItems) { item in
+                            CoinMarketLineItemView(viewModel: item)
+                                .padding(.bottom, 12)
                         }
                         Spacer()
                     }
+                    .padding(20)
                     Spacer()
                 }
             }
@@ -36,8 +36,21 @@ struct CryptoMarketsView: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
+        .task {
+            do {
+                let response = try await marketDataService.coinsMarkets()
+                DispatchQueue.main.async {
+                    viewModel.updateItems(with: response)
+                }
+            } catch (let error) {
+                print(error)
+            }
+        }
+
     }
 }
+
+// coin, price in usd, 24 hour delta, market cap
 
 #Preview {
     CryptoMarketsView()
