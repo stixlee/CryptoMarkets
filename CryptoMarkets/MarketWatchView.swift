@@ -26,12 +26,6 @@ struct MarketWatchView: View {
                                 
                                 // Market Cap View
                                 MarketCapView(viewModel: viewModel.marketCapViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
                                 
                                 // Volume View
                                 TradingVolumeView(viewModel: viewModel.marketVolumeViewModel)

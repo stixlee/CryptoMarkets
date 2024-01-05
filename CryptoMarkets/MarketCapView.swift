@@ -12,27 +12,35 @@ struct MarketCapView: View {
     @ObservedObject var viewModel: MarketCapViewModel
     
     var body: some View {
-        HStack(alignment: .center) {
-            VStack(alignment: .leading) {
-                Text(
-                    viewModel.marketCap,
-                    format: .currency(code: "USD").precision(.fractionLength(0))
-                )
+        VStack(alignment: .leading, spacing: 4) {
+            Text("Global Market Cap")
                 .font(.headline)
-                .fontWeight(.bold)
-                .foregroundStyle(Color.primaryFG)
-                .padding(.bottom, 4)
-                MarketCapChangeView(viewModel: viewModel)
+                .fontWeight(.semibold)
+            HStack(alignment: .center) {
+                VStack(alignment: .leading) {
+                    Text(
+                        viewModel.marketCap,
+                        format: .currency(code: "USD").precision(.fractionLength(0))
+                    )
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.primaryFG)
+                    .padding(.bottom, 4)
+                    MarketCapChangeView(viewModel: viewModel)
+                }
+                Spacer()
+
+                Image(systemName: viewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
+                                .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
+                                .font(.title)
             }
+            .padding(16)
+            .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.primaryFG, lineWidth: 0.5)
+                )
             Spacer()
-
-            Image(systemName: viewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
-                            .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
-                            .font(.title)
         }
-        .padding(.leading, 24)
-        .padding(.trailing, 24)
-
     }
 }
 
