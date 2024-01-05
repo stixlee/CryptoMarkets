@@ -21,6 +21,6 @@ struct MarketItem: Identifiable {
         self.name = response.name
         self.image = response.image
         self.price = response.currentPrice
-        self.percentChange = response.percentPriceChange
+        self.percentChange = response.percentPriceChange / 100.0
     }
 }

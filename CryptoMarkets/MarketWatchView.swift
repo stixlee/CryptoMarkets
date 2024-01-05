@@ -21,60 +21,62 @@ struct MarketWatchView: View {
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
-                            // Market Cap View
-                            MarketCapView(viewModel: viewModel.marketCapViewModel)
-                                .padding([.top, .bottom], 16)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
-                            
-                            // Volume View
-                            TradingVolumeView(viewModel: viewModel.marketVolumeViewModel)
-                                .padding([.top, .bottom], 16)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
+                            Group {
+                                
+                                // Market Cap View
+                                MarketCapView(viewModel: viewModel.marketCapViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
+                                
+                                // Volume View
+                                TradingVolumeView(viewModel: viewModel.marketVolumeViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
 
-                            
-                            // Leading Indicators View
-                            LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
-                                .padding([.top, .bottom], 16)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
+                                
+                                // Leading Indicators View
+                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
 
-                            // Biggest Movers View
-                            BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-                                .padding([.top, .bottom], 16)
-                                .padding([.leading, .trailing], 18)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
+                                // Biggest Movers View
+                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .padding([.leading, .trailing], 18)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
 
 
-                            // Trending View
-                            TrendingView(viewModel: viewModel.trendingViewModel)
-                                .padding([.top, .bottom], 16)
-                                .padding([.leading, .trailing], 18)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
-
-                            
+                                // Trending View
+                                TrendingView(viewModel: viewModel.trendingViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .padding([.leading, .trailing], 18)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
+                                Color.clear
+                                    .frame(height: 12)
+                            }
                         }
                     }
                     .padding([.leading, .trailing], 8)
-                   
                     Spacer()
                 }
             }
