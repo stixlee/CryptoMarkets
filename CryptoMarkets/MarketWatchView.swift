@@ -10,6 +10,7 @@ import SwiftUI
 struct MarketWatchView: View {
     
     @StateObject var viewModel: MarketwatchCompositeViewModel = MarketwatchCompositeViewModel()
+    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -17,7 +18,7 @@ struct MarketWatchView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Current Market", icon: "arrowtriangle.up.fill", accentColor: .green)
+                    HeaderView(title: "Current Market", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
@@ -114,6 +115,6 @@ struct MarketWatchView: View {
 
 }
 
-#Preview {
-    MarketWatchView()
-}
+//#Preview {
+//    MarketWatchView(homeViewModel: HomeViewModel())
+//}

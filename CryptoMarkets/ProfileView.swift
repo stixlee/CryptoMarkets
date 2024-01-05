@@ -14,7 +14,7 @@ struct ProfileView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Profile", icon: "person.fill", accentColor: .gray)
+//                    HeaderView(title: "Profile", icon: "person.fill", homeViewModel: HomeViewModel(), accentColor: .gray)
                     
                     // Crypto List View
                     VStack(alignment: .center) {

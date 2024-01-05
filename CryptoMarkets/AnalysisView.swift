@@ -14,7 +14,7 @@ struct AnalysisView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "In Depth Analysis", icon: "graduationcap.fill", accentColor: .yellow)
+//                    HeaderView(title: "In Depth Analysis", icon: "graduationcap.fill", homeViewModel: HomeViewModel(), accentColor: .yellow)
                     
                     // Crypto List View
                     VStack(alignment: .center) {

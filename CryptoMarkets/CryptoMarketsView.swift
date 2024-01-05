@@ -14,7 +14,7 @@ struct CryptoMarketsView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", accentColor: .orange)
+//                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", homeViewModel: HomeViewModel(), accentColor: .orange)
                     
                     // Crypto List View
                     VStack(alignment: .center) {
