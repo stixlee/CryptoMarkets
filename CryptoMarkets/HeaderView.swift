@@ -38,8 +38,8 @@ struct HeaderView: View {
                             showSideView.toggle()
                         }
                     } label: {
-                        Image(systemName: "ellipsis")
-                            .frame(width: 32, height: 32)
+                        Image(systemName: "line.3.horizontal")
+                            .font(.headline)
                             .foregroundColor(Color.primaryFG)
                     }
                 }

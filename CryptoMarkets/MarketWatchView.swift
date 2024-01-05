@@ -101,12 +101,14 @@ struct MarketWatchView: View {
             let snapshot = try await marketDataService.marketWatch()
             let trendingSnapshots = try await marketDataService.trending()
             DispatchQueue.main.async {
-                viewModel.marketCapViewModel.marketCap = snapshot.marketCap
-                viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
-                viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
-                viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
-                viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
-                viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
+                withAnimation(.easeInOut) {
+                    viewModel.marketCapViewModel.marketCap = snapshot.marketCap
+                    viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
+                    viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
+                    viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
+                    viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
+                    viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
+                }
             }
         } catch (let error) {
             print(error)

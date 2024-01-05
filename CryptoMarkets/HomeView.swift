@@ -11,7 +11,7 @@ struct HomeView: View {
     
     let sideMenuWidth = 100.0
     
-    @State var showSideView: Bool = true
+    @State var showSideView: Bool = false
     
     var body: some View {
         ZStack {
