@@ -11,7 +11,6 @@ import Foundation
     var marketCapViewModel: MarketCapViewModel = MarketCapViewModel()
     var marketVolumeViewModel: MarketVolumeViewModel = MarketVolumeViewModel()
     var trendingViewModel: TrendingViewModel = TrendingViewModel()
-    var biggestMoversViewModel: CryptoListViewModel = CryptoListViewModel(label: "Biggest Movers")
+    var biggestMoversViewModel: BiggestMoversViewModel = BiggestMoversViewModel()
     var leadingIndicatorsViewModel: LeadingIndicatorsViewModel = LeadingIndicatorsViewModel()
-
 }

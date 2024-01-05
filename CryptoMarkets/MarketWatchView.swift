@@ -49,7 +49,17 @@ struct MarketWatchView: View {
                                     )
                                 .padding(.top, 18)
 
-                            
+                            // Biggest Movers View
+                            BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
+                                .padding([.top, .bottom], 16)
+                                .padding([.leading, .trailing], 18)
+                                .overlay(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(Color.primaryFG, lineWidth: 0.5)
+                                    )
+                                .padding(.top, 18)
+
+
                             // Trending View
                             TrendingView(viewModel: viewModel.trendingViewModel)
                                 .padding([.top, .bottom], 16)
@@ -61,16 +71,6 @@ struct MarketWatchView: View {
                                 .padding(.top, 18)
 
                             
-                            // Biggest Movers View
-                            BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-                                .padding([.top, .bottom], 16)
-                                .padding([.leading, .trailing], 18)
-                                .overlay(
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .stroke(Color.primaryFG, lineWidth: 0.5)
-                                    )
-                                .padding(.top, 18)
-
                         }
                     }
                     .padding([.leading, .trailing], 8)
@@ -94,6 +94,7 @@ struct MarketWatchView: View {
     
     private func loadData() async -> Void {
         do {
+            let topFiveMovers = try await marketDataService.movers()
             let snapshot = try await marketDataService.marketWatch()
             let trendingSnapshots = try await marketDataService.trending()
             DispatchQueue.main.async {
@@ -102,6 +103,7 @@ struct MarketWatchView: View {
                 viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
                 viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
                 viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
+                viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
             }
         } catch (let error) {
             print(error)

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BiggestMoversView: View {
     
-    @ObservedObject var viewModel: CryptoListViewModel
+    @ObservedObject var viewModel: BiggestMoversViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -17,18 +17,18 @@ struct BiggestMoversView: View {
                 Image(systemName: "flame.fill")
                     .font(.headline)
                     .foregroundStyle(.red)
-                Text(viewModel.label)
+                Text("Large Cap Movers")
                     .font(.headline)
                     .foregroundStyle(Color.primaryFG)
                 Spacer()
-                Text(viewModel.period)
+                Text("last 24h")
                     .font(.subheadline)
                     .foregroundStyle(Color.primaryFG)
                 
             }
             .padding(.bottom, 24)
             
-            ForEach(viewModel.items) { item in
+            ForEach(viewModel.topFiveMovers) { item in
                 CryptoLineItemView(viewModel: item)
                     .padding(.bottom, 12)
             }
@@ -36,6 +36,6 @@ struct BiggestMoversView: View {
     }
 }
 
-#Preview {
-    BiggestMoversView(viewModel: CryptoListViewModel(label: "Biggest Movers"))
-}
+//#Preview {
+//    BiggestMoversView(viewModel: CryptoListViewModel(label: "Biggest Movers"))
+//}
