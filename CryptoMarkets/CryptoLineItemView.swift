@@ -36,23 +36,16 @@ struct CryptoLineItemView: View {
             )
                 .font(.caption)
                 .foregroundStyle(Color.primaryFG)
-            Image(
-                systemName: viewModel.percentChange >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill"
-            )
-                .font(.caption)
-                .foregroundColor(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
-            Text(
-                viewModel.percentChange,
-                format: .percent.precision(.fractionLength(2))
-            )
-            .font(.caption)
-            .fontWeight(.semibold)
-            .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
+            HStack(alignment: .center, spacing: 0) {
+                Image(
+                    systemName: viewModel.percentChange >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill"
+                )
+                    .font(.caption)
+                    .foregroundColor(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
+                FixedDecimalView(value: viewModel.percentChange)
+                    .padding(.leading, -10)
+            }
         }
-//        .padding(.leading, 12)
-//        .padding(.trailing, 12)
-//        .padding(.bottom, 18)
-
     }
 }
 

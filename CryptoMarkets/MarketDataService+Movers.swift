@@ -11,7 +11,7 @@ extension MarketDataService {
             
     func movers() async throws -> [MarketItem] {
         do {
-            var movers = try await api.largeCapBiggestMovers()
+            let movers = try await api.largeCapBiggestMovers()
             var topFiveMovers: [MarketItem] = []
             for mover in movers {
                 topFiveMovers.append(MarketItem(from: mover))

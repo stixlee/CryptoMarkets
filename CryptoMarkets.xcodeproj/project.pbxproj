@@ -24,6 +24,7 @@
 		9030036D2B4210080076DD41 /* CryptoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9030036C2B4210080076DD41 /* CryptoListViewModel.swift */; };
 		9030036F2B4210DE0076DD41 /* TrendingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9030036E2B4210DE0076DD41 /* TrendingView.swift */; };
 		903003722B42110C0076DD41 /* CryptoLineItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903003712B42110C0076DD41 /* CryptoLineItemView.swift */; };
+		905501512B49D1D80061F925 /* FixedDecimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 905501502B49D1D80061F925 /* FixedDecimalView.swift */; };
 		9074A3FE2B4367A80061DBAF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A3FD2B4367A70061DBAF /* Api.swift */; };
 		9074A40B2B43718A0061DBAF /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A40A2B43718A0061DBAF /* MarketDataService.swift */; };
 		9074A40D2B4371FC0061DBAF /* MarketDataService+MarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A40C2B4371FC0061DBAF /* MarketDataService+MarketCap.swift */; };
@@ -95,6 +96,7 @@
 		9030036C2B4210080076DD41 /* CryptoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListViewModel.swift; sourceTree = "<group>"; };
 		9030036E2B4210DE0076DD41 /* TrendingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingView.swift; sourceTree = "<group>"; };
 		903003712B42110C0076DD41 /* CryptoLineItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoLineItemView.swift; sourceTree = "<group>"; };
+		905501502B49D1D80061F925 /* FixedDecimalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedDecimalView.swift; sourceTree = "<group>"; };
 		9074A3FD2B4367A70061DBAF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		9074A40A2B43718A0061DBAF /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		9074A40C2B4371FC0061DBAF /* MarketDataService+MarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketDataService+MarketCap.swift"; sourceTree = "<group>"; };
@@ -527,6 +529,7 @@
 				903003712B42110C0076DD41 /* CryptoLineItemView.swift */,
 				90D0D5F72B411BE600406596 /* HeaderView.swift */,
 				908895472B48B9070031059A /* PanelView.swift */,
+				905501502B49D1D80061F925 /* FixedDecimalView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -682,6 +685,7 @@
 				9030035C2B41E5B50076DD41 /* MarketCapChangeView.swift in Sources */,
 				90D0D5F82B411BE600406596 /* HeaderView.swift in Sources */,
 				9074A42B2B4496720061DBAF /* QuoteResponse.swift in Sources */,
+				905501512B49D1D80061F925 /* FixedDecimalView.swift in Sources */,
 				9074A3FE2B4367A80061DBAF /* Api.swift in Sources */,
 				903003722B42110C0076DD41 /* CryptoLineItemView.swift in Sources */,
 				908B87282B45DF2A007927CE /* TrendingViewModel.swift in Sources */,
