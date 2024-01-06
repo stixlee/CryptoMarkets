@@ -16,23 +16,28 @@ struct MarketCapView: View {
             Text("Global Market Cap")
                 .font(.headline)
                 .fontWeight(.semibold)
-            HStack(alignment: .center) {
-                VStack(alignment: .leading) {
-                    Text(
-                        viewModel.marketCap,
-                        format: .currency(code: "USD").precision(.fractionLength(0))
-                    )
-                    .font(.headline)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color.primaryFG)
-                    .padding(.bottom, 4)
-                    MarketCapChangeView(viewModel: viewModel)
-                }
+                .padding(.leading, 12)
+            HStack(alignment: .center, spacing: 0) {
+                Text(
+                    viewModel.marketCap,
+                    format: .currency(code: "USD").precision(.fractionLength(0))
+                )
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .foregroundStyle(Color.primaryFG)
                 Spacer()
+                Text("% change")
+                    .font(.caption)
+                    .foregroundStyle(Color.primaryFG)
+                    .padding(.trailing, 10)
+                Image(
+                    systemName: viewModel.percentChange >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill"
+                )
+                    .font(.caption)
+                    .foregroundColor(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
+                FixedDecimalView(value: viewModel.percentChange)
+                    .padding(.leading, -10)
 
-                Image(systemName: viewModel.percentChange >= 0.0 ? "arrow.up" : "arrow.down")
-                                .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
-                                .font(.title)
             }
             .padding(16)
             .overlay(

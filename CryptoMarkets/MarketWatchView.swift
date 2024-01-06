@@ -72,6 +72,7 @@ struct MarketWatchView: View {
                         }
                     }
                     .padding([.leading, .trailing], 8)
+                    .padding(.top, 18)
                     Spacer()
                 }
             }
