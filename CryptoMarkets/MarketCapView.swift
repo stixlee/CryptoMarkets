@@ -48,7 +48,3 @@ struct MarketCapView: View {
         }
     }
 }
-
-//#Preview {
-//    MarketCapView(viewModel: MarketCapViewModel())
-//}

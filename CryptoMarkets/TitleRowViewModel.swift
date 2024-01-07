@@ -21,3 +21,9 @@ extension TitleRowViewModel {
     var isPositive: Bool { return percentChange >= 0.0 }
 }
 
+extension TitleRowViewModel {
+    func didTapInfo() {
+        print("DEBUG: didTapInfo")
+    }
+}
+

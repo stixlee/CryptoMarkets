@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct TitleSectionView: View {
+    
+    @ObservedObject var viewModel: TitleSectionViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 4) {
+            TitleRowView(viewModel: viewModel.titleRowViewModel)
+            Text(viewModel.secondaryTitle)
+                .font(.caption)
+                .foregroundStyle(Color.gray)
+                .lineLimit(1)
+        }
     }
 }
 
 #Preview {
-    TitleSectionView()
+    TitleSectionView(
+        viewModel: TitleSectionViewModel(
+            title: "Market Cap",
+            secondaryTitle: "Global Market Capitalization",
+            percentChange: 0.2345))
 }

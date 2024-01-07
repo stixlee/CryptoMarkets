@@ -14,6 +14,7 @@ import Foundation
     var value: Decimal
     var percentChange: Decimal
     var titleSectionViewModel: TitleSectionViewModel
+    var valueSectionViewModel: ValueSectionViewModel
     
     init(title: String, secondaryTitle: String, value: Decimal, percentChange: Decimal) {
         self.title = title
@@ -21,6 +22,7 @@ import Foundation
         self.value = value
         self.percentChange = percentChange
         self.titleSectionViewModel = TitleSectionViewModel(title: title, secondaryTitle: secondaryTitle, percentChange: percentChange)
+        self.valueSectionViewModel = ValueSectionViewModel(value: value, percentChange: percentChange)
     }
     
 }

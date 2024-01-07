@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct MarketPanelItemView: View {
+    
+    @ObservedObject var viewModel: MarketPanelItemViewModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(alignment: .center, spacing: 0) {
+            TitleSectionView(viewModel: viewModel.titleSectionViewModel)
+            Spacer()
+            ValueSectionView(viewModel: viewModel.valueSectionViewModel)
+        }
+        .padding(.leading, 24)
     }
 }
 
 #Preview {
-    MarketPanelItemView()
+    MarketPanelItemView(
+        viewModel: MarketPanelItemViewModel(
+            title: "Market Cap",
+            secondaryTitle: "Global Market Capitalization",
+            value: 1655999069111, percentChange: 0.0234
+        )
+    )
 }

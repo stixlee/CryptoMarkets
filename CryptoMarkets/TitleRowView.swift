@@ -24,7 +24,7 @@ struct TitleRowView: View {
                 .foregroundStyle(Color.primaryFG)
             
             Button {
-                print("Title Info Tapped")
+                viewModel.didTapInfo()
             } label: {
                 Image(systemName: "info.circle")
                     .font(.subheadline)

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+@Observable final class MarketPanelViewModel: ObservableObject {
+    
+    var itemViewModels: [MarketPanelItemViewModel]
+    
+    init(itemViewModels: [MarketPanelItemViewModel]) {
+        self.itemViewModels = itemViewModels
+    }
+}

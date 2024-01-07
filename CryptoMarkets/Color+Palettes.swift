@@ -12,4 +12,5 @@ extension Color {
     static let primaryBG = Color("PrimaryBackground")
     static let primaryFG = Color("PrimaryForeground")
     static let sideMenuBackround = Color("SideMenuBackground")
+    static let panelBG = Color("PanelBackground")
 }
