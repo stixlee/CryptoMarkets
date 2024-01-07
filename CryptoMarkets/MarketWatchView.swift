@@ -18,54 +18,46 @@ struct MarketWatchView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Current Market", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
+                    HeaderView(title: "Crypto Markets", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
                             Group {
                                 
-                                // Market Cap View
-                                MarketCapView(viewModel: viewModel.marketCapViewModel)
-                                
-                                // Volume View
-                                TradingVolumeView(viewModel: viewModel.marketVolumeViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
-
-                                
+                                // Market Panel View
+                                MarketPanelView(viewModel: viewModel.marketPanelViewModel)
+                                    .padding([.leading, .trailing], 18)
+//                                MarketCapView(viewModel: viewModel.marketCapViewModel)
+                                                                
                                 // Leading Indicators View
-                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
+//                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
+//                                    .padding([.top, .bottom], 16)
+//                                    .overlay(
+//                                            RoundedRectangle(cornerRadius: 10)
+//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+//                                        )
+//                                    .padding(.top, 18)
 
                                 // Biggest Movers View
-                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .padding([.leading, .trailing], 18)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
+//                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
+//                                    .padding([.top, .bottom], 16)
+//                                    .padding([.leading, .trailing], 18)
+//                                    .overlay(
+//                                            RoundedRectangle(cornerRadius: 10)
+//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+//                                        )
+//                                    .padding(.top, 18)
 
 
                                 // Trending View
-                                TrendingView(viewModel: viewModel.trendingViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .padding([.leading, .trailing], 18)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
+//                                TrendingView(viewModel: viewModel.trendingViewModel)
+//                                    .padding([.top, .bottom], 16)
+//                                    .padding([.leading, .trailing], 18)
+//                                    .overlay(
+//                                            RoundedRectangle(cornerRadius: 10)
+//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+//                                        )
+//                                    .padding(.top, 18)
                                 Color.clear
                                     .frame(height: 12)
                             }
@@ -97,12 +89,14 @@ struct MarketWatchView: View {
             let trendingSnapshots = try await marketDataService.trending()
             DispatchQueue.main.async {
                 withAnimation(.easeInOut) {
-                    viewModel.marketCapViewModel.marketCap = snapshot.marketCap
-                    viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
-                    viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
-                    viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
+                    viewModel.marketPanelViewModel = MarketPanelViewModel(from: snapshot, title: "Market Snapshot")
+//                    viewModel.marketCapViewModel.marketCap = snapshot.marketCap
+//                    viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
+//                    viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
+//                    viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
                     viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
                     viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
+                    print()
                 }
             }
         } catch (let error) {

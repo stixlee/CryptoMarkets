@@ -13,4 +13,5 @@ import Foundation
     var trendingViewModel: TrendingViewModel = TrendingViewModel()
     var biggestMoversViewModel: BiggestMoversViewModel = BiggestMoversViewModel()
     var leadingIndicatorsViewModel: LeadingIndicatorsViewModel = LeadingIndicatorsViewModel()
+    var marketPanelViewModel: MarketPanelViewModel = MarketPanelViewModel()
 }

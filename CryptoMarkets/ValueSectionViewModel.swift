@@ -18,7 +18,7 @@ enum ValueModifier: String {
     
     var value: Decimal
     var percentChange: Decimal
-    var valueModifer: ValueModifier
+    var valueModifier: ValueModifier
     
     private let trillion: Decimal = 1000000000000
     private let billion: Decimal = 1000000000
@@ -26,20 +26,25 @@ enum ValueModifier: String {
     var displayValue: Decimal {
         var adjustedValue = value / trillion
         if adjustedValue > 1.0 {
-            self.valueModifer = ValueModifier.trillion
+            valueModifier = ValueModifier.trillion
             return adjustedValue
-        } else {
-            adjustedValue = value / billion
-            self.valueModifer = ValueModifier.billion
         }
-        return adjustedValue
+        
+        adjustedValue = value / billion
+        if adjustedValue > 1.0 {
+            valueModifier = ValueModifier.billion
+            return adjustedValue
+        }
+        
+        valueModifier = ValueModifier.none
+        return value
     }
 
     
     init(value: Decimal, percentChange: Decimal) {
         self.value = value
         self.percentChange = percentChange
-        self.valueModifer = ValueModifier.none
+        self.valueModifier = ValueModifier.none
     }
 }
 

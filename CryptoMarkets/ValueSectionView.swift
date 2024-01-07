@@ -19,18 +19,18 @@ struct ValueSectionView: View {
                 )
                     .font(.subheadline)
                     .fontWeight(.semibold)
-                Text(viewModel.valueModifer.rawValue)
+                Text(viewModel.valueModifier.rawValue)
                     .font(.subheadline)
                     .fontWeight(.semibold)
             }
             HStack(alignment: .center, spacing: 0) {
-                Text(viewModel.percentChange >= 0.0 ? "+" : "-")
-                    .font(.subheadline)
+                Text(viewModel.percentChange >= 0.0 ? "+" : "")
+                    .font(.caption)
                     .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
                 Text(viewModel.percentChange,
                     format: .percent.precision(.fractionLength(2))
                 )
-                    .font(.subheadline)
+                    .font(.caption)
                     .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
             }
         }
