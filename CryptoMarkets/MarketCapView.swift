@@ -49,6 +49,6 @@ struct MarketCapView: View {
     }
 }
 
-#Preview {
-    MarketCapView(viewModel: MarketCapViewModel())
-}
+//#Preview {
+//    MarketCapView(viewModel: MarketCapViewModel())
+//}

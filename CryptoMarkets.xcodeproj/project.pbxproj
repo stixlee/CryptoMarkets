@@ -31,6 +31,8 @@
 		9074A4162B43895A0061DBAF /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A4152B43895A0061DBAF /* Double+Extensions.swift */; };
 		9074A42B2B4496720061DBAF /* QuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A42A2B4496720061DBAF /* QuoteResponse.swift */; };
 		9074A4302B44BFCF0061DBAF /* VolumeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A42F2B44BFCF0061DBAF /* VolumeChangeView.swift */; };
+		907EE3542B4B1BBC0090FB18 /* TitleRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3532B4B1BBC0090FB18 /* TitleRowViewModel.swift */; };
+		907EE3572B4B1C1E0090FB18 /* TitleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */; };
 		9088953E2B4881510031059A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088953D2B4881510031059A /* HomeViewModel.swift */; };
 		908895402B4884AC0031059A /* RightSideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9088953F2B4884AC0031059A /* RightSideMenuView.swift */; };
 		908895482B48B9070031059A /* PanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908895472B48B9070031059A /* PanelView.swift */; };
@@ -103,6 +105,8 @@
 		9074A4152B43895A0061DBAF /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		9074A42A2B4496720061DBAF /* QuoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteResponse.swift; sourceTree = "<group>"; };
 		9074A42F2B44BFCF0061DBAF /* VolumeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeChangeView.swift; sourceTree = "<group>"; };
+		907EE3532B4B1BBC0090FB18 /* TitleRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowViewModel.swift; sourceTree = "<group>"; };
+		907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowView.swift; sourceTree = "<group>"; };
 		9088953D2B4881510031059A /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		9088953F2B4884AC0031059A /* RightSideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightSideMenuView.swift; sourceTree = "<group>"; };
 		908895472B48B9070031059A /* PanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelView.swift; sourceTree = "<group>"; };
@@ -203,6 +207,22 @@
 				9074A42F2B44BFCF0061DBAF /* VolumeChangeView.swift */,
 			);
 			name = "Trading Volume View";
+			sourceTree = "<group>";
+		};
+		907EE3522B4B1B6D0090FB18 /* Market Panel View Models */ = {
+			isa = PBXGroup;
+			children = (
+				907EE3532B4B1BBC0090FB18 /* TitleRowViewModel.swift */,
+			);
+			name = "Market Panel View Models";
+			sourceTree = "<group>";
+		};
+		907EE3552B4B1BFA0090FB18 /* Market Panel Views */ = {
+			isa = PBXGroup;
+			children = (
+				907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */,
+			);
+			name = "Market Panel Views";
 			sourceTree = "<group>";
 		};
 		908B87172B45CBEF007927CE /* CoinMarketCap Endpoints */ = {
@@ -526,6 +546,7 @@
 		90D0D5F52B411BC200406596 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				907EE3552B4B1BFA0090FB18 /* Market Panel Views */,
 				903003712B42110C0076DD41 /* CryptoLineItemView.swift */,
 				90D0D5F72B411BE600406596 /* HeaderView.swift */,
 				908895472B48B9070031059A /* PanelView.swift */,
@@ -537,6 +558,7 @@
 		90D0D5F62B411BCA00406596 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				907EE3522B4B1B6D0090FB18 /* Market Panel View Models */,
 				9030036C2B4210080076DD41 /* CryptoListViewModel.swift */,
 			);
 			name = "View Models";
@@ -690,6 +712,7 @@
 				903003722B42110C0076DD41 /* CryptoLineItemView.swift in Sources */,
 				908B87282B45DF2A007927CE /* TrendingViewModel.swift in Sources */,
 				90D0D5E32B40E04500406596 /* HomeView.swift in Sources */,
+				907EE3572B4B1C1E0090FB18 /* TitleRowView.swift in Sources */,
 				90F6E2C52B4326280048E98A /* BiggestMoversView.swift in Sources */,
 				90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */,
 				90F6E2C72B4329E20048E98A /* AppState.swift in Sources */,
@@ -701,6 +724,7 @@
 				903003662B4209E10076DD41 /* MarketVolumeViewModel.swift in Sources */,
 				901F476D2B47765200C49C64 /* MarketDataService+Movers.swift in Sources */,
 				908B87242B45D912007927CE /* TrendingSnapshot.swift in Sources */,
+				907EE3542B4B1BBC0090FB18 /* TitleRowViewModel.swift in Sources */,
 				9074A4162B43895A0061DBAF /* Double+Extensions.swift in Sources */,
 				901F47692B4723A600C49C64 /* MarketItemResponse.swift in Sources */,
 				90D0D5DE2B40DDC700406596 /* MarketWatchView.swift in Sources */,
