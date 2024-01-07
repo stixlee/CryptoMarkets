@@ -19,18 +19,26 @@ struct MarketPanelView: View {
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    MarketPanelItemView(viewModel: viewModel.itemViewModels[0])
-                    Divider()
-                        .frame(minHeight: 1)
-                        .background(Color.gray)
-                        .padding(.leading, 24)
-                    MarketPanelItemView(viewModel: viewModel.itemViewModels[1])
+                    ForEach(viewModel.itemViewModels) { item in
+                        MarketPanelItemView(viewModel: item)
+                        if item.title != (viewModel.itemViewModels.last?.title ?? "") {
+                            Divider()
+                                  .frame(minHeight: 1)
+                                  .background(Color.gray)
+                                  .padding(.leading, 24)
+                        }
+                    }
                 }
             }
             .padding([.top, .bottom], 18)
             .background(Color.panelBG)
                 .cornerRadius(15)
         }
+    }
+    
+    private func isLast(item: MarketPanelItemViewModel) -> Bool {
+        guard let lastItem = self.viewModel.itemViewModels.last else { return false }
+        return item.title == lastItem.title
     }
 }
 

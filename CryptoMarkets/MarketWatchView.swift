@@ -24,10 +24,9 @@ struct MarketWatchView: View {
                         ScrollView(.vertical, showsIndicators: false) {
                             Group {
                                 
-                                // Market Panel View
+                                // Market Snapshot
                                 MarketPanelView(viewModel: viewModel.marketPanelViewModel)
                                     .padding([.leading, .trailing], 18)
-//                                MarketCapView(viewModel: viewModel.marketCapViewModel)
                                                                 
                                 // Leading Indicators View
 //                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
@@ -39,14 +38,14 @@ struct MarketWatchView: View {
 //                                    .padding(.top, 18)
 
                                 // Biggest Movers View
-//                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-//                                    .padding([.top, .bottom], 16)
-//                                    .padding([.leading, .trailing], 18)
-//                                    .overlay(
-//                                            RoundedRectangle(cornerRadius: 10)
-//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-//                                        )
-//                                    .padding(.top, 18)
+                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
+                                    .padding([.top, .bottom], 16)
+                                    .padding([.leading, .trailing], 18)
+                                    .overlay(
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+                                        )
+                                    .padding(.top, 18)
 
 
                                 // Trending View

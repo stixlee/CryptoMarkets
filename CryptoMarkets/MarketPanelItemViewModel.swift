@@ -7,8 +7,9 @@
 
 import Foundation
 
-@Observable final class MarketPanelItemViewModel: ObservableObject {
+@Observable final class MarketPanelItemViewModel: ObservableObject, Identifiable {
     
+    let id = UUID().uuidString
     var title: String
     var secondaryTitle: String
     var value: Decimal
