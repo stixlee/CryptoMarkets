@@ -22,10 +22,7 @@ struct TradingVolumeView: View {
                 .fontWeight(.bold)
                 .foregroundStyle(Color.primaryFG)
                 .padding(.bottom, 4)
-                Text("24h Trading Volume")
-                    .font(.subheadline)
-                    .foregroundStyle(Color.primaryFG)
-
+                VolumeChangeView(viewModel: viewModel)
             }
             Spacer()
         }

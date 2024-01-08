@@ -14,7 +14,7 @@ struct WatchlistView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Watchlist", icon: "sunglasses.fill", accentColor: .blue)
+//                    HeaderView(title: "Watchlist", icon: "sunglasses.fill", homeViewModel: HomeViewModel(), accentColor: .blue)
                     
                     // Crypto List View
                     VStack(alignment: .center) {

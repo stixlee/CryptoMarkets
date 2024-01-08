@@ -12,6 +12,8 @@ struct HeaderView: View {
     var title: String
     var icon: String
     
+    @Binding var showSideView: Bool
+    
     @State var accentColor: Color
     
     var body: some View {
@@ -32,10 +34,12 @@ struct HeaderView: View {
                 HStack(alignment: .center) {
                     Spacer()
                     Button {
-                        print("Three dot tapped!")
+                        withAnimation(.easeInOut) {
+                            showSideView.toggle()
+                        }
                     } label: {
-                        Image(systemName: "ellipsis")
-                            .frame(width: 32, height: 32)
+                        Image(systemName: "line.3.horizontal")
+                            .font(.headline)
                             .foregroundColor(Color.primaryFG)
                     }
                 }
@@ -49,7 +53,6 @@ struct HeaderView: View {
                         },
                         icon: {
                             Image(systemName: icon)
-//                                .resizable()
                                 .font(.headline)
                                 .foregroundColor(accentColor)
                                 .padding(.trailing, 4)
@@ -64,6 +67,8 @@ struct HeaderView: View {
     }
 }
 
-#Preview {
-    HeaderView(title: "Market Watch", icon: "Bitcoinsign.circle.fill", accentColor: .orange)
-}
+//#Preview {
+//    static @State var ssm = false
+//    HeaderView(title: "Market Watch", icon: "Market Watch", showSideView: $ssm, accentColor: Color.orange)
+////    HeaderView(title: "Market Watch", icon: "Market Watch", accentColor: .orange)
+//}

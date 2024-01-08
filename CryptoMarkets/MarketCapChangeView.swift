@@ -13,18 +13,19 @@ struct MarketCapChangeView: View {
     
     
     var body: some View {
-        HStack(alignment: .center) {
-            Text("Market Capitilization")
-                .font(.subheadline)
+        HStack(alignment: .center, spacing: 0) {
+            Text("% Change")
+                .font(.caption)
                 .foregroundStyle(Color.primaryFG)
+                .padding(.trailing, 8)
             Image(systemName: viewModel.percentChange >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill" )
-                .font(.subheadline)
+                .font(.caption)
                 .foregroundColor(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
             Text(
                 viewModel.percentChange,
                 format: .percent.precision(.fractionLength(2))
             )
-            .font(.subheadline)
+            .font(.caption)
             .fontWeight(.semibold)
             .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
         }

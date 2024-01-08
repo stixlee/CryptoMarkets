@@ -13,6 +13,8 @@ import Foundation
                                                             CoinMarketLineItemViewModel()]
     
     func updateItems(with coinsMarkets: [CoinsMarketsResponse]?) {
+        coinsMarketsItems.removeAll()
+        
         if let coinsMarkets = coinsMarkets {
             for coinsMarket in coinsMarkets {
                 let newItem = CoinMarketLineItemViewModel()
@@ -23,8 +25,6 @@ import Foundation
                 newItem.percentDelta = Decimal(coinsMarket.priceChangePercentage24h)
                 coinsMarketsItems.append(newItem)
             }
-        } else {
-            coinsMarketsItems.removeAll()
-        }
+        } 
     }
 }

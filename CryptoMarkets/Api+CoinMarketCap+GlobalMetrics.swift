@@ -1,8 +1,8 @@
 //
-//  Api+CoinMarketCap.swift
+//  Api+CoinMarketCap+GlobalMetrics.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 1/2/24.
+//  Created by Michael Lee on 1/3/24.
 //
 
 import Foundation
@@ -15,14 +15,10 @@ extension Api {
             print("DEBUG: invalid URL")
             throw NetworkingError.invalidUrl
         }
-        var request = URLRequest(url: url)
-        request.addValue("acee5f7b-6669-4844-851b-6f364492daf7", 
-                         forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+        let request = buildRequest(url: url, apiKey: "acee5f7b-6669-4844-851b-6f364492daf7")
 
         let (data, response) = try await URLSession.shared.data(for: request)
-        
-        print(String(data: data, encoding: .utf8) ?? "nil")
-        
+                
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw NetworkingError.invalidResponse
         }
@@ -38,3 +34,14 @@ extension Api {
     }
     
 }
+
+private extension Api {
+    
+    func buildRequest(url: URL, apiKey: String) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.addValue("acee5f7b-6669-4844-851b-6f364492daf7",
+                         forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+        return request
+    }
+}
+

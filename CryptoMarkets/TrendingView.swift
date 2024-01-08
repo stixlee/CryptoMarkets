@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TrendingView: View {
     
-    @ObservedObject var viewModel: CryptoListViewModel
+    @ObservedObject var viewModel: TrendingViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -21,21 +21,21 @@ struct TrendingView: View {
                     .font(.headline)
                     .foregroundStyle(Color.primaryFG)
                 Spacer()
-                Text(viewModel.period)
+                Text(viewModel.secondaryLabel)
                     .font(.subheadline)
                     .foregroundStyle(Color.primaryFG)
                 
             }
             .padding(.bottom, 24)
             
-            ForEach(viewModel.items) { item in
-                CryptoLineItemView(viewModel: item)
+            ForEach(viewModel.trendingItems) { item in
+                TrendingItemView(viewModel: item)
                     .padding(.bottom, 12)
             }
         }
     }
 }
 
-#Preview {
-    TrendingView(viewModel: CryptoListViewModel(label: "Trending"))
-}
+//#Preview {
+//    TrendingView(viewModel: CryptoListViewModel(label: "Trending"))
+//}

@@ -47,10 +47,18 @@ struct QuoteLineItem: Codable {
 struct UsdQuote: Codable {
     let totalMarketCap: Double
     let previousMarketCap: Double
+    let totalVolume: Double
+    let previousVolume: Double
+    let marketCapChange: Double
+    let volumeChange: Double
     
     enum CodingKeys: String, CodingKey {
         case totalMarketCap = "total_market_cap"
         case previousMarketCap = "total_market_cap_yesterday"
+        case totalVolume = "total_volume_24h"
+        case previousVolume = "total_volume_24h_yesterday"
+        case marketCapChange = "total_market_cap_yesterday_percentage_change"
+        case volumeChange = "total_volume_24h_yesterday_percentage_change"
     }
 }
 
