@@ -11,11 +11,7 @@ import Foundation
     
     var itemViewModels: [MarketPanelItemViewModel]
     var title: String
-    
-//    init(itemViewModels: [MarketPanelItemViewModel]) {
-//        self.itemViewModels = itemViewModels
-//    }
-    
+        
     init() {
         let marketCapItemViewModel = MarketPanelItemViewModel(
             title: "Market Cap",

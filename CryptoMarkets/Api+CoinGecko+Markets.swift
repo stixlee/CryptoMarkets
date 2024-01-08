@@ -31,7 +31,7 @@ extension Api {
             movers.sort {
                 abs($0.percentPriceChange) > abs($1.percentPriceChange)
             }
-            return movers.first(5)
+            return movers.first(3)
         } catch let error {
             print("DEBUG: \(error.localizedDescription)")
             throw NetworkingError.invalidJSON

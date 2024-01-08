@@ -22,44 +22,56 @@ struct MarketWatchView: View {
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
-                            Group {
-                                
-                                // Market Snapshot
-                                MarketPanelView(viewModel: viewModel.marketPanelViewModel)
-                                    .padding([.leading, .trailing], 18)
-                                                                
-                                // Leading Indicators View
-//                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
-//                                    .padding([.top, .bottom], 16)
-//                                    .overlay(
-//                                            RoundedRectangle(cornerRadius: 10)
-//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-//                                        )
-//                                    .padding(.top, 18)
+                            // Market Snapshot
+                            MarketPanelView(viewModel: viewModel.marketPanelViewModel)
+                                .padding([.leading, .trailing], 18)
+                                .padding(.bottom, 24)
+                            
+                            CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelViewModel)
+                                .padding([.leading, .trailing], 18)
 
-                                // Biggest Movers View
-                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-                                    .padding([.top, .bottom], 16)
-                                    .padding([.leading, .trailing], 18)
-                                    .overlay(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-                                        )
-                                    .padding(.top, 18)
-
-
-                                // Trending View
-//                                TrendingView(viewModel: viewModel.trendingViewModel)
-//                                    .padding([.top, .bottom], 16)
+//                            Group {
+//                                
+//                                // Market Snapshot
+//                                MarketPanelView(viewModel: viewModel.marketPanelViewModel)
 //                                    .padding([.leading, .trailing], 18)
-//                                    .overlay(
-//                                            RoundedRectangle(cornerRadius: 10)
-//                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-//                                        )
-//                                    .padding(.top, 18)
-                                Color.clear
-                                    .frame(height: 12)
-                            }
+//                                
+////                                CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelVIewModel)
+//                                                                
+//                                // Leading Indicators View
+////                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
+////                                    .padding([.top, .bottom], 16)
+////                                    .overlay(
+////                                            RoundedRectangle(cornerRadius: 10)
+////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+////                                        )
+////                                    .padding(.top, 18)
+//
+//                                // Top Movers View
+////                                CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelViewModel)
+//                                
+////                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
+////                                    .padding([.top, .bottom], 16)
+////                                    .padding([.leading, .trailing], 18)
+////                                    .overlay(
+////                                            RoundedRectangle(cornerRadius: 10)
+////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+////                                        )
+////                                    .padding(.top, 18)
+//
+//
+//                                // Trending View
+////                                TrendingView(viewModel: viewModel.trendingViewModel)
+////                                    .padding([.top, .bottom], 16)
+////                                    .padding([.leading, .trailing], 18)
+////                                    .overlay(
+////                                            RoundedRectangle(cornerRadius: 10)
+////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
+////                                        )
+////                                    .padding(.top, 18)
+//                                Color.clear
+//                                    .frame(height: 12)
+//                            }
                         }
                     }
                     .padding([.leading, .trailing], 8)
@@ -83,18 +95,19 @@ struct MarketWatchView: View {
     
     private func loadData() async -> Void {
         do {
-            let topFiveMovers = try await marketDataService.movers()
+            let topMovers = try await marketDataService.movers()
             let snapshot = try await marketDataService.marketWatch()
             let trendingSnapshots = try await marketDataService.trending()
             DispatchQueue.main.async {
                 withAnimation(.easeInOut) {
                     viewModel.marketPanelViewModel = MarketPanelViewModel(from: snapshot, title: "Market Snapshot")
+                    viewModel.cryptoPanelViewModel = CryptoPanelViewModel(from: topMovers)
 //                    viewModel.marketCapViewModel.marketCap = snapshot.marketCap
 //                    viewModel.marketCapViewModel.percentChange = snapshot.marketCapPercentChange
 //                    viewModel.marketVolumeViewModel.tradingVolume = snapshot.volume
 //                    viewModel.marketVolumeViewModel.volumeChange = snapshot.volumePercentChange
-                    viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
-                    viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
+//                    viewModel.trendingViewModel = TrendingViewModel(from: trendingSnapshots)
+//                    viewModel.biggestMoversViewModel = BiggestMoversViewModel(from: topFiveMovers)
                     print()
                 }
             }
