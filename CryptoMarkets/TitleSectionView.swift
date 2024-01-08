@@ -9,11 +9,11 @@ import SwiftUI
 
 struct TitleSectionView: View {
     
-    @ObservedObject var viewModel: TitleSectionViewModel
+    @ObservedObject var viewModel: MarketPanelItemViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            TitleRowView(viewModel: viewModel.titleRowViewModel)
+            TitleRowView(viewModel: viewModel)
             Text(viewModel.secondaryTitle)
                 .font(.caption)
                 .foregroundStyle(Color.gray)
@@ -24,8 +24,9 @@ struct TitleSectionView: View {
 
 #Preview {
     TitleSectionView(
-        viewModel: TitleSectionViewModel(
+        viewModel: MarketPanelItemViewModel(
             title: "Market Cap",
             secondaryTitle: "Global Market Capitalization",
+            value: 0.0,
             percentChange: 0.2345))
 }

@@ -1,5 +1,5 @@
 //
-//  TitleRowView.swift
+//  CryptoNameRowView.swift
 //  CryptoMarkets
 //
 //  Created by Michael Lee on 1/7/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct TitleRowView: View {
+struct CryptoNameRowView: View {
     
-    @ObservedObject var viewModel: MarketPanelItemViewModel
+    @ObservedObject var viewModel: CryptoPanelItemViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
@@ -18,32 +18,22 @@ struct TitleRowView: View {
                 .fontWeight(.semibold)
                 .foregroundColor(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
             
-            Text(viewModel.title)
+            Text(viewModel.name)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.primaryFG)
-            
-            Button {
-                viewModel.didTapInfo()
-            } label: {
-                Image(systemName: "info.circle")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-            }
-                .offset(y: -4)
-            
             Spacer()
 
         }
         
-    }
-}
+    }}
 
 #Preview {
-    TitleRowView(viewModel: MarketPanelItemViewModel(
-        title: "Market Cap",
-        secondaryTitle: "Global Market Capitalization",
-        value: 0.0,
+    CryptoNameRowView(viewModel: CryptoPanelItemViewModel(
+        name: "Bitcoin",
+        symbol: "BTC",
+        imageUrlString: "",
+        value: 43023.23,
         percentChange: 0.0123)
     )
 }

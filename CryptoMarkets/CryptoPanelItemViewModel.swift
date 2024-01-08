@@ -1,5 +1,5 @@
 //
-//  MarketPanelViewModel.swift
+//  CryptoPanelViewModels.swift
 //  CryptoMarkets
 //
 //  Created by Michael Lee on 1/7/24.
@@ -7,11 +7,12 @@
 
 import Foundation
 
-@Observable final class MarketPanelItemViewModel: ObservableObject, Identifiable {
+@Observable final class CryptoPanelItemViewModel: ObservableObject, Identifiable {
     
     let id = UUID().uuidString
-    var title: String
-    var secondaryTitle: String
+    var name: String
+    var symbol: String
+    var imageUrlString: String
     var value: Decimal
     var percentChange: Decimal
     var valueModifier: ValueModifier = ValueModifier.none
@@ -35,24 +36,29 @@ import Foundation
         valueModifier = ValueModifier.none
         return value
     }
-
     
-    init(title: String, secondaryTitle: String, value: Decimal, percentChange: Decimal) {
-        self.title = title
-        self.secondaryTitle = secondaryTitle
+    init(name: String, symbol: String, imageUrlString: String, value: Decimal, percentChange: Decimal) {
+        self.name = name
+        self.symbol = symbol
+        self.imageUrlString = imageUrlString
         self.value = value
         self.percentChange = percentChange
     }
     
-}
-
-extension MarketPanelItemViewModel {
-    var isPositive: Bool { return percentChange >= 0.0 }
-}
-
-extension MarketPanelItemViewModel {
-    func didTapInfo() {
-        print("DEBUG: didTapInfo")
+    init() {
+        self.name = "Bitcoin"
+        self.symbol = "BTC"
+        self.imageUrlString = ""
+        self.value = 43456.23
+        self.percentChange = 0.0234
     }
+    
+    init(from marketItem: MarketItem) {
+        self.name = marketItem.name
+        self.symbol = marketItem.symbol
+        self.imageUrlString = marketItem.image
+        self.value = marketItem.price
+        self.percentChange = marketItem.percentChange
+    }
+    
 }
-

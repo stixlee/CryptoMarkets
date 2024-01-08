@@ -9,7 +9,6 @@ import SwiftUI
 
 struct MarketPanelView: View {
     
-    
     var viewModel: MarketPanelViewModel
         
     var body: some View {
