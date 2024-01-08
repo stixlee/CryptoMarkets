@@ -27,7 +27,7 @@ struct MarketWatchView: View {
                                 .padding([.leading, .trailing], 18)
                                 .padding(.bottom, 24)
                             
-                            CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelViewModel)
+                            CryptoPanelView(viewModel: viewModel.cryptoPanelViewModel)
                                 .padding([.leading, .trailing], 18)
 
 //                            Group {

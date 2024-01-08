@@ -9,7 +9,7 @@ import Foundation
 
 @Observable final class CryptoPanelViewModel: ObservableObject {
     
-    var items: [CryptoPanelItemViewModel]
+    var viewModels: [CryptoPanelItemViewModel]
     var title: String
         
     init() {
@@ -17,7 +17,7 @@ import Foundation
         let item2 = CryptoPanelItemViewModel()
         let item3 = CryptoPanelItemViewModel()
 
-        self.items = [item1, item2, item3]
+        self.viewModels = [item1, item2, item3]
         self.title = "Large Cap Movers"
     }
     
@@ -27,6 +27,19 @@ import Foundation
             cryptoItems.append(CryptoPanelItemViewModel(from: mover))
         }
         self.title = "Large Cap Movers"
-        self.items = cryptoItems
+        self.viewModels = cryptoItems
     }
+    
+    func firstItems() -> [CryptoPanelItemViewModel] {
+        var items: [CryptoPanelItemViewModel] = []
+        for index in 0..<viewModels.count-1 {
+            items.append(viewModels[index])
+        }
+        return items
+    }
+    
+    func lastItem() -> CryptoPanelItemViewModel {
+        return viewModels[viewModels.count-1]
+    }
+
 }
