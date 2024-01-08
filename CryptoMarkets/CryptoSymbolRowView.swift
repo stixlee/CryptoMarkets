@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CryptoSymbolRowView: View {
     
-    @ObservedObject var viewModel: CryptoSymbolRowViewModel
+    @ObservedObject var viewModel: CryptoPanelItemViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
@@ -38,5 +38,11 @@ struct CryptoSymbolRowView: View {
 }
 
 #Preview {
-    CryptoSymbolRowView(viewModel: CryptoSymbolRowViewModel(symbol: "BTC", imageUrlString: "", percentChange: 0.234))
+    CryptoSymbolRowView(viewModel: CryptoPanelItemViewModel(
+        name: "Bitcoin",
+        symbol: "BTC",
+        imageUrlString: "",
+        value: 43023/23,
+        percentChange: 0.0123)
+    )
 }

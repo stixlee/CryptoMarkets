@@ -31,18 +31,6 @@ struct CryptoPanelView: View {
                           .background(Color.gray)
                           .padding(.leading, 24)
 
-//                    CryptoPanelItemView(viewModel:cryptoViewModel.items[2])
-//                    Divider()
-//                          .frame(minHeight: 1)
-//                          .background(Color.gray)
-//                          .padding(.leading, 24)
-//
-//                    CryptoPanelItemView(viewModel:cryptoViewModel.items[3])
-//                    Divider()
-//                          .frame(minHeight: 1)
-//                          .background(Color.gray)
-//                          .padding(.leading, 24)
-//                    
                     CryptoPanelItemView(viewModel:cryptoViewModel.items[2])
 
                 }

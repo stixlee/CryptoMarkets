@@ -13,9 +13,9 @@ struct MarketPanelItemView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
-            TitleSectionView(viewModel: viewModel.titleSectionViewModel)
+            TitleSectionView(viewModel: viewModel)
             Spacer()
-            ValueSectionView(viewModel: viewModel.valueSectionViewModel)
+            ValueSectionView(viewModel: viewModel)
         }
         .padding(.leading, 24)
     }

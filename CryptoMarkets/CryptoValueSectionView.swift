@@ -1,15 +1,15 @@
 //
-//  ValueSectionView.swift
+//  CryptoValueSectionView.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 1/7/24.
+//  Created by Michael Lee on 1/8/24.
 //
 
 import SwiftUI
 
-struct ValueSectionView: View {
+struct CryptoValueSectionView: View {
     
-    @ObservedObject var viewModel: MarketPanelItemViewModel
+    @ObservedObject var viewModel: CryptoPanelItemViewModel
     
     var body: some View {
         VStack(alignment: .trailing, spacing: 4) {
@@ -39,10 +39,11 @@ struct ValueSectionView: View {
 }
 
 #Preview {
-    ValueSectionView(viewModel: MarketPanelItemViewModel(
-        title: "",
-        secondaryTitle: "",
-        value: 1678234645012,
+    CryptoValueSectionView(viewModel: CryptoPanelItemViewModel(
+        name: "Bitcoin",
+        symbol: "BTC",
+        imageUrlString: "",
+        value: 43034.66,
         percentChange: 0.0123)
     )
 }

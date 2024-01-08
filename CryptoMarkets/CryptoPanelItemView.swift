@@ -13,9 +13,9 @@ struct CryptoPanelItemView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
-            CryptoNameSectionView(viewModel: viewModel.nameSectionViewModel)
+            CryptoNameSectionView(viewModel: viewModel)
             Spacer()
-            ValueSectionView(viewModel: viewModel.valueSectionViewModel)
+            CryptoValueSectionView(viewModel: viewModel)
         }
         .padding(.leading, 24)
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TitleRowView: View {
     
-    @ObservedObject var viewModel: TitleRowViewModel
+    @ObservedObject var viewModel: MarketPanelItemViewModel
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
@@ -40,6 +40,10 @@ struct TitleRowView: View {
 }
 
 #Preview {
-    TitleRowView(viewModel: TitleRowViewModel(title: "Market Cap",
-                                              percentChange: -0.2345))
+    TitleRowView(viewModel: MarketPanelItemViewModel(
+        title: "Market Cap",
+        secondaryTitle: "Global Market Capitalization",
+        value: 0.0,
+        percentChange: 0.0123)
+    )
 }

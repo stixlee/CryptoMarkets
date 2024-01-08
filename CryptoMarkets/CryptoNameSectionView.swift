@@ -9,16 +9,22 @@ import SwiftUI
 
 struct CryptoNameSectionView: View {
     
-    @ObservedObject var viewModel: CryptoNameSectionViewModel
+    @ObservedObject var viewModel: CryptoPanelItemViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            CryptoNameRowView(viewModel: viewModel.nameRowViewModel)
-            CryptoSymbolRowView(viewModel: viewModel.symbolRowViewModel)
+            CryptoNameRowView(viewModel: viewModel)
+            CryptoSymbolRowView(viewModel: viewModel)
         }
     }
 }
 
 #Preview {
-    CryptoNameSectionView(viewModel: CryptoNameSectionViewModel())
+    CryptoNameSectionView(viewModel: CryptoPanelItemViewModel(
+        name: "Bitcoin",
+        symbol: "BTC",
+        imageUrlString: "",
+        value: 43023.23,
+        percentChange: 0.0123)
+    )
 }
