@@ -783,14 +783,22 @@
 				9074A4302B44BFCF0061DBAF /* VolumeChangeView.swift in Sources */,
 				9030036B2B420EA50076DD41 /* CryptoLineItemViewModel.swift in Sources */,
 				903003682B420A2C0076DD41 /* TradingVolumeView.swift in Sources */,
+<<<<<<< HEAD
 				14DBBBC82B486E6D001A7321 /* CoinMarketLineItemView.swift in Sources */,
+=======
 				907EE36F2B4B6AE00090FB18 /* CryptoSymbolRowView.swift in Sources */,
 				907EE37D2B4B755A0090FB18 /* CryptoPanelItemView.swift in Sources */,
+>>>>>>> b340c874f2da0a2f17096d9a52e4c4afc61e23d0
 				903003502B41C6950076DD41 /* Color+Palettes.swift in Sources */,
 				907EE3712B4B6D980090FB18 /* CryptoPanelItemViewModel.swift in Sources */,
 				9074A40B2B43718A0061DBAF /* MarketDataService.swift in Sources */,
 				9030035C2B41E5B50076DD41 /* MarketCapChangeView.swift in Sources */,
+<<<<<<< HEAD
 				1478B7822B44C0D900FBE7F6 /* CoinsMarketsResponse.swift in Sources */,
+				9074A41F2B4492D00061DBAF /* Api+CoinMarketCap.swift in Sources */,
+				907EE3592B4B23540090FB18 /* TitleSectionViewModel.swift in Sources */,
+=======
+>>>>>>> b340c874f2da0a2f17096d9a52e4c4afc61e23d0
 				90D0D5F82B411BE600406596 /* HeaderView.swift in Sources */,
 				907EE35F2B4B2AF60090FB18 /* MarketPanelItemView.swift in Sources */,
 				9074A42B2B4496720061DBAF /* QuoteResponse.swift in Sources */,

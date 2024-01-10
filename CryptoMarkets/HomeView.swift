@@ -20,7 +20,7 @@ struct HomeView: View {
                     .tabItem {
                         Label("Current", systemImage: "house.fill")
                     }
-                CryptoMarketsView()
+                CryptoMarketsView(showSideMenu: $showSideView)
                     .tabItem {
                         Label("Markets", systemImage: "bitcoinsign.circle.fill")
                     }
