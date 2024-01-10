@@ -10,6 +10,7 @@ import SwiftUI
 struct CryptoMarketsView: View {
     
     @ObservedObject var viewModel: CryptoMarketsViewModel = CryptoMarketsViewModel()
+    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -17,15 +18,17 @@ struct CryptoMarketsView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-//                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", homeViewModel: HomeViewModel(), accentColor: .orange)
+                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", showSideView: $showSideMenu, accentColor: .green)
                     
                     // Coin market List View
                     VStack(alignment: .center) {
-                        ForEach(viewModel.coinsMarketsItems) { item in
-                            CoinMarketLineItemView(viewModel: item)
-                                .padding(.bottom, 12)
+                        ScrollView(.vertical, showsIndicators: false) {
+                            ForEach(viewModel.coinsMarketsItems) { item in
+                                CoinMarketLineItemView(viewModel: item)
+                                    .padding(.bottom, 12)
+                            }
+                            Spacer()
                         }
-                        Spacer()
                     }
                     .padding(20)
                     Spacer()
@@ -53,5 +56,5 @@ struct CryptoMarketsView: View {
 // coin, price in usd, 24 hour delta, market cap
 
 #Preview {
-    CryptoMarketsView()
+    CryptoMarketsView(showSideMenu: .constant(false))
 }
