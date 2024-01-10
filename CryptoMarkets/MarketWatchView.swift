@@ -18,7 +18,7 @@ struct MarketWatchView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Crypto Markets", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
+                    HeaderView(title: "Current Snapshot", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
