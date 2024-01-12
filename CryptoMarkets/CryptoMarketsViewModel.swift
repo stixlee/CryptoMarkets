@@ -8,21 +8,26 @@
 import Foundation
 
 @Observable final class CryptoMarketsViewModel: ObservableObject {
-    var coinsMarketsItems: [CoinMarketLineItemViewModel] = [CoinMarketLineItemViewModel(),
-                                                            CoinMarketLineItemViewModel(),
-                                                            CoinMarketLineItemViewModel()]
+    
+    var viewModels: [CryptoCellViewModel]
+    
+    init() {
+        self.viewModels = []
+    }
+//    var coinsMarketsItems: [CoinMarketLineItemViewModel] = [CoinMarketLineItemViewModel(),
+//                                                            CoinMarketLineItemViewModel(),
+//                                                            CoinMarketLineItemViewModel()]
     
     func updateItems(with coinsMarkets: [MarketItem]) {
-        coinsMarketsItems.removeAll()
         
-        for coinsMarket in coinsMarkets {
-            let newItem = CoinMarketLineItemViewModel()
-            newItem.rank = coinsMarket.rank
-            newItem.imageURL = coinsMarket.image
-            newItem.symbol = coinsMarket.symbol
-            newItem.price = coinsMarket.price
-            newItem.percentDelta = coinsMarket.percentChange
-            coinsMarketsItems.append(newItem)
+        var loadedItems: [CryptoCellViewModel] = []
+        
+        for marketItem in coinsMarkets {
+            loadedItems.append(CryptoCellViewModel(from: marketItem))
         }
+        
+        self.viewModels = loadedItems
+        
+        
     }
 }

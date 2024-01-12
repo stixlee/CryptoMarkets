@@ -28,9 +28,9 @@ struct CryptoMarketsView: View {
                     // Coin market List View
                     VStack(alignment: .center) {
                         ScrollView(.vertical, showsIndicators: false) {
-                            ForEach(viewModel.coinsMarketsItems) { item in
-                                CoinMarketLineItemView(viewModel: item)
-                                    .padding(.bottom, 12)
+                            ForEach(viewModel.viewModels) { viewModel in
+                                CryptoCellView(viewModel: viewModel)
+                                     .padding(.bottom, 12)
                             }
                             Spacer()
                         }
@@ -44,13 +44,22 @@ struct CryptoMarketsView: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
+        .refreshable {
+            await loadData()
+        }
         .task {
-            let response = await marketDataService.coinsMarkets()
-            DispatchQueue.main.async {
-                viewModel.updateItems(with: response)
-            }
+            await loadData()
         }
 
+    }
+    
+    private func loadData() async -> Void {
+        let crypto = await marketDataService.coinsMarkets()
+        DispatchQueue.main.async {
+            withAnimation(.smooth) {
+                viewModel.updateItems(with: crypto)
+            }
+        }
     }
 }
 

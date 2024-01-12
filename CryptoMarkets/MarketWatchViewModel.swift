@@ -5,7 +5,7 @@
 //  Created by Michael Lee on 12/31/23.
 //
 
-import Foundation
+import SwiftUI
 
 @Observable final class MarketwatchCompositeViewModel: ObservableObject {
 //    var trendingViewModel: TrendingViewModel = TrendingViewModel()
@@ -48,4 +48,23 @@ import Foundation
             )
         ]
     )
+    
+    func loadData() async -> Void {
+        do {
+            let topMovers = try await marketDataService.movers()
+            let snapshot = try await marketDataService.marketWatch()
+            await updateViewModels(snapshot: snapshot, movers: topMovers)
+        } catch (let error) {
+            print(error)
+        }
+    }
+    
+    @MainActor private func updateViewModels(snapshot: GlobalMarketSnapshot, movers: [MarketItem]) {
+        withAnimation(.easeInOut) {
+            marketSnapshotViewModel = PanelViewModel(from: snapshot)
+            largeCapMoversViewModel = PanelViewModel(with: movers)
+        }
+
+    }
+
 }
