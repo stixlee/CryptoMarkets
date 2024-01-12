@@ -23,55 +23,17 @@ struct MarketWatchView: View {
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {
                             // Market Snapshot
-                            MarketPanelView(viewModel: viewModel.marketPanelViewModel)
+                            PanelView(panelViewModel: viewModel.marketSnapshotViewModel)
                                 .padding([.leading, .trailing], 18)
                                 .padding(.bottom, 24)
+//                            MarketPanelView(viewModel: viewModel.marketPanelViewModel)
+//                                .padding([.leading, .trailing], 18)
+//                                .padding(.bottom, 24)
                             
                             CryptoPanelView(viewModel: viewModel.cryptoPanelViewModel)
                                 .padding([.leading, .trailing], 18)
 
-//                            Group {
-//                                
-//                                // Market Snapshot
-//                                MarketPanelView(viewModel: viewModel.marketPanelViewModel)
-//                                    .padding([.leading, .trailing], 18)
-//                                
-////                                CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelVIewModel)
-//                                                                
-//                                // Leading Indicators View
-////                                LeadingIndicatorsView(viewModel: viewModel.leadingIndicatorsViewModel)
-////                                    .padding([.top, .bottom], 16)
-////                                    .overlay(
-////                                            RoundedRectangle(cornerRadius: 10)
-////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-////                                        )
-////                                    .padding(.top, 18)
-//
-//                                // Top Movers View
-////                                CryptoPanelView(cryptoViewModel: viewModel.cryptoPanelViewModel)
-//                                
-////                                BiggestMoversView(viewModel: viewModel.biggestMoversViewModel)
-////                                    .padding([.top, .bottom], 16)
-////                                    .padding([.leading, .trailing], 18)
-////                                    .overlay(
-////                                            RoundedRectangle(cornerRadius: 10)
-////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-////                                        )
-////                                    .padding(.top, 18)
-//
-//
-//                                // Trending View
-////                                TrendingView(viewModel: viewModel.trendingViewModel)
-////                                    .padding([.top, .bottom], 16)
-////                                    .padding([.leading, .trailing], 18)
-////                                    .overlay(
-////                                            RoundedRectangle(cornerRadius: 10)
-////                                                .stroke(Color.primaryFG, lineWidth: 0.5)
-////                                        )
-////                                    .padding(.top, 18)
-//                                Color.clear
-//                                    .frame(height: 12)
-//                            }
+
                         }
                     }
                     .padding([.leading, .trailing], 8)
@@ -100,6 +62,7 @@ struct MarketWatchView: View {
 //            let trendingSnapshots = try await marketDataService.trending()
             DispatchQueue.main.async {
                 withAnimation(.easeInOut) {
+                    viewModel.marketSnapshotViewModel = PanelViewModel(from: snapshot)
                     viewModel.marketPanelViewModel = MarketPanelViewModel(from: snapshot, title: "Market Snapshot")
                     viewModel.cryptoPanelViewModel = CryptoPanelViewModel(from: topMovers)
                     print()

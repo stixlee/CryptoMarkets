@@ -2,15 +2,15 @@
 //  ValueSectionView.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 1/11/24.
+//  Created by Michael Lee on 1/7/24.
 //
 
 import SwiftUI
 
-struct ValueSectionView: View {
-
-    @ObservedObject var viewModel: PanelItemViewModel
-
+struct MarketValueSectionView: View {
+    
+    @ObservedObject var viewModel: MarketPanelItemViewModel
+    
     var body: some View {
         VStack(alignment: .trailing, spacing: 4) {
             HStack(alignment: .center, spacing: 0) {
@@ -34,9 +34,15 @@ struct ValueSectionView: View {
                     .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
             }
         }
-        .padding(.trailing, 24)    }
+        .padding(.trailing, 24)
+    }
 }
 
 #Preview {
-    ValueSectionView(viewModel: PanelItemViewModel())
+    MarketValueSectionView(viewModel: MarketPanelItemViewModel(
+        title: "",
+        secondaryTitle: "",
+        value: 1678234645012,
+        percentChange: 0.0123)
+    )
 }

@@ -2,31 +2,23 @@
 //  TitleSectionView.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 1/7/24.
+//  Created by Michael Lee on 1/11/24.
 //
 
 import SwiftUI
 
 struct TitleSectionView: View {
     
-    @ObservedObject var viewModel: MarketPanelItemViewModel
+    @ObservedObject var viewModel: PanelItemViewModel
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            TitleRowView(viewModel: viewModel)
-            Text(viewModel.secondaryTitle)
-                .font(.caption)
-                .foregroundStyle(Color.gray)
-                .lineLimit(1)
+            TitleView(viewModel: viewModel)
+            SubtitleView(viewModel: viewModel)
         }
     }
 }
 
 #Preview {
-    TitleSectionView(
-        viewModel: MarketPanelItemViewModel(
-            title: "Market Cap",
-            secondaryTitle: "Global Market Capitalization",
-            value: 0.0,
-            percentChange: 0.2345))
+    TitleSectionView(viewModel: PanelItemViewModel())
 }

@@ -15,4 +15,23 @@ import Foundation
     var leadingIndicatorsViewModel: LeadingIndicatorsViewModel = LeadingIndicatorsViewModel()
     var marketPanelViewModel: MarketPanelViewModel = MarketPanelViewModel()
     var cryptoPanelViewModel: CryptoPanelViewModel = CryptoPanelViewModel()
+    var marketSnapshotViewModel: PanelViewModel = PanelViewModel(
+        title: "Market Snapshot",
+        items: [
+            PanelItemViewModel(
+                title: "Market Cap",
+                subtitle: "Global Market Capitlization",
+                image: "",
+                value: 0,
+                percentChange: 0
+            ),
+            PanelItemViewModel(
+                title: "Trading Volume",
+                subtitle: "Global Trading Volume  24h",
+                image: "",
+                value: 0,
+                percentChange: 0
+            )
+        ]
+    )
 }
