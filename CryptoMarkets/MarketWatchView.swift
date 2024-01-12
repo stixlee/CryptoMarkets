@@ -26,14 +26,10 @@ struct MarketWatchView: View {
                             PanelView(panelViewModel: viewModel.marketSnapshotViewModel)
                                 .padding([.leading, .trailing], 18)
                                 .padding(.bottom, 24)
-//                            MarketPanelView(viewModel: viewModel.marketPanelViewModel)
-//                                .padding([.leading, .trailing], 18)
-//                                .padding(.bottom, 24)
                             
-                            CryptoPanelView(viewModel: viewModel.cryptoPanelViewModel)
+                            PanelView(panelViewModel: viewModel.largeCapMoversViewModel)
                                 .padding([.leading, .trailing], 18)
-
-
+                                .padding(.bottom, 24)
                         }
                     }
                     .padding([.leading, .trailing], 8)
@@ -64,9 +60,7 @@ struct MarketWatchView: View {
                 withAnimation(.easeInOut) {
                     viewModel.marketSnapshotViewModel = PanelViewModel(from: snapshot)
                     viewModel.largeCapMoversViewModel = PanelViewModel(with: topMovers)
-                    viewModel.marketPanelViewModel = MarketPanelViewModel(from: snapshot, title: "Market Snapshot")
-                    viewModel.cryptoPanelViewModel = CryptoPanelViewModel(from: topMovers)
-                    print()
+                      print()
                 }
             }
         } catch (let error) {

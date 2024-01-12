@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum ValueModifier: String {
+    case trillion = "T"
+    case billion = "B"
+    case million = "M"
+    case none = ""
+}
+
 @Observable final class PanelItemViewModel: ObservableObject, Identifiable {
     
     let id = UUID().uuidString
