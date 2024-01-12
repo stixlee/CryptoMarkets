@@ -12,19 +12,17 @@ import Foundation
                                                             CoinMarketLineItemViewModel(),
                                                             CoinMarketLineItemViewModel()]
     
-    func updateItems(with coinsMarkets: [CoinsMarketsResponse]?) {
+    func updateItems(with coinsMarkets: [MarketItem]) {
         coinsMarketsItems.removeAll()
         
-        if let coinsMarkets = coinsMarkets {
-            for coinsMarket in coinsMarkets {
-                let newItem = CoinMarketLineItemViewModel()
-                newItem.rank = coinsMarket.marketCapRank
-                newItem.imageURL = coinsMarket.image
-                newItem.symbol = coinsMarket.symbol
-                newItem.price = Decimal(coinsMarket.currentPrice)
-                newItem.percentDelta = Decimal(coinsMarket.priceChangePercentage24h)
-                coinsMarketsItems.append(newItem)
-            }
-        } 
+        for coinsMarket in coinsMarkets {
+            let newItem = CoinMarketLineItemViewModel()
+            newItem.rank = coinsMarket.rank
+            newItem.imageURL = coinsMarket.image
+            newItem.symbol = coinsMarket.symbol
+            newItem.price = coinsMarket.price
+            newItem.percentDelta = coinsMarket.percentChange
+            coinsMarketsItems.append(newItem)
+        }
     }
 }

@@ -16,11 +16,11 @@ struct HomeView: View {
     var body: some View {
         ZStack {
             TabView {
-                MarketWatchView(showSideMenu: $showSideView)
+                MarketWatchView()
                     .tabItem {
                         Label("Current", systemImage: "house.fill")
                     }
-                CryptoMarketsView(showSideMenu: $showSideView)
+                CryptoMarketsView()
                     .tabItem {
                         Label("Markets", systemImage: "bitcoinsign.circle.fill")
                     }

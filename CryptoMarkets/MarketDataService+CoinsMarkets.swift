@@ -9,13 +9,17 @@ import Foundation
 
 extension MarketDataService {
         
-    func coinsMarkets() async -> [CoinsMarketsResponse]? {
+    func coinsMarkets() async -> [MarketItem] {
+        var marketItems: [MarketItem] = []
         do {
             let response = try await api.coinsMarkets()
-            return response
+            for item in response {
+                marketItems.append(MarketItem(with: item))
+            }
+            return marketItems
         } catch (let error) {
             print("DEBUG: \(error.localizedDescription)")
-            return nil
+            return marketItems
         }
     }
 }

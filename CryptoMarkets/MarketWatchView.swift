@@ -10,7 +10,7 @@ import SwiftUI
 struct MarketWatchView: View {
     
     @StateObject var viewModel: MarketwatchCompositeViewModel = MarketwatchCompositeViewModel()
-    @Binding var showSideMenu: Bool
+//    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -18,7 +18,13 @@ struct MarketWatchView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Current Snapshot", icon: "arrowtriangle.up.fill", showSideView: $showSideMenu, accentColor: .green)
+                    HeaderView(viewModel: HeaderViewModel(
+                        tabId: 0,
+                        title: "Crypto Markets",
+                        icon: "dollarsign.circle.fill",
+                        showSideMenu: false,
+                        accentColor: .green)
+                    )
                     
                     VStack {
                         ScrollView(.vertical, showsIndicators: false) {

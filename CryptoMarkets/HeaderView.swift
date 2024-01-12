@@ -9,12 +9,7 @@ import SwiftUI
 
 struct HeaderView: View {
     
-    var title: String
-    var icon: String
-    
-    @Binding var showSideView: Bool
-    
-    @State var accentColor: Color
+    @ObservedObject var viewModel: HeaderViewModel
     
     var body: some View {
         VStack {
@@ -25,7 +20,7 @@ struct HeaderView: View {
                     } label: {
                         Image(systemName: "bell.fill")
                             .frame(width: 32, height: 32)
-                            .foregroundColor(Color.primaryFG)
+                            .foregroundColor(Color.primaryForeground)
                     }
                     Spacer()
                 }
@@ -35,12 +30,13 @@ struct HeaderView: View {
                     Spacer()
                     Button {
                         withAnimation(.easeInOut) {
-                            showSideView.toggle()
+                            viewModel.didTapHamburgerMenu()
+//                            viewModel.showSideView.toggle()
                         }
                     } label: {
                         Image(systemName: "line.3.horizontal")
                             .font(.headline)
-                            .foregroundColor(Color.primaryFG)
+                            .foregroundColor(Color.primaryForeground)
                     }
                 }
                 .padding(.trailing, 8)
@@ -48,13 +44,13 @@ struct HeaderView: View {
                     Spacer()
                     Label(
                         title: {
-                            Text(title)
+                            Text(viewModel.title)
                                 .font(.headline)
                         },
                         icon: {
-                            Image(systemName: icon)
+                            Image(systemName: viewModel.icon)
                                 .font(.headline)
-                                .foregroundColor(accentColor)
+                                .foregroundColor(viewModel.accentColor)
                                 .padding(.trailing, 4)
                         }
                     )
@@ -65,6 +61,10 @@ struct HeaderView: View {
             .padding(.top, 56)
         }
     }
+}
+
+#Preview {
+    HeaderView(viewModel: HeaderViewModel())
 }
 
 //#Preview {

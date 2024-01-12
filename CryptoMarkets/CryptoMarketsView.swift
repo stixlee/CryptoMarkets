@@ -10,7 +10,6 @@ import SwiftUI
 struct CryptoMarketsView: View {
     
     @ObservedObject var viewModel: CryptoMarketsViewModel = CryptoMarketsViewModel()
-    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -18,7 +17,13 @@ struct CryptoMarketsView: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(title: "Crypto Markets", icon: "bitcoinsign.circle.fill", showSideView: $showSideMenu, accentColor: .green)
+                    HeaderView(viewModel: HeaderViewModel(
+                        tabId: 1,
+                        title: "Cryptocurrencies",
+                        icon: "bitcoinsign.circle.fill",
+                        showSideMenu: false,
+                        accentColor: .orange)
+                    )
                     
                     // Coin market List View
                     VStack(alignment: .center) {
@@ -40,13 +45,9 @@ struct CryptoMarketsView: View {
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
         .task {
-            do {
-                let response = try await marketDataService.coinsMarkets()
-                DispatchQueue.main.async {
-                    viewModel.updateItems(with: response)
-                }
-            } catch (let error) {
-                print(error)
+            let response = await marketDataService.coinsMarkets()
+            DispatchQueue.main.async {
+                viewModel.updateItems(with: response)
             }
         }
 
@@ -56,5 +57,5 @@ struct CryptoMarketsView: View {
 // coin, price in usd, 24 hour delta, market cap
 
 #Preview {
-    CryptoMarketsView(showSideMenu: .constant(false))
+    CryptoMarketsView()
 }
