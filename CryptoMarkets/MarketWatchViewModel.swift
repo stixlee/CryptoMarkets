@@ -15,6 +15,25 @@ import Foundation
     var leadingIndicatorsViewModel: LeadingIndicatorsViewModel = LeadingIndicatorsViewModel()
     var marketPanelViewModel: MarketPanelViewModel = MarketPanelViewModel()
     var cryptoPanelViewModel: CryptoPanelViewModel = CryptoPanelViewModel()
+    var largeCapMoversViewModel: PanelViewModel = PanelViewModel(
+        title: "Large Cap Movers",
+        items: [
+            PanelItemViewModel(
+                title: "Bitcoin",
+                subtitle: "BTC",
+                image: "",
+                value: 0,
+                percentChange: 0
+            ),
+            PanelItemViewModel(
+                title: "Ethereum",
+                subtitle: "ETH",
+                image: "",
+                value: 0,
+                percentChange: 0
+            )
+        ]
+    )
     var marketSnapshotViewModel: PanelViewModel = PanelViewModel(
         title: "Market Snapshot",
         items: [

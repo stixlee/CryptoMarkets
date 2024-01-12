@@ -44,14 +44,9 @@
 		9074A4162B43895A0061DBAF /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A4152B43895A0061DBAF /* Double+Extensions.swift */; };
 		9074A42B2B4496720061DBAF /* QuoteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A42A2B4496720061DBAF /* QuoteResponse.swift */; };
 		9074A4302B44BFCF0061DBAF /* VolumeChangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A42F2B44BFCF0061DBAF /* VolumeChangeView.swift */; };
-		907EE3572B4B1C1E0090FB18 /* TitleRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */; };
-		907EE35B2B4B248E0090FB18 /* MarketTitleSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE35A2B4B248E0090FB18 /* MarketTitleSectionView.swift */; };
 		907EE35D2B4B28090090FB18 /* MarketPanelItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE35C2B4B28090090FB18 /* MarketPanelItemViewModel.swift */; };
-		907EE35F2B4B2AF60090FB18 /* MarketPanelItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE35E2B4B2AF60090FB18 /* MarketPanelItemView.swift */; };
 		907EE3612B4B2D310090FB18 /* ValueSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3602B4B2D310090FB18 /* ValueSectionViewModel.swift */; };
-		907EE3632B4B2E2D0090FB18 /* MarketValueSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3622B4B2E2D0090FB18 /* MarketValueSectionView.swift */; };
 		907EE3652B4B35420090FB18 /* MarketPanelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3642B4B35420090FB18 /* MarketPanelViewModel.swift */; };
-		907EE3672B4B36DB0090FB18 /* MarketPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3662B4B36DB0090FB18 /* MarketPanelView.swift */; };
 		907EE36A2B4B68950090FB18 /* CryptoSymbolRowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3692B4B68950090FB18 /* CryptoSymbolRowViewModel.swift */; };
 		907EE36F2B4B6AE00090FB18 /* CryptoSymbolRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE36E2B4B6AE00090FB18 /* CryptoSymbolRowView.swift */; };
 		907EE3712B4B6D980090FB18 /* CryptoPanelItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EE3702B4B6D980090FB18 /* CryptoPanelItemViewModel.swift */; };
@@ -146,14 +141,9 @@
 		9074A4152B43895A0061DBAF /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 		9074A42A2B4496720061DBAF /* QuoteResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteResponse.swift; sourceTree = "<group>"; };
 		9074A42F2B44BFCF0061DBAF /* VolumeChangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeChangeView.swift; sourceTree = "<group>"; };
-		907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleRowView.swift; sourceTree = "<group>"; };
-		907EE35A2B4B248E0090FB18 /* MarketTitleSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTitleSectionView.swift; sourceTree = "<group>"; };
 		907EE35C2B4B28090090FB18 /* MarketPanelItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPanelItemViewModel.swift; sourceTree = "<group>"; };
-		907EE35E2B4B2AF60090FB18 /* MarketPanelItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPanelItemView.swift; sourceTree = "<group>"; };
 		907EE3602B4B2D310090FB18 /* ValueSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueSectionViewModel.swift; sourceTree = "<group>"; };
-		907EE3622B4B2E2D0090FB18 /* MarketValueSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketValueSectionView.swift; sourceTree = "<group>"; };
 		907EE3642B4B35420090FB18 /* MarketPanelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPanelViewModel.swift; sourceTree = "<group>"; };
-		907EE3662B4B36DB0090FB18 /* MarketPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPanelView.swift; sourceTree = "<group>"; };
 		907EE3692B4B68950090FB18 /* CryptoSymbolRowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSymbolRowViewModel.swift; sourceTree = "<group>"; };
 		907EE36E2B4B6AE00090FB18 /* CryptoSymbolRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSymbolRowView.swift; sourceTree = "<group>"; };
 		907EE3702B4B6D980090FB18 /* CryptoPanelItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPanelItemViewModel.swift; sourceTree = "<group>"; };
@@ -293,11 +283,6 @@
 		907EE3552B4B1BFA0090FB18 /* Market Panel Views */ = {
 			isa = PBXGroup;
 			children = (
-				907EE3562B4B1C1E0090FB18 /* TitleRowView.swift */,
-				907EE35A2B4B248E0090FB18 /* MarketTitleSectionView.swift */,
-				907EE35E2B4B2AF60090FB18 /* MarketPanelItemView.swift */,
-				907EE3622B4B2E2D0090FB18 /* MarketValueSectionView.swift */,
-				907EE3662B4B36DB0090FB18 /* MarketPanelView.swift */,
 			);
 			name = "Market Panel Views";
 			sourceTree = "<group>";
@@ -317,6 +302,7 @@
 		907EE36B2B4B69DD0090FB18 /* Crypto Panel Views */ = {
 			isa = PBXGroup;
 			children = (
+				907EE37C2B4B755A0090FB18 /* CryptoPanelItemView.swift */,
 				903003712B42110C0076DD41 /* CryptoLineItemView.swift */,
 				907EE36E2B4B6AE00090FB18 /* CryptoSymbolRowView.swift */,
 				907EE3782B4B72FE0090FB18 /* CryptoNameRowView.swift */,
@@ -662,7 +648,6 @@
 				907EE36B2B4B69DD0090FB18 /* Crypto Panel Views */,
 				907EE3552B4B1BFA0090FB18 /* Market Panel Views */,
 				90D0D5F72B411BE600406596 /* HeaderView.swift */,
-				907EE37C2B4B755A0090FB18 /* CryptoPanelItemView.swift */,
 				905501502B49D1D80061F925 /* FixedDecimalView.swift */,
 			);
 			name = Views;
@@ -830,7 +815,6 @@
 				902486532B50CAEC004218DD /* ValueSectionView.swift in Sources */,
 				1478B7822B44C0D900FBE7F6 /* CoinsMarketsResponse.swift in Sources */,
 				90D0D5F82B411BE600406596 /* HeaderView.swift in Sources */,
-				907EE35F2B4B2AF60090FB18 /* MarketPanelItemView.swift in Sources */,
 				9074A42B2B4496720061DBAF /* QuoteResponse.swift in Sources */,
 				905501512B49D1D80061F925 /* FixedDecimalView.swift in Sources */,
 				9074A3FE2B4367A80061DBAF /* Api.swift in Sources */,
@@ -839,9 +823,7 @@
 				908B87282B45DF2A007927CE /* TrendingViewModel.swift in Sources */,
 				90D0D5E32B40E04500406596 /* HomeView.swift in Sources */,
 				14DBBBC62B4869A9001A7321 /* CryptoMarketsViewModel.swift in Sources */,
-				907EE3572B4B1C1E0090FB18 /* TitleRowView.swift in Sources */,
 				907EE3652B4B35420090FB18 /* MarketPanelViewModel.swift in Sources */,
-				907EE3672B4B36DB0090FB18 /* MarketPanelView.swift in Sources */,
 				907EE3612B4B2D310090FB18 /* ValueSectionViewModel.swift in Sources */,
 				907EE35D2B4B28090090FB18 /* MarketPanelItemViewModel.swift in Sources */,
 				90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */,
@@ -870,7 +852,6 @@
 				9030036D2B4210080076DD41 /* CryptoListViewModel.swift in Sources */,
 				908B87162B45C73D007927CE /* GlobalMarketSnapshot.swift in Sources */,
 				901F476F2B47768500C49C64 /* MarketItem.swift in Sources */,
-				907EE35B2B4B248E0090FB18 /* MarketTitleSectionView.swift in Sources */,
 				903003542B41DE1C0076DD41 /* MarketCapView.swift in Sources */,
 				908B871E2B45D183007927CE /* TrendingResponse.swift in Sources */,
 				90D0D5A72B40D94900406596 /* CryptoMarketsApp.swift in Sources */,
@@ -878,7 +859,6 @@
 				90F6E2C92B432B4C0048E98A /* LeadingIndicatorsView.swift in Sources */,
 				90D0D5ED2B4119EB00406596 /* AnalysisView.swift in Sources */,
 				907EE3752B4B6F4E0090FB18 /* CryptoNameSectionViewModel.swift in Sources */,
-				907EE3632B4B2E2D0090FB18 /* MarketValueSectionView.swift in Sources */,
 				908B87222B45D8D7007927CE /* MarketDataService+Trending.swift in Sources */,
 				908B872B2B45E302007927CE /* TrendingItemView.swift in Sources */,
 				907EE36A2B4B68950090FB18 /* CryptoSymbolRowViewModel.swift in Sources */,

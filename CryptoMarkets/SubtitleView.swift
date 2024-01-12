@@ -14,12 +14,28 @@ struct SubtitleView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
             if !viewModel.image.isEmpty {
-                EmptyView()
+                Label {
+                    Text(viewModel.subtitle)
+                        .font(.subheadline)
+                } icon: {
+                    AsyncImage(
+                        url: URL(string: viewModel.image),
+                        content: { image in
+                            image.resizable()
+                                 .aspectRatio(contentMode: .fit)
+                                 .frame(maxWidth: 12, maxHeight: 12)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
+                }
+            } else {
+                Text(viewModel.subtitle)
+                    .font(.caption)
+                    .foregroundStyle(Color.gray)
+                    .lineLimit(1)
             }
-            Text(viewModel.subtitle)
-                .font(.caption)
-                .foregroundStyle(Color.gray)
-                .lineLimit(1)
         }
     }
 }

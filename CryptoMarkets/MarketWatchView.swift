@@ -63,6 +63,7 @@ struct MarketWatchView: View {
             DispatchQueue.main.async {
                 withAnimation(.easeInOut) {
                     viewModel.marketSnapshotViewModel = PanelViewModel(from: snapshot)
+                    viewModel.largeCapMoversViewModel = PanelViewModel(with: topMovers)
                     viewModel.marketPanelViewModel = MarketPanelViewModel(from: snapshot, title: "Market Snapshot")
                     viewModel.cryptoPanelViewModel = CryptoPanelViewModel(from: topMovers)
                     print()

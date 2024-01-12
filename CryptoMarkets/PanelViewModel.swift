@@ -51,6 +51,22 @@ import Foundation
         ]
     }
     
+    init(with marketItems: [MarketItem]) {
+        self.title = "Large Cap Movers"
+        self.items = []
+        for marketItem in marketItems {
+            let viewModel = PanelItemViewModel(
+                title: marketItem.name,
+                subtitle: marketItem.symbol,
+                image: marketItem.image,
+                value: marketItem.price,
+                percentChange: marketItem.percentChange
+            )
+            self.items.append(viewModel)
+        }
+    }
+
+    
     func firstItems() -> [PanelItemViewModel] {
         var viewModels: [PanelItemViewModel] = []
         for item in items {
