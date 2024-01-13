@@ -12,7 +12,7 @@ extension MarketDataService {
     func coinsMarkets() async throws -> [MarketItem] {
         var marketItems: [MarketItem] = []
         do {
-            let response = try await api.coinsMarkets()
+            let response = try await api.fetchCoins()
             for item in response {
                 marketItems.append(MarketItem(with: item))
             }

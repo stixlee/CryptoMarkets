@@ -12,7 +12,7 @@ extension MarketDataService {
     func marketWatch() async throws -> GlobalMarketSnapshot {
         
         do {
-            let quoteResponse = try await api.latestQuotes()
+            let quoteResponse = try await api.globalMarkets()
             return GlobalMarketSnapshot(from: quoteResponse)
         } catch (let error) {
             print("DEBUG: \(error.localizedDescription)")

@@ -19,10 +19,16 @@ extension Api {
 
         let (data, response) = try await URLSession.shared.data(for: request)
         
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            print("DEBUG: invalid response (trending) - \(response)")
             throw NetworkingError.invalidResponse
         }
         
+        guard httpResponse.statusCode == 200 else {
+            print("DEBUG: status error (trending) - code: \(httpResponse.statusCode) | response: \(httpResponse)")
+            throw NetworkingError.invalidResponse
+        }
+
 //        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
         
         do {

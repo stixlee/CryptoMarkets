@@ -7,7 +7,52 @@
 
 import Foundation
 
+enum FetchOrder: String {
+    case marketCapAscending = "market_cap_rank"
+    case marketCapDescending = "market_cap_desc"
+}
+
 extension Api {
+    
+    func fetchCoins() async throws -> [CoinsMarketsResponse] {
+
+        let baseUrl = "https://api.coingecko.com/api/v3/coins/markets"
+        let queryString: String = buildQueryString(
+            currency: "usd",
+            fetchOrder: FetchOrder.marketCapAscending,
+            pageSize: 25,
+            page: 1,
+            addSparkLine: false
+        )
+        
+        guard let  url = URL(string: baseUrl+queryString) else {
+            print("DEBUG: invalid URL")
+            throw NetworkingError.invalidUrl
+        }
+        let request = URLRequest(url: url)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+//        print(String(data: data, encoding: .utf8) ?? "nil")
+        
+        guard let httpResponse = response as? HTTPURLResponse else {
+            print("DEBUG: invalid response (fetchCoins) - \(response)")
+            throw NetworkingError.invalidResponse
+        }
+        
+        guard httpResponse.statusCode == 200 else {
+            print("DEBUG: status error (fetchCoins) - code: \(httpResponse.statusCode) | response: \(httpResponse)")
+            throw NetworkingError.invalidResponse
+        }
+
+        do {
+            let response = try JSONDecoder().decode([CoinsMarketsResponse].self, from: data)
+            return response
+        } catch let error {
+            print("DEBUG: \(error.localizedDescription)")
+            throw NetworkingError.invalidJSON
+        }
+    }
     
     func coinsMarkets() async throws -> [CoinsMarketsResponse] {
         let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_rank&per_page=20&page=1&sparkline=false"
@@ -63,5 +108,19 @@ extension Api {
             throw NetworkingError.invalidJSON
         }
         
+    }
+    
+    private func buildQueryString(currency: String,
+                                  fetchOrder: FetchOrder,
+                                  pageSize: Int,
+                                  page: Int,
+                                  addSparkLine: Bool) -> String {
+        let currencyParm = "vs_currency=\(currency)"
+        let orderParm = "order=\(fetchOrder.rawValue)"
+        let pageSize = "per_page=\(pageSize)"
+        let page = "page=\(page)"
+        let sparkline = "sparkline=\(addSparkLine)"
+        
+        return "?"+currencyParm+"&"+orderParm+"&"+pageSize+"&"+page+"&"+sparkline
     }
 }
