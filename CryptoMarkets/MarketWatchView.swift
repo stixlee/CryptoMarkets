@@ -10,7 +10,6 @@ import SwiftUI
 struct MarketWatchView: View {
     
     @StateObject var viewModel: MarketwatchCompositeViewModel = MarketwatchCompositeViewModel()
-//    @Binding var showSideMenu: Bool
     
     var body: some View {
         VStack {
@@ -49,33 +48,11 @@ struct MarketWatchView: View {
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
         .refreshable {
-            await viewModel.loadData()
+            await viewModel.refreshData()
         }
         .task {
             await viewModel.loadData()
         }
 
     }
-    
-//    private func loadData() async -> Void {
-//        do {
-//            let topMovers = try await marketDataService.movers()
-//            let snapshot = try await marketDataService.marketWatch()
-////            let trendingSnapshots = try await marketDataService.trending()
-//            DispatchQueue.main.async {
-//                withAnimation(.easeInOut) {
-//                    viewModel.marketSnapshotViewModel = PanelViewModel(from: snapshot)
-//                    viewModel.largeCapMoversViewModel = PanelViewModel(with: topMovers)
-//                      print()
-//                }
-//            }
-//        } catch (let error) {
-//            print(error)
-//        }
-//    }
-
 }
-
-//#Preview {
-//    MarketWatchView(homeViewModel: HomeViewModel())
-//}

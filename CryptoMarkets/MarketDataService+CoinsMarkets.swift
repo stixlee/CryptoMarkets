@@ -9,7 +9,7 @@ import Foundation
 
 extension MarketDataService {
         
-    func coinsMarkets() async -> [MarketItem] {
+    func coinsMarkets() async throws -> [MarketItem] {
         var marketItems: [MarketItem] = []
         do {
             let response = try await api.coinsMarkets()
@@ -19,7 +19,7 @@ extension MarketDataService {
             return marketItems
         } catch (let error) {
             print("DEBUG: \(error.localizedDescription)")
-            return marketItems
+            throw error
         }
     }
 }

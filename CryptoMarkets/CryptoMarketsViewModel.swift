@@ -5,18 +5,33 @@
 //  Created by John Ayres on 1/5/24.
 //
 
-import Foundation
+import SwiftUI
 
-@Observable final class CryptoMarketsViewModel: ObservableObject {
+final class CryptoMarketsViewModel: ObservableObject {
     
-    var viewModels: [CryptoCellViewModel]
+    @Published var viewModels: [CryptoCellViewModel]
+    
+    var isLoaded = false
     
     init() {
-        self.viewModels = []
+        self.viewModels = [
+            CryptoCellViewModel(
+                rank: 1,
+                imageURL: "",
+                symbol: "BTC",
+                price: 43001.34,
+                percentDelta: 0.0023
+            ),
+            CryptoCellViewModel(
+                rank: 2,
+                imageURL: "",
+                symbol: "ETH",
+                price: 301.34,
+                percentDelta: -0.0141
+            )
+            
+        ]
     }
-//    var coinsMarketsItems: [CoinMarketLineItemViewModel] = [CoinMarketLineItemViewModel(),
-//                                                            CoinMarketLineItemViewModel(),
-//                                                            CoinMarketLineItemViewModel()]
     
     func updateItems(with coinsMarkets: [MarketItem]) {
         
@@ -30,4 +45,27 @@ import Foundation
         
         
     }
+    
+    func loadData() async -> Void {
+        if isLoaded { return }
+        do {
+            let crypto = try await marketDataService.coinsMarkets()
+            if crypto.isEmpty {
+                print("DEBUG: Crypto Data Load was Empty")
+                return
+            }
+            print("DEBUG: Crypto Data Load was successful")
+            await updateViewModels(cryptoData: crypto)
+        } catch (let error ){
+            print("DEBUG: Crypto Data Load Failed with error: \(error.localizedDescription)")
+        }
+    }
+    
+    @MainActor private func updateViewModels(cryptoData: [MarketItem]) {
+        withAnimation(.smooth) { [weak self] in
+            self?.updateItems(with: cryptoData)
+            self?.isLoaded = true
+        }
+    }
+
 }

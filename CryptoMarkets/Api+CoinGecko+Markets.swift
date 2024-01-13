@@ -19,7 +19,7 @@ extension Api {
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
-        print(String(data: data, encoding: .utf8) ?? "nil")
+//        print(String(data: data, encoding: .utf8) ?? "nil")
         
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             throw NetworkingError.invalidResponse
@@ -50,7 +50,7 @@ extension Api {
             throw NetworkingError.invalidResponse
         }
         
-        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
+//        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
         
         do {
             var movers = try JSONDecoder().decode([MarketItemResponse].self, from: data)

@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-@Observable final class MarketwatchCompositeViewModel: ObservableObject {
+final class MarketwatchCompositeViewModel: ObservableObject {
 //    var trendingViewModel: TrendingViewModel = TrendingViewModel()
 //    var leadingIndicatorsViewModel: LeadingIndicatorsViewModel = LeadingIndicatorsViewModel()
-    var largeCapMoversViewModel: PanelViewModel = PanelViewModel(
+    
+    var isLoaded: Bool = false
+    @Published var largeCapMoversViewModel: PanelViewModel = PanelViewModel(
         title: "Large Cap Movers",
         items: [
             PanelItemViewModel(
@@ -50,19 +52,34 @@ import SwiftUI
     )
     
     func loadData() async -> Void {
+        if isLoaded { return }
         do {
             let topMovers = try await marketDataService.movers()
             let snapshot = try await marketDataService.marketWatch()
+            print("DEBUG: Data Loaded Successfully")
             await updateViewModels(snapshot: snapshot, movers: topMovers)
         } catch (let error) {
-            print(error)
+            print("DEBUG: Data Load Failed with error: \(error.localizedDescription)")
         }
+    }
+    
+    func refreshData() async -> Void {
+        do {
+            let topMovers = try await marketDataService.movers()
+            let snapshot = try await marketDataService.marketWatch()
+            print("DEBUG: Data Loaded Successfully")
+            await updateViewModels(snapshot: snapshot, movers: topMovers)
+        } catch (let error) {
+            print("DEBUG: Data Load Failed with error: \(error.localizedDescription)")
+        }
+
     }
     
     @MainActor private func updateViewModels(snapshot: GlobalMarketSnapshot, movers: [MarketItem]) {
         withAnimation(.easeInOut) {
             marketSnapshotViewModel = PanelViewModel(from: snapshot)
             largeCapMoversViewModel = PanelViewModel(with: movers)
+            isLoaded = true
         }
 
     }

@@ -12,7 +12,7 @@ struct PriceSectionView: View {
     @ObservedObject var viewModel: CryptoCellViewModel
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: 0) {
+        VStack(alignment: .center, spacing: 0) {
             HStack(alignment: .center, spacing: 0) {
                 Spacer()
                 Text(viewModel.price,

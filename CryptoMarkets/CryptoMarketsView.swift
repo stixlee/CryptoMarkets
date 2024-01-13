@@ -45,22 +45,22 @@ struct CryptoMarketsView: View {
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
         .refreshable {
-            await loadData()
+            await viewModel.loadData()
         }
         .task {
-            await loadData()
+            await viewModel.loadData()
         }
 
     }
     
-    private func loadData() async -> Void {
-        let crypto = await marketDataService.coinsMarkets()
-        DispatchQueue.main.async {
-            withAnimation(.smooth) {
-                viewModel.updateItems(with: crypto)
-            }
-        }
-    }
+//    private func loadData() async -> Void {
+//        let crypto = await marketDataService.coinsMarkets()
+//        DispatchQueue.main.async {
+//            withAnimation(.smooth) {
+//                viewModel.updateItems(with: crypto)
+//            }
+//        }
+//    }
 }
 
 // coin, price in usd, 24 hour delta, market cap
