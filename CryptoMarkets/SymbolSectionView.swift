@@ -12,7 +12,7 @@ struct SymbolSectionView: View {
     @ObservedObject var viewModel: CryptoCellViewModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading) {
             HStack(alignment: .center, spacing: 0) {
                 Label {
                     Text(viewModel.symbol)
@@ -30,7 +30,7 @@ struct SymbolSectionView: View {
                         }
                     )
                 }
-//                Spacer()
+                Spacer()
             }
         }
     }

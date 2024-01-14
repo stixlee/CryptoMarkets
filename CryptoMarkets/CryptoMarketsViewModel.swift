@@ -19,13 +19,13 @@ final class CryptoMarketsViewModel: ObservableObject {
     
     func updateItems(with coinsMarkets: [MarketItem]) {
         
-        var loadedItems: [CryptoCellViewModel] = []
+//        var loadedItems: [CryptoCellViewModel] = []
         
         for marketItem in coinsMarkets {
-            loadedItems.append(CryptoCellViewModel(from: marketItem))
+            self.viewModels.append(CryptoCellViewModel(from: marketItem))
         }
         
-        self.viewModels = loadedItems
+//        self.viewModels = loadedItems
         
         
     }
@@ -65,7 +65,7 @@ final class CryptoMarketsViewModel: ObservableObject {
 
     
     @MainActor private func updateViewModels(cryptoData: [MarketItem]) {
-        withAnimation(.smooth) { [weak self] in
+        withAnimation() { [weak self] in
             self?.updateItems(with: cryptoData)
             self?.isLoaded = true
         }

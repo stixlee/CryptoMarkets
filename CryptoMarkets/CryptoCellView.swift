@@ -12,25 +12,25 @@ struct CryptoCellView: View {
     @ObservedObject var viewModel: CryptoCellViewModel
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack(alignment: .center, spacing: 0) {
-                SymbolSectionView(viewModel: viewModel)
-                Spacer()
-                PriceSectionView(viewModel: viewModel)
-                Spacer()
-                DeltaSectionView(viewModel: viewModel)
-            }
-        }
-//        Grid(alignment:.leading) {
-//            GridRow() {
+//        VStack(alignment: .leading, spacing: 0) {
+//            HStack(alignment: .center, spacing: 0) {
 //                SymbolSectionView(viewModel: viewModel)
-//                    .gridColumnAlignment(.leading)
+//                Spacer()
 //                PriceSectionView(viewModel: viewModel)
-//                    .gridColumnAlignment(.center)
+//                Spacer()
 //                DeltaSectionView(viewModel: viewModel)
-//                    .gridColumnAlignment(.trailing)
 //            }
 //        }
+        Grid() {
+            GridRow() {
+                SymbolSectionView(viewModel: viewModel)
+                    .gridColumnAlignment(.leading)
+                PriceSectionView(viewModel: viewModel)
+                    .gridColumnAlignment(.center)
+                DeltaSectionView(viewModel: viewModel)
+                    .gridColumnAlignment(.trailing)
+            }
+        }
     }
 }
 

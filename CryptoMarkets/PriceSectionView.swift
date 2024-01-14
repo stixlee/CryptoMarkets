@@ -12,17 +12,11 @@ struct PriceSectionView: View {
     @ObservedObject var viewModel: CryptoCellViewModel
 
     var body: some View {
-        VStack(alignment: .center, spacing: 0) {
-            HStack(alignment: .center, spacing: 0) {
-                Spacer()
-                Text(viewModel.price,
-                     format: .currency(code: "USD").precision(.fractionLength(2))
-                )
-            }
-            .font(.subheadline)
-            .fontWeight(.semibold)
-        }
-
+        Text(viewModel.price,
+             format: .currency(code: "USD").precision(.fractionLength(2))
+        )
+        .font(.subheadline)
+        .fontWeight(.semibold)
     }
 }
 
