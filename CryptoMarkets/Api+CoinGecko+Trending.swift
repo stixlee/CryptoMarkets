@@ -12,6 +12,7 @@ extension Api {
     func trending() async throws -> TrendingResponse {
         let urlString = "https://api.coingecko.com/api/v3/search/trending"
         guard let  url = URL(string: urlString) else {
+            print("DEBUG: \(NetworkingError.invalidUrl.localizedDescription)")
             throw NetworkingError.invalidUrl
         }
         let request = URLRequest(url: url)
@@ -19,10 +20,12 @@ extension Api {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse else {
-             throw NetworkingError.invalidResponse(response: response)
+            print("DEBUG: \(NetworkingError.invalidResponse(response: response).localizedDescription)")
+            throw NetworkingError.invalidResponse(response: response)
         }
         
         guard httpResponse.statusCode == 200 else {
+            print("DEBUG: \(NetworkingError.responseError(response: httpResponse).localizedDescription)")
             throw NetworkingError.responseError(response: httpResponse)
         }
 
@@ -33,8 +36,10 @@ extension Api {
             return trendingResponse
         } catch let error {
             if let decodingError = error as? DecodingError {
+                print("DEBUG: \(NetworkingError.invalidJSON(decodingError: decodingError).localizedDescription)")
                 throw NetworkingError.invalidJSON(decodingError: decodingError)
             }
+            print("DEBUG: \(NetworkingError.unknown(error: error).localizedDescription)")
             throw NetworkingError.unknown(error: error)
         }
         
