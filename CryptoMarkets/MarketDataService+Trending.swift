@@ -13,7 +13,6 @@ extension MarketDataService {
             let trendingResponse = try await api.trending()
             return TrendingItemsSnapshot(from: trendingResponse)
         } catch (let error) {
-            print("DEBUG: \(error.localizedDescription)")
             throw error
         }
     }

@@ -32,11 +32,3 @@ final class Api {
     }
     
 }
-
-enum NetworkingError: Error {
-    case invalidUrl
-    case invalidRequest
-    case invalidResponse
-    case invalidJSON
-}
-

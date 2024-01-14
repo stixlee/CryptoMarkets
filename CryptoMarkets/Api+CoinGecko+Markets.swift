@@ -27,7 +27,6 @@ extension Api {
         let queryString: String = buildQueryString(parameters: parameters)
 
         guard let  url = URL(string: baseUrl+queryString) else {
-            print("DEBUG: invalid URL")
             throw NetworkingError.invalidUrl
         }
         let request = URLRequest(url: url)
@@ -37,31 +36,25 @@ extension Api {
 //        print(String(data: data, encoding: .utf8) ?? "nil")
         
         guard let httpResponse = response as? HTTPURLResponse else {
-            print("DEBUG: invalid response (fetchCoins) - \(response)")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.invalidResponse(response: response)
         }
         
         guard httpResponse.statusCode == 200 else {
-            print("DEBUG: status error (fetchCoins) - code: \(httpResponse.statusCode) | response: \(httpResponse)")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.responseError(response: httpResponse)
         }
 
         do {
             let response = try JSONDecoder().decode([CoinsMarketsResponse].self, from: data)
             return response
         } catch let error {
-            print("DEBUG: \(error.localizedDescription)")
-            throw NetworkingError.invalidJSON
+            if let decodingError = error as? DecodingError {
+                throw NetworkingError.invalidJSON(decodingError: decodingError)
+            }
+            throw NetworkingError.unknown(error: error)
         }
     }
     
     func fetchLargeCapMovers() async throws -> [MarketItemResponse] {
-//        let urlString = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=15&page=1&sparkline=false&price_change_percentage=true&locale=en"
-//        guard let  url = URL(string: urlString) else {
-//            print("DEBUG: invalid URL")
-//            throw NetworkingError.invalidUrl
-//        }
-//        
         let baseUrl = "https://api.coingecko.com/api/v3/coins/markets"
         let parameters: [String: String] = [
             "vs_currency": "usd",
@@ -75,18 +68,20 @@ extension Api {
         let queryString: String = buildQueryString(parameters: parameters)
 
         guard let  url = URL(string: baseUrl+queryString) else {
-            print("DEBUG: invalid URL")
             throw NetworkingError.invalidUrl
         }
         let request = URLRequest(url: url)
         
         let (data, response) = try await URLSession.shared.data(for: request)
 
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-            print("DEBUG: \(response)")
-            throw NetworkingError.invalidResponse
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw NetworkingError.invalidResponse(response: response)
         }
         
+        guard httpResponse.statusCode == 200 else {
+            throw NetworkingError.responseError(response: httpResponse)
+        }
+
 //        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
         
         do {
@@ -99,8 +94,10 @@ extension Api {
             }
             return largeCap.first(4)
         } catch let error {
-            print("DEBUG: \(error.localizedDescription)")
-            throw NetworkingError.invalidJSON
+            if let decodingError = error as? DecodingError {
+                throw NetworkingError.invalidJSON(decodingError: decodingError)
+            }
+            throw NetworkingError.unknown(error: error)
         }
         
     }

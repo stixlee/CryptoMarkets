@@ -15,7 +15,6 @@ extension MarketDataService {
             let quoteResponse = try await api.globalMarkets()
             return GlobalMarketSnapshot(from: quoteResponse)
         } catch (let error) {
-            print("DEBUG: \(error.localizedDescription)")
             throw error
         }
     }

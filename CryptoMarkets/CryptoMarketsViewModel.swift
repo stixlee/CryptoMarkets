@@ -56,10 +56,29 @@ final class CryptoMarketsViewModel: ObservableObject {
             }
             print("DEBUG: Crypto Data Load was successful")
             await updateViewModels(cryptoData: crypto)
-        } catch (let error ){
-            print("DEBUG: Crypto Data Load Failed with error: \(error.localizedDescription)")
+        } catch (let error ) {
+            if let error = error as? NetworkingError {
+                print("DEBUG: Networking Error - \(error.localizedDescription)")
+            }
         }
     }
+    
+    func refreshData() async -> Void {
+        do {
+            let crypto = try await marketDataService.coinsMarkets()
+            if crypto.isEmpty {
+                print("DEBUG: Crypto Data Load was Empty")
+                return
+            }
+            print("DEBUG: Crypto Data Load was successful")
+            await updateViewModels(cryptoData: crypto)
+        } catch (let error ) {
+            if let error = error as? NetworkingError {
+                print("DEBUG: Networking Error - \(error.localizedDescription)")
+            }
+        }
+    }
+
     
     @MainActor private func updateViewModels(cryptoData: [MarketItem]) {
         withAnimation(.smooth) { [weak self] in

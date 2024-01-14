@@ -63,6 +63,7 @@
 		90F6E2C72B4329E20048E98A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6E2C62B4329E20048E98A /* AppState.swift */; };
 		90F6E2C92B432B4C0048E98A /* LeadingIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6E2C82B432B4C0048E98A /* LeadingIndicatorsView.swift */; };
 		90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6E2CA2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift */; };
+		90F7C4792B543E0000F3B991 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7C4782B543E0000F3B991 /* NetworkingError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		90F6E2C62B4329E20048E98A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		90F6E2C82B432B4C0048E98A /* LeadingIndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingIndicatorsView.swift; sourceTree = "<group>"; };
 		90F6E2CA2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingIndicatorsViewModel.swift; sourceTree = "<group>"; };
+		90F7C4782B543E0000F3B991 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 				908B871A2B45CC30007927CE /* Coin Gecko API */,
 				908B87192B45CC21007927CE /* CoinMarketCap API */,
 				9074A3FD2B4367A70061DBAF /* Api.swift */,
+				90F7C4782B543E0000F3B991 /* NetworkingError.swift */,
 			);
 			name = "Networking Services";
 			sourceTree = "<group>";
@@ -702,6 +705,7 @@
 				9074A3FE2B4367A80061DBAF /* Api.swift in Sources */,
 				902486592B50D0E3004218DD /* PanelView.swift in Sources */,
 				908B87282B45DF2A007927CE /* TrendingViewModel.swift in Sources */,
+				90F7C4792B543E0000F3B991 /* NetworkingError.swift in Sources */,
 				909950FF2B51BEBA000B269D /* SymbolSectionView.swift in Sources */,
 				90D0D5E32B40E04500406596 /* HomeView.swift in Sources */,
 				14DBBBC62B4869A9001A7321 /* CryptoMarketsViewModel.swift in Sources */,

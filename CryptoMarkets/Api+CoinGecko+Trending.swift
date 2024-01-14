@@ -12,7 +12,6 @@ extension Api {
     func trending() async throws -> TrendingResponse {
         let urlString = "https://api.coingecko.com/api/v3/search/trending"
         guard let  url = URL(string: urlString) else {
-            print("DEBUG: invalid URL")
             throw NetworkingError.invalidUrl
         }
         let request = URLRequest(url: url)
@@ -20,13 +19,11 @@ extension Api {
         let (data, response) = try await URLSession.shared.data(for: request)
         
         guard let httpResponse = response as? HTTPURLResponse else {
-            print("DEBUG: invalid response (trending) - \(response)")
-            throw NetworkingError.invalidResponse
+             throw NetworkingError.invalidResponse(response: response)
         }
         
         guard httpResponse.statusCode == 200 else {
-            print("DEBUG: status error (trending) - code: \(httpResponse.statusCode) | response: \(httpResponse)")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.responseError(response: httpResponse)
         }
 
 //        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
@@ -35,8 +32,10 @@ extension Api {
             let trendingResponse = try JSONDecoder().decode(TrendingResponse .self, from: data)
             return trendingResponse
         } catch let error {
-            print("DEBUG: \(error.localizedDescription)")
-            throw NetworkingError.invalidJSON
+            if let decodingError = error as? DecodingError {
+                throw NetworkingError.invalidJSON(decodingError: decodingError)
+            }
+            throw NetworkingError.unknown(error: error)
         }
         
     }

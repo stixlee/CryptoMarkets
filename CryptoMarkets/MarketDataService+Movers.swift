@@ -18,7 +18,6 @@ extension MarketDataService {
             }
             return topFiveMovers
         } catch (let error) {
-            print("DEBUG: \(error.localizedDescription)")
             throw error
         }
     }

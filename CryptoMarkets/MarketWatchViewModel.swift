@@ -63,7 +63,9 @@ final class MarketwatchCompositeViewModel: ObservableObject {
             print("DEBUG: Data Loaded Successfully")
             await updateViewModels(snapshot: snapshot, movers: topMovers)
         } catch (let error) {
-            print("DEBUG: Data Load Failed with error: \(error.localizedDescription)")
+            if let error = error as? NetworkingError {
+                print("DEBUG: Networking Error - \(error.localizedDescription)")
+            }
         }
     }
     
@@ -74,7 +76,9 @@ final class MarketwatchCompositeViewModel: ObservableObject {
             print("DEBUG: Data Loaded Successfully")
             await updateViewModels(snapshot: snapshot, movers: topMovers)
         } catch (let error) {
-            print("DEBUG: Data Load Failed with error: \(error.localizedDescription)")
+            if let error = error as? NetworkingError {
+                print("DEBUG: Networking Error - \(error.localizedDescription)")
+            }
         }
 
     }

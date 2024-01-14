@@ -20,21 +20,21 @@ extension Api {
         let (data, response) = try await URLSession.shared.data(for: request)
                 
         guard let httpResponse = response as? HTTPURLResponse else {
-            print("DEBUG: invalid response (globalMarkets) - \(response)")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.invalidResponse(response: response)
         }
         
         guard httpResponse.statusCode == 200 else {
-            print("DEBUG: status error (globalMarkets) - code: \(httpResponse.statusCode) | response: \(httpResponse)")
-            throw NetworkingError.invalidResponse
+            throw NetworkingError.responseError(response: httpResponse)
         }
-        
+
         do {
             let quoteResponse = try JSONDecoder().decode(QuoteResponse .self, from: data)
             return quoteResponse
         } catch let error {
-            print("DEBUG: \(error.localizedDescription)")
-            throw NetworkingError.invalidJSON
+            if let decodingError = error as? DecodingError {
+                throw NetworkingError.invalidJSON(decodingError: decodingError)
+            }
+            throw NetworkingError.unknown(error: error)
         }
         
     }
