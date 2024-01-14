@@ -14,22 +14,26 @@ enum ValueModifier: String {
     case none = ""
 }
 
-@Observable final class PanelItemViewModel: ObservableObject, Identifiable {
+final class PanelItemViewModel: ObservableObject, Identifiable {
     
     let id = UUID().uuidString
+    
+    @Published var value: Decimal
+    @Published var percentChange: Decimal
+
     var title: String
     var subtitle: String
     var image: String
-    var value: Decimal
-    var percentChange: Decimal
     var valueModifier: ValueModifier = .none
+    var showInfoButton: Bool
     
-    init(title: String, subtitle: String, image: String, value: Decimal, percentChange: Decimal) {
+    init(title: String, subtitle: String, image: String, value: Decimal, percentChange: Decimal, showInfoButton: Bool) {
         self.title = title
         self.subtitle = subtitle
         self.value = value
         self.percentChange = percentChange
         self.image = image
+        self.showInfoButton = showInfoButton
     }
     
     init() {
@@ -38,6 +42,7 @@ enum ValueModifier: String {
         self.value = 1712000000000
         self.percentChange = 0.0076
         self.image = ""
+        self.showInfoButton = true
     }
 }
 

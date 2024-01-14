@@ -66,7 +66,7 @@ extension Api {
         let parameters: [String: String] = [
             "vs_currency": "usd",
             "order": FetchOrder.marketCapDescending.rawValue,
-            "per_page": "15",
+            "per_page": "100",
             "page": "1",
             "sparkline": "false",
             "price_change_percentage": "true",
@@ -90,11 +90,14 @@ extension Api {
 //        print("DEBUG: \(String(decoding: data, as: UTF8.self))")
         
         do {
-            var movers = try JSONDecoder().decode([MarketItemResponse].self, from: data)
-            movers.sort {
+            let movers = try JSONDecoder().decode([MarketItemResponse].self, from: data)
+            var largeCap = movers.filter {
+                $0.marketCap >= 10000000000
+            }
+            largeCap.sort {
                 abs($0.percentPriceChange) > abs($1.percentPriceChange)
             }
-            return movers.first(3)
+            return largeCap.first(4)
         } catch let error {
             print("DEBUG: \(error.localizedDescription)")
             throw NetworkingError.invalidJSON

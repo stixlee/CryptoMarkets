@@ -290,6 +290,7 @@
 				90D0D5D42B40DBC200406596 /* Application Services */,
 				90D0D5D32B40DBA200406596 /* Utilities & Extensions */,
 				90D0D5D22B40DB1C00406596 /* App */,
+				90D0D5F42B411BB600406596 /* Shared */,
 				90D0D5D12B40DAD200406596 /* Features */,
 				90D0D5AC2B40D94B00406596 /* Preview Content */,
 			);
@@ -325,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				903003692B420D240076DD41 /* Just-in-Time Onboarding */,
-				90D0D5F42B411BB600406596 /* Shared */,
 				90D0D5DC2B40DD7500406596 /* Three Dot */,
 				90D0D5DA2B40DD4E00406596 /* Profile */,
 				90D0D5D92B40DD2500406596 /* Watchlist */,

@@ -23,14 +23,16 @@ struct TitleView: View {
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.primaryForeground)
             
-            Button {
-                viewModel.didTapInfo()
-            } label: {
-                Image(systemName: "info.circle")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
-            }
+            if viewModel.showInfoButton {
+                Button {
+                    viewModel.didTapInfo()
+                } label: {
+                    Image(systemName: "info.circle")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+                }
                 .offset(y: -4)
+            }
             
             Spacer()
 

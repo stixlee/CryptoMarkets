@@ -26,7 +26,8 @@ import Foundation
                 subtitle: "Global Trading Volume  24h",
                 image: "",
                 value: 78400000000,
-                percentChange: 0.0567
+                percentChange: 0.0567,
+                showInfoButton: true
             )
         ]
     }
@@ -39,14 +40,16 @@ import Foundation
                 subtitle: "Global Global Market Capitalizatioon",
                 image: "",
                 value: snapshot.marketCap,
-                percentChange: snapshot.marketCapPercentChange
+                percentChange: snapshot.marketCapPercentChange,
+                showInfoButton: true
             ),
             PanelItemViewModel(
                 title: "Trading Volume",
                 subtitle: "Global Trading Volume  24h",
                 image: "",
                 value: snapshot.volume,
-                percentChange: snapshot.volumePercentChange
+                percentChange: snapshot.volumePercentChange,
+                showInfoButton: true
             )
         ]
     }
@@ -60,7 +63,8 @@ import Foundation
                 subtitle: marketItem.symbol,
                 image: marketItem.image,
                 value: marketItem.price,
-                percentChange: marketItem.percentChange
+                percentChange: marketItem.percentChange,
+                showInfoButton: false
             )
             self.items.append(viewModel)
         }

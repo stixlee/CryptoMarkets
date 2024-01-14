@@ -20,14 +20,16 @@ final class MarketwatchCompositeViewModel: ObservableObject {
                 subtitle: "BTC",
                 image: "",
                 value: 0,
-                percentChange: 0
+                percentChange: 0,
+                showInfoButton: false
             ),
             PanelItemViewModel(
                 title: "Ethereum",
                 subtitle: "ETH",
                 image: "",
                 value: 0,
-                percentChange: 0
+                percentChange: 0,
+                showInfoButton: false
             )
         ]
     )
@@ -39,14 +41,16 @@ final class MarketwatchCompositeViewModel: ObservableObject {
                 subtitle: "Global Market Capitlization",
                 image: "",
                 value: 0,
-                percentChange: 0
+                percentChange: 0,
+                showInfoButton: true
             ),
             PanelItemViewModel(
                 title: "Trading Volume",
                 subtitle: "Global Trading Volume  24h",
                 image: "",
                 value: 0,
-                percentChange: 0
+                percentChange: 0,
+                showInfoButton: true
             )
         ]
     )

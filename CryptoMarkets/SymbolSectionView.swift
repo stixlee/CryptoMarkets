@@ -14,9 +14,6 @@ struct SymbolSectionView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(alignment: .center, spacing: 0) {
-                Text("\(viewModel.rank)")
-                    .font(.caption)
-                    .padding(.trailing, 6)
                 Label {
                     Text(viewModel.symbol)
                         .font(.subheadline)
