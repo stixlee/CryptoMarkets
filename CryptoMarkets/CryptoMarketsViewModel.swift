@@ -14,23 +14,7 @@ final class CryptoMarketsViewModel: ObservableObject {
     var isLoaded = false
     
     init() {
-        self.viewModels = [
-            CryptoCellViewModel(
-                rank: 1,
-                imageURL: "",
-                symbol: "BTC",
-                price: 43001.34,
-                percentDelta: 0.0023
-            ),
-            CryptoCellViewModel(
-                rank: 2,
-                imageURL: "",
-                symbol: "ETH",
-                price: 301.34,
-                percentDelta: -0.0141
-            )
-            
-        ]
+        self.viewModels =  []
     }
     
     func updateItems(with coinsMarkets: [MarketItem]) {

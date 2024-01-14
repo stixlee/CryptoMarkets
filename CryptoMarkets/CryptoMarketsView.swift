@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CryptoMarketsView: View {
     
-    @ObservedObject var viewModel: CryptoMarketsViewModel = CryptoMarketsViewModel()
+    @StateObject var viewModel: CryptoMarketsViewModel = CryptoMarketsViewModel()
     
     var body: some View {
         VStack {
