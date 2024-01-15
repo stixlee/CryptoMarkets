@@ -3,4 +3,657 @@
    uuid = "E67BF5A8-64F6-4BBE-A365-398C092D804C"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarkets/MarketWatchView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "527">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "360">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "741">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "437">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1081">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "580">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "990">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "547">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1053">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "569">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1228">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "635">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1457">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "723">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2323">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1031">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2529">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1097">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2393">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1053">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2461">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1075">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2427">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1064">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2455">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2476">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1086">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - ce2b1a89dcf9c4de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(5) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "2612">
+               </Location>
+               <Location
+                  uuid = "DBC50204-6F29-47EC-B6B8-E96D0FFB3252 - d97947fe0fed62df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #3 @Sendable () async -&gt; () in CryptoMarkets.MarketWatchView.body.getter : some"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/MarketWatchView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "1130">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CryptoMarkets/Api+CoinGecko+Coins.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "fetchCoin(id:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "5412">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "5362">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "5694">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "6066">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7350">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7640">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7440">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7544">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7496">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7532">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7582">
+               </Location>
+               <Location
+                  uuid = "CE68AE91-CA69-42C9-8821-327B55BA7E31 - bee957946a2bcbec"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for CryptoMarkets.Api.fetchCoin(id: Swift.String) async throws -&gt; CryptoMarkets.CoinResponse"
+                  moduleName = "CryptoMarkets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/michaellee/Workspaces/CryptoMarkets/CryptoMarkets/Api+CoinGecko+Coins.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "7774">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

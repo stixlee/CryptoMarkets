@@ -64,6 +64,8 @@
 		90F6E2C92B432B4C0048E98A /* LeadingIndicatorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6E2C82B432B4C0048E98A /* LeadingIndicatorsView.swift */; };
 		90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6E2CA2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift */; };
 		90F7C4792B543E0000F3B991 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7C4782B543E0000F3B991 /* NetworkingError.swift */; };
+		90F7C47B2B549F8800F3B991 /* CoinResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7C47A2B549F8800F3B991 /* CoinResponse.swift */; };
+		90F7C47D2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7C47C2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +146,8 @@
 		90F6E2C82B432B4C0048E98A /* LeadingIndicatorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingIndicatorsView.swift; sourceTree = "<group>"; };
 		90F6E2CA2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingIndicatorsViewModel.swift; sourceTree = "<group>"; };
 		90F7C4782B543E0000F3B991 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		90F7C47A2B549F8800F3B991 /* CoinResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinResponse.swift; sourceTree = "<group>"; };
+		90F7C47C2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+CoinGecko+Coins.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				908B871D2B45D183007927CE /* TrendingResponse.swift */,
+				90F7C47A2B549F8800F3B991 /* CoinResponse.swift */,
 			);
 			name = "CoinGecko Endpoints";
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 			children = (
 				901F476A2B47251F00C49C64 /* Api+CoinGecko+Markets.swift */,
 				908B871F2B45D1FD007927CE /* Api+CoinGecko+Trending.swift */,
+				90F7C47C2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift */,
 			);
 			name = "Coin Gecko API";
 			sourceTree = "<group>";
@@ -709,6 +715,8 @@
 				909950FF2B51BEBA000B269D /* SymbolSectionView.swift in Sources */,
 				90D0D5E32B40E04500406596 /* HomeView.swift in Sources */,
 				14DBBBC62B4869A9001A7321 /* CryptoMarketsViewModel.swift in Sources */,
+				90F7C47D2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift in Sources */,
+				90F7C47B2B549F8800F3B991 /* CoinResponse.swift in Sources */,
 				90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */,
 				90F6E2C72B4329E20048E98A /* AppState.swift in Sources */,
 				908B87202B45D1FD007927CE /* Api+CoinGecko+Trending.swift in Sources */,
