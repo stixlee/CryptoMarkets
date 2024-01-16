@@ -29,6 +29,8 @@ struct CoinResponse: Codable {
     let sentimentDownPercent: Double
     let numberWatching: Int
     let marketData: MarketData
+    let lastUpdated: String
+    let tickers: [Ticker]
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
@@ -51,6 +53,8 @@ struct CoinResponse: Codable {
         case sentimentDownPercent = "sentiment_votes_down_percentage"
         case numberWatching = "watchlist_portfolio_users"
         case marketData = "market_data"
+        case lastUpdated = "last_updated"
+        case tickers = "tickers"
     }
 }
 
@@ -106,11 +110,17 @@ struct IntCollection: Codable {
     let usd: Int
     let btc: Int
 }
+
 struct StringCollection: Codable {
     let usd: String
     let btc: String
 }
 
+struct ConvertedDoubleCollection: Codable {
+    let usd: Double
+    let btc: Double
+    let eth: Double
+}
 
 struct MarketData: Codable {
     let price: DoubleCollection
@@ -201,7 +211,62 @@ struct MarketData: Codable {
         case circulatingSupply = "circulating_supply"
         case lastUpdated = "last_updated"
    }
+    
 }
 
+struct Ticker: Codable {
+    
+    let base: String
+    let target: String
+    let market: MarketMetaData
+    let last: Double
+    let volume: Double
+    let convertedLast: ConvertedDoubleCollection
+    let convertedVolume: ConvertedDoubleCollection
+    let trustScore: String
+    let spreadPercentage: Double
+    let timestamp: String
+    let lastTradedAt: String
+    let lastFetchAt: String
+    let isAnomaly: Bool
+    let isStale: Bool
+    let urlString: String?
+    let tokenUrlString: String?
+    let coinId: String?
+    let targetId: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case base = "base"
+        case target = "target"
+        case market = "market"
+        case last = "last"
+        case volume = "volume"
+        case convertedLast = "converted_last"
+        case convertedVolume = "converted_volume"
+        case trustScore = "trust_score"
+        case spreadPercentage = "bid_ask_spread_percentage"
+        case timestamp = "timestamp"
+        case lastTradedAt = "last_traded_at"
+        case lastFetchAt = "last_fetch_at"
+        case isAnomaly = "is_anomaly"
+        case isStale = "is_stale"
+        case urlString = "trade_url"
+        case tokenUrlString = "token_info_url"
+        case coinId = "coin_id"
+        case targetId = "target_coin_id"
+    }
+}
+
+struct MarketMetaData: Codable {
+    let name: String
+    let identifier: String
+    let hasTradingIncentive: Bool
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case identifier = "identifier"
+        case hasTradingIncentive = "has_trading_incentive"
+    }
+}
 
 

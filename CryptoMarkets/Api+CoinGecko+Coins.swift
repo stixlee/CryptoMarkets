@@ -41,6 +41,18 @@ extension Api {
             return coinInfo
         } catch let error {
             if let decodingError = error as? DecodingError {
+                switch decodingError {
+                case .typeMismatch(let key, let value):
+                    print("error \(key), value \(value) and ERROR: \(error.localizedDescription)")
+                case .valueNotFound(let key, let value):
+                    print("error \(key), value \(value) and ERROR: \(error.localizedDescription)")
+                case .keyNotFound(let key, let value):
+                    print("error \(key), value \(value) and ERROR: \(error.localizedDescription)")
+                case .dataCorrupted(let key):
+                    print("error \(key), and ERROR: \(error.localizedDescription)")
+                default:
+                    print("ERROR: \(error.localizedDescription)")
+                }
                 throw NetworkingError.invalidJSON(decodingError: decodingError)
             }
             throw NetworkingError.unknown(error: error)
