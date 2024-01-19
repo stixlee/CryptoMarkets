@@ -10,7 +10,8 @@ import SwiftUI
 struct CryptoCellView: View {
     
     @ObservedObject var viewModel: CryptoCellViewModel
-
+    @State var showDetails = false
+    
     var body: some View {
 //        VStack(alignment: .leading, spacing: 0) {
 //            HStack(alignment: .center, spacing: 0) {
@@ -31,6 +32,12 @@ struct CryptoCellView: View {
                     .gridColumnAlignment(.trailing)
             }
         }
+        .onTapGesture {
+            showDetails.toggle()
+        }
+        .sheet(isPresented: $showDetails, content: {
+            CryptoDetailsView(id: viewModel.id, showDetails: $showDetails)
+        })
     }
 }
 

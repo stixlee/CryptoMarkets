@@ -14,7 +14,7 @@ struct CryptoMarketsView: View {
     var body: some View {
         VStack {
             ZStack {
-                Color.primaryBG
+                Color.primaryBackground
                 VStack {
                     // Header View
                     HeaderView(viewModel: HeaderViewModel(

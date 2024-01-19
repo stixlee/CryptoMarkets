@@ -52,7 +52,6 @@ struct MarketWatchView: View {
         }
         .task {
             await viewModel.loadData()
-            let coinInfo = try? await api.fetchCoin(id: "bitcoin")
             print("")
         }
 

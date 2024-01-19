@@ -9,14 +9,16 @@ import Foundation
 
 @Observable final class CryptoCellViewModel: ObservableObject, Identifiable {
     
-    let id: String = UUID().uuidString
+    let id: String
     var rank: Int
     var imageURL: String
     var symbol: String
     var price: Decimal
     var percentDelta: Decimal
+    var showMenu: Bool = false
     
     init(rank: Int, imageURL: String, symbol: String, price: Decimal, percentDelta: Decimal) {
+        self.id = ""
         self.rank = rank
         self.imageURL = imageURL
         self.symbol = symbol
@@ -25,6 +27,7 @@ import Foundation
     }
     
     init() {
+        self.id = ""
         self.rank = 1
         self.imageURL = ""
         self.symbol = "BTC"
@@ -34,6 +37,7 @@ import Foundation
     }
     
     init(from marketItem: MarketItem) {
+        self.id = marketItem.id
         self.rank = marketItem.rank
         self.imageURL = marketItem.image
         self.symbol = marketItem.symbol
