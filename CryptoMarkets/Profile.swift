@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct Profile: View {
+    @ObservedObject var state = appState
+    
     var body: some View {
-        Text("Profile")
+        VStack {
+            ZStack {
+                Color.primaryBG
+                VStack {
+                    // Header View
+                    Header()
+                    Spacer()
+                }
+            }
+            Spacer()
+            Divider()
+                .padding(0)
+        }
+        .edgesIgnoringSafeArea([.leading, .trailing, .top])
     }
 }
 
