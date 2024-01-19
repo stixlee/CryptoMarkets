@@ -57,3 +57,8 @@ struct MarketWatchView: View {
 
     }
 }
+
+#Preview {
+    MarketWatchView(viewModel: MarketwatchCompositeViewModel())
+}
+

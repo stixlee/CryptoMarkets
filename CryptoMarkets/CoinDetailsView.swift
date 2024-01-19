@@ -14,20 +14,43 @@ struct CoinDetailsView: View {
     @Binding var showDetails: Bool
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(viewModel.price,
-                 format: .currency(code: "USD").precision(.fractionLength(2))
-            )
+        ZStack {
+            ScrollView {
+                VStack {
+                    OverviewPanelView()
+                        .padding([.leading, .trailing], 18)
+                    OverviewPanelView()
+                        .padding([.leading, .trailing], 18)
+                    OverviewPanelView()
+                        .padding([.leading, .trailing], 18)
+                    Spacer()
+                }
+                .padding(.top, 64)
+
+            }
+            VStack {
+                HStack {
+                    Spacer()
+                    Button("", systemImage: "xmark") {
+                        showDetails.toggle()
+                    }
+                    .font(.headline)
+                    .foregroundStyle(.primaryForeground)
+                }
+                .padding(.trailing, 24)
+                Spacer()
+            }
+            .padding(.top, 24)
         }
-        .ignoresSafeArea()
         .task {
             await viewModel.loadData(id: id)
         }
+
 
     }
 
 }
 
-//#Preview {
-//    CryptoDetailsView(viewModel: CryptoDetailsViewModel(id: "bitcoin"), showDetails: .constant(false))
-//}
+#Preview {
+    CoinDetailsView(id: "bitcoin", showDetails: .constant(false))
+}
