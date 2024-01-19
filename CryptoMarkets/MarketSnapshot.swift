@@ -11,6 +11,8 @@ struct MarketSnapshot: View {
     
     @ObservedObject var state = appState
     
+    let actions = MarketWatchActions()
+    
     var body: some View {
         VStack {
             ZStack {
@@ -26,6 +28,14 @@ struct MarketSnapshot: View {
                 .padding(0)
         }
         .edgesIgnoringSafeArea([.leading, .trailing, .top])
+        .refreshable {
+            await actions.refreshData()
+        }
+        .task {
+            await actions.loadData()
+            print("")
+        }
+
     }
 }
 

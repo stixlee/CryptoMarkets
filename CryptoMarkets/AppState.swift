@@ -19,4 +19,5 @@ enum Tabs: Int {
 let appState = AppState()
 @Observable final class AppState: ObservableObject {
     var currentTab: Tabs = .markets
+    var latestQuote: QuoteState = QuoteState()
 }

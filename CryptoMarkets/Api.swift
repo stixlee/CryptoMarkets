@@ -12,7 +12,13 @@ final class Api {
     
     static fileprivate let shared = Api()
     
+    private var coinMarketApi = CoinMarketApi()
+    
     private init() { }
+    
+    func latestQuote() async throws -> Quote {
+        return try await coinMarketApi.latestQuote()
+    }
     
     func buildQueryString(parameters: [String: String]) -> String {
         let parms = [String] (parameters.keys)
