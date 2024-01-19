@@ -20,6 +20,8 @@
 		9004C0B32B5AF8DC009CE1B3 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0B22B5AF8DC009CE1B3 /* Profile.swift */; };
 		9004C0B62B5AFCB1009CE1B3 /* TabActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0B52B5AFCB1009CE1B3 /* TabActions.swift */; };
 		9004C0B82B5AFF99009CE1B3 /* Binding+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0B72B5AFF99009CE1B3 /* Binding+Extensions.swift */; };
+		9004C0BA2B5B168A009CE1B3 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0B92B5B168A009CE1B3 /* Header.swift */; };
+		9004C0BC2B5B2393009CE1B3 /* AppState+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0BB2B5B2393009CE1B3 /* AppState+Header.swift */; };
 		901F47692B4723A600C49C64 /* MarketItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F47682B4723A600C49C64 /* MarketItemResponse.swift */; };
 		901F476B2B47251F00C49C64 /* Api+CoinGecko+Markets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F476A2B47251F00C49C64 /* Api+CoinGecko+Markets.swift */; };
 		901F476D2B47765200C49C64 /* MarketDataService+Movers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901F476C2B47765200C49C64 /* MarketDataService+Movers.swift */; };
@@ -112,6 +114,8 @@
 		9004C0B22B5AF8DC009CE1B3 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9004C0B52B5AFCB1009CE1B3 /* TabActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabActions.swift; sourceTree = "<group>"; };
 		9004C0B72B5AFF99009CE1B3 /* Binding+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+Extensions.swift"; sourceTree = "<group>"; };
+		9004C0B92B5B168A009CE1B3 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		9004C0BB2B5B2393009CE1B3 /* AppState+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppState+Header.swift"; sourceTree = "<group>"; };
 		901F47682B4723A600C49C64 /* MarketItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketItemResponse.swift; sourceTree = "<group>"; };
 		901F476A2B47251F00C49C64 /* Api+CoinGecko+Markets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Api+CoinGecko+Markets.swift"; sourceTree = "<group>"; };
 		901F476C2B47765200C49C64 /* MarketDataService+Movers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketDataService+Movers.swift"; sourceTree = "<group>"; };
@@ -233,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				90F6E2C62B4329E20048E98A /* AppState.swift */,
+				9004C0BB2B5B2393009CE1B3 /* AppState+Header.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 		9004C0A32B5AF343009CE1B3 /* Shared Views */ = {
 			isa = PBXGroup;
 			children = (
+				9004C0B92B5B168A009CE1B3 /* Header.swift */,
 			);
 			name = "Shared Views";
 			sourceTree = "<group>";
@@ -844,6 +850,7 @@
 				901F476B2B47251F00C49C64 /* Api+CoinGecko+Markets.swift in Sources */,
 				90F7C4C42B58331600F3B991 /* SummaryPanelView.swift in Sources */,
 				909950F92B51B70E000B269D /* DeltaSectionView.swift in Sources */,
+				9004C0BA2B5B168A009CE1B3 /* Header.swift in Sources */,
 				902486552B50CC7D004218DD /* PanelItemView.swift in Sources */,
 				908B871C2B45CD1C007927CE /* Api+CoinMarketCap+GlobalMetrics.swift in Sources */,
 				90F7C4B92B57537300F3B991 /* CoinDetailsView.swift in Sources */,
@@ -869,6 +876,7 @@
 				90F7C47D2B54A2E400F3B991 /* Api+CoinGecko+Coins.swift in Sources */,
 				90F7C47B2B549F8800F3B991 /* CoinResponse.swift in Sources */,
 				9004C09A2B5AB28D009CE1B3 /* OverviewPanelView.swift in Sources */,
+				9004C0BC2B5B2393009CE1B3 /* AppState+Header.swift in Sources */,
 				90F6E2CB2B432BBC0048E98A /* LeadingIndicatorsViewModel.swift in Sources */,
 				90F6E2C72B4329E20048E98A /* AppState.swift in Sources */,
 				908B87202B45D1FD007927CE /* Api+CoinGecko+Trending.swift in Sources */,
