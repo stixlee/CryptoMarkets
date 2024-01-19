@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct CryptoMarketsApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            MainTab()
         }
     }
 }

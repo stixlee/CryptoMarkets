@@ -9,7 +9,6 @@ import SwiftUI
 
 struct LeadingIndicatorsView: View {
     
-    @ObservedObject var appState = globalAppState
     @ObservedObject var viewModel: LeadingIndicatorsViewModel
     
     var body: some View {
@@ -30,25 +29,25 @@ struct LeadingIndicatorsView: View {
             }
             .padding(.leading, 18)
             .padding(.trailing, 24)
-            Group {
-                if appState.leadingIndicatorsEnabled {
-                    EmptyView()
-                } else {
-                    VStack(alignment: .center) {
-                        Spacer()
-                        HStack(alignment: .center) {
-                            Spacer()
-                            Image(systemName: "lock.fill")
-                                .font(.largeTitle)
-                            Spacer()
-                        }
-                        Spacer()
-                    }
-                    .padding(.top, 18)
-                    .frame(height: 96)
-                }
-            }
-            .padding(.bottom, 24)
+//            Group {
+//                if appState.leadingIndicatorsEnabled {
+//                    EmptyView()
+//                } else {
+//                    VStack(alignment: .center) {
+//                        Spacer()
+//                        HStack(alignment: .center) {
+//                            Spacer()
+//                            Image(systemName: "lock.fill")
+//                                .font(.largeTitle)
+//                            Spacer()
+//                        }
+//                        Spacer()
+//                    }
+//                    .padding(.top, 18)
+//                    .frame(height: 96)
+//                }
+//            }
+//            .padding(.bottom, 24)
             
         }
     }
