@@ -5,7 +5,7 @@
 //  Created by Michael Lee on 1/19/24.
 //
 
-import Foundation
+import SwiftUI
 
 extension AppState {
     var headerTitle: String {
@@ -29,6 +29,18 @@ extension AppState {
             default: return ""
         }
     }
+    
+    var headerAccentColor: Color {
+        switch currentTab {
+            case .markets: return .green
+            case .crypto: return .orange
+            case .watchlist: return .blue
+            case .intelligence: return .red
+            case .profile: return .yellow
+            default: return .clear
+        }
+    }
+
 
     
 }

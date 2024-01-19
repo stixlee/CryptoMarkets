@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct CryptoCurrencies: View {
+    @ObservedObject var state = appState
+    
     var body: some View {
-        Text("Crypto Currencies")
+        VStack {
+            ZStack {
+                Color.primaryBG
+                VStack {
+                    // Header View
+                    Header()
+                    Spacer()
+                }
+            }
+            Spacer()
+            Divider()
+                .padding(0)
+        }
+        .edgesIgnoringSafeArea([.leading, .trailing, .top])
     }
 }
 

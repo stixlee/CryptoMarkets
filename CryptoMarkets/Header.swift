@@ -50,7 +50,7 @@ struct Header: View {
                         icon: {
                             Image(systemName: state.headerIcon)
                                 .font(.headline)
-                                .foregroundColor(.orange)
+                                .foregroundColor(state.headerAccentColor)
                                 .padding(.trailing, 4)
                         }
                     )

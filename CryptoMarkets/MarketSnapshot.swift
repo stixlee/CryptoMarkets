@@ -17,13 +17,7 @@ struct MarketSnapshot: View {
                 Color.primaryBG
                 VStack {
                     // Header View
-                    HeaderView(viewModel: HeaderViewModel(
-                        tabId: 0,
-                        title: "Crypto Markets",
-                        icon: "dollarsign.circle.fill",
-                        showSideMenu: false,
-                        accentColor: .green)
-                    )
+                    Header()
                     Spacer()
                 }
             }
