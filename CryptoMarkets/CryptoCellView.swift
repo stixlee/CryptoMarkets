@@ -36,7 +36,8 @@ struct CryptoCellView: View {
             showDetails.toggle()
         }
         .sheet(isPresented: $showDetails, content: {
-            CryptoDetailsView(id: viewModel.id, showDetails: $showDetails)
+            CoinDetailsView(id: viewModel.id, showDetails: $showDetails)
+                .presentationBackground(.thinMaterial.opacity(0.95))
         })
     }
 }
