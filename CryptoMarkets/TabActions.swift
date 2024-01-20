@@ -12,7 +12,6 @@ final class TabActions {
     @ObservedObject var state = appState
     
     func tabSelected(selectedTab: Int) {
-        print("DEBUG: Selected Tab: \(selectedTab)")
         switch selectedTab {
             case 0: appState.currentTab = .markets
             case 1: appState.currentTab = .markets

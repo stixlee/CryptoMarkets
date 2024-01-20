@@ -17,8 +17,8 @@ struct ValueSectionView: View {
                 Text(viewModel.displayValue,
                      format: .currency(code: "USD").precision(.fractionLength(2))
                 )
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
+                .font(.subheadline)
+                .fontWeight(.semibold)
                 Text(viewModel.valueModifier.rawValue)
                     .font(.subheadline)
                     .fontWeight(.semibold)
@@ -28,13 +28,14 @@ struct ValueSectionView: View {
                     .font(.caption)
                     .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
                 Text(viewModel.percentChange,
-                    format: .percent.precision(.fractionLength(2))
+                     format: .percent.precision(.fractionLength(2))
                 )
-                    .font(.caption)
-                    .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
+                .font(.caption)
+                .foregroundStyle(viewModel.percentChange >= 0.0 ? Color.green : Color.red)
             }
         }
-        .padding(.trailing, 24)    }
+        .padding(.trailing, 24)
+    }
 }
 
 #Preview {

@@ -20,6 +20,11 @@ struct MarketSnapshot: View {
                 VStack {
                     // Header View
                     Header()
+                    ScrollView {
+                        MarketPanel(state: state.latestQuote, title: "")
+                            .padding([.leading, .trailing], 18)
+                            .padding(.top, 12)
+                    }
                     Spacer()
                 }
             }

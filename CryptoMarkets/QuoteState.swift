@@ -24,9 +24,9 @@ final class QuoteState: ObservableObject {
     }
 
     init() {
-        self.marketCap = 0.0
-        self.marketCapPercentChange = 0.0
-        self.volume = 0.0
-        self.volumePercentChange = 0.0
+        self.marketCap = 1234000000000
+        self.marketCapPercentChange = 0.0023
+        self.volume = 52345000000
+        self.volumePercentChange = 0.0243
     }
 }

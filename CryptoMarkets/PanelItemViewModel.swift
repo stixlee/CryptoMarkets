@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum ValueModifier: String {
-    case trillion = "T"
-    case billion = "B"
-    case million = "M"
-    case none = ""
-}
+//enum ValueModifier: String {
+//    case trillion = "T"
+//    case billion = "B"
+//    case million = "M"
+//    case none = ""
+//}
 
 final class PanelItemViewModel: ObservableObject, Identifiable {
     
