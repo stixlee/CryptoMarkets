@@ -20,6 +20,10 @@ final class Api {
         return try await coinMarketApi.latestQuote()
     }
     
+    func largeCapMovers() async throws -> [CryptoSummary] {
+        return try await coinMarketApi.largeCapMovers()
+    }
+    
     func buildQueryString(parameters: [String: String]) -> String {
         let parms = [String] (parameters.keys)
         var queryString: String = "?"

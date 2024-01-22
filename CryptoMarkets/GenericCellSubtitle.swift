@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MarketCellSubtitle: View {
+struct GenericCellSubtitle: View {
     
-    @ObservedObject var state: MarketPanelState
+    @ObservedObject var state: GenericPanelState
     let actions = MarketCellActions()
 
     var body: some View {
@@ -43,5 +43,5 @@ struct MarketCellSubtitle: View {
 }
 
 #Preview {
-    MarketCellSubtitle(state: MarketPanelState())
+    GenericCellSubtitle(state: GenericPanelState())
 }

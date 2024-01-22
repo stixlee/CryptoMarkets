@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MarketPanel: View {
     
-    @ObservedObject var state = appState.latestQuote
+    @ObservedObject var state: QuoteState = appState.latestQuote
+    
     let title: String
     
     var body: some View {
@@ -19,21 +20,32 @@ struct MarketPanel: View {
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    MarketPanelCell(state: MarketPanelState(type: .marketCap, from: state))
+                    GenericPanelCell(state: GenericPanelState(type: .marketCap, from: state))
                     Divider()
-                          .frame(minHeight: 1)
-                          .background(Color.gray)
-                          .padding(.leading, 24)
-                    MarketPanelCell(state: MarketPanelState(type: .volume, from: state))
+                        .frame(minHeight: 1)
+                        .background(Color.gray)
+                        .padding(.leading, 24)
+                    GenericPanelCell(state: GenericPanelState(type: .volume, from: state))
                 }
             }
-            .padding([.top, .bottom], 18)
-            .background(Color.panelBackground)
-                .cornerRadius(15)
         }
+        .padding([.top, .bottom], 18)
+        .background(Color.panelBackground)
+        .cornerRadius(15)
     }
 }
+    
+//    private var lastIndex: Int {
+//        return state.count - 1
+//    }
+//    
+//    private var leadingItems: [GenericPanelState] {
+//        let original = state
+//        let array = state.filter { $0.id != state.last?.id ?? ""}
+//        return array
+//    }
+//}
 
-#Preview {
-    MarketPanel(title: "")
-}
+//#Preview {
+//    GenericPanel(title: "")
+//}

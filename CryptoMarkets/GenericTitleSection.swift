@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct TitleSection: View {
+struct GenericTitleSection: View {
     
-    @ObservedObject var state: MarketPanelState
+    @ObservedObject var state: GenericPanelState
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            MarketCellTitle(state: state)
-            MarketCellSubtitle(state: state)
+            GenericCellTitle(state: state)
+            GenericCellSubtitle(state: state)
         }
     }
 }
 
 #Preview {
-    TitleSection(state: MarketPanelState())
+    GenericTitleSection(state: GenericPanelState())
 }

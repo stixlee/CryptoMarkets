@@ -14,10 +14,10 @@ final class MarketWatchActions {
     func loadData() async -> Void {
         if state.latestQuote.isLoaded { return }
         do {
-//            let topMovers = try await marketDataService.movers()
+            let largeCapMovers = try await api.largeCapMovers()
             let latestQuote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            await updateQuote(quote: latestQuote)
+            await updateState(quote: latestQuote, movers: largeCapMovers)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -27,10 +27,10 @@ final class MarketWatchActions {
     
     func refreshData() async -> Void {
         do {
-//            let topMovers = try await marketDataService.movers()
+            let largeCapMovers = try await api.largeCapMovers()
             let quote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            await updateQuote(quote: quote)
+            await updateState(quote: quote, movers: largeCapMovers)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -39,10 +39,10 @@ final class MarketWatchActions {
 
     }
     
-    @MainActor private func updateQuote(quote: Quote) async {
+    @MainActor private func updateState(quote: Quote, movers: [CryptoSummary]) async {
         withAnimation(.easeInOut) {
             appState.latestQuote = QuoteState(from: quote)
-//            largeCapMoversViewModel = PanelViewModel(with: movers)
+            appState.largeCapMovers.movers = movers
             state.latestQuote.isLoaded = true
         }
 

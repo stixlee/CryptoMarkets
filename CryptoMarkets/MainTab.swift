@@ -19,7 +19,7 @@ struct MainTab: View {
             TabView(selection: $selectedTab.onUpdate {
                 tabActions.tabSelected(selectedTab: selectedTab)
             }) {
-                MarketSnapshot()
+                MarketWatch()
                     .tabItem {
                         Label("Market", systemImage: "house.fill")
                     }

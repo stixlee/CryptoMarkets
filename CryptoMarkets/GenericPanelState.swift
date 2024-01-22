@@ -7,9 +7,10 @@
 
 import Foundation
 
-enum PanelType: String {
+enum GenericPanelType: String {
     case marketCap = "Market Cap"
     case volume = "Trading Volume"
+    case largeCapMovers = "Large Cap Movers"
 }
 
 enum ValueModifier: String {
@@ -19,8 +20,9 @@ enum ValueModifier: String {
     case none = ""
 }
 
-@Observable class MarketPanelState: ObservableObject {
-    let type: PanelType
+@Observable class GenericPanelState: ObservableObject, Identifiable {
+    let id: String = UUID().uuidString
+    let type: GenericPanelType
     let title: String
     let subtitle: String
     let image: String
@@ -28,7 +30,7 @@ enum ValueModifier: String {
     let percentChange: Decimal
     let showInfo: Bool
     
-    init(type: PanelType, from quote: QuoteState, image: String = "") {
+    init(type: GenericPanelType, from quote: QuoteState, image: String = "") {
         self.type = type
         switch type {
         case .marketCap:
@@ -45,7 +47,16 @@ enum ValueModifier: String {
             self.value = quote.volume
             self.percentChange = quote.volumePercentChange
             self.showInfo = true
+        case .largeCapMovers:
+            self.title = ""
+            self.subtitle = ""
+            self.image = ""
+            self.value = 0.0
+            self.percentChange = 0.0
+            self.showInfo = false
+
         }
+        
     }
     
     init() {
@@ -58,6 +69,21 @@ enum ValueModifier: String {
         self.showInfo = true
     }
 
+    init(type: GenericPanelType = .largeCapMovers,
+         with cryptoSummary: CryptoSummary) {
+        self.type = .largeCapMovers
+        self.title = cryptoSummary.name
+        self.subtitle = cryptoSummary.symbol
+        self.image = cryptoSummary.image
+        self.value = cryptoSummary.currentPrice
+        self.percentChange = cryptoSummary.percentPriceChange
+        self.showInfo = false
+    }
+
+}
+
+extension GenericPanelState {
+    
     var valueModifer: ValueModifier {
         let trillion: Decimal = 1000000000000
         let billion: Decimal = 1000000000
@@ -80,18 +106,14 @@ enum ValueModifier: String {
 
         var adjustedValue = value / trillion
         if adjustedValue > 1.0 {
-//            valueModifier = ValueModifier.trillion
             return adjustedValue
         }
         
         adjustedValue = value / billion
         if adjustedValue > 1.0 {
-//            valueModifier = ValueModifier.billion
             return adjustedValue
         }
-        
-//        valueModifier = ValueModifier.none
         return value
     }
-
 }
+

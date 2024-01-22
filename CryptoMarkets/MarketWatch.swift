@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MarketSnapshot: View {
+struct MarketWatch: View {
     
     @ObservedObject var state = appState
     
@@ -21,9 +21,12 @@ struct MarketSnapshot: View {
                     // Header View
                     Header()
                     ScrollView {
-                        MarketPanel(state: state.latestQuote, title: "")
+                        MarketPanel(title: "")
                             .padding([.leading, .trailing], 18)
                             .padding(.top, 12)
+//                        MarketPanel(state: state.largeCapMoversPanelState, title: "Large Cap Movers")
+//                            .padding([.leading, .trailing], 18)
+//                            .padding(.top, 12)
                     }
                     Spacer()
                 }
@@ -40,10 +43,10 @@ struct MarketSnapshot: View {
             await actions.loadData()
             print("")
         }
-
     }
+    
 }
 
 #Preview {
-    MarketSnapshot()
+    MarketWatch()
 }

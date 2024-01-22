@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MarketCellTitle: View {
+struct GenericCellTitle: View {
     
-    @ObservedObject var state: MarketPanelState
+    @ObservedObject var state: GenericPanelState
     let actions = MarketCellActions()
         
     var body: some View {
@@ -40,5 +40,5 @@ struct MarketCellTitle: View {
 }
 
 #Preview {
-    MarketCellTitle(state: MarketPanelState())
+    GenericCellTitle(state: GenericPanelState())
 }

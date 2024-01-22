@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ValueSection: View {
+struct GenericValueSection: View {
     
-    @ObservedObject var state: MarketPanelState
+    @ObservedObject var state: GenericPanelState
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 4) {
@@ -38,10 +38,10 @@ struct ValueSection: View {
 }
 
 #Preview {
-    ValueSection(state: MarketPanelState())
+    GenericValueSection(state: GenericPanelState())
 }
 
-extension ValueSection {
+extension GenericValueSection {
     
     var displayValue: Decimal {
         let trillion: Decimal = 1000000000000

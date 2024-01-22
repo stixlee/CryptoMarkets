@@ -7,22 +7,22 @@
 
 import SwiftUI
 
-struct MarketPanelCell: View {
+struct GenericPanelCell: View {
     
-    @ObservedObject var state: MarketPanelState
+    @ObservedObject var state: GenericPanelState
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
-            TitleSection(state: state)
+            GenericTitleSection(state: state)
             Spacer()
-            ValueSection(state: state)
+            GenericValueSection(state: state)
         }
         .padding(.leading, 24)
     }
 }
 
 #Preview {
-    MarketPanelCell(state: MarketPanelState(
+    GenericPanelCell(state: GenericPanelState(
         type: .marketCap, from: QuoteState())
     )
 }

@@ -9,7 +9,7 @@ import Foundation
 
 final class MarketCellActions {
     
-    func didTapInfoButton(source: PanelType) {
+    func didTapInfoButton(source: GenericPanelType) {
         print("DEBUG: \(source.rawValue) info button tapped")
     }
 }
