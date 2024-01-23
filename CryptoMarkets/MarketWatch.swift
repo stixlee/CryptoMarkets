@@ -24,9 +24,9 @@ struct MarketWatch: View {
                         MarketPanel(title: "")
                             .padding([.leading, .trailing], 18)
                             .padding(.top, 12)
-//                        MarketPanel(state: state.largeCapMoversPanelState, title: "Large Cap Movers")
-//                            .padding([.leading, .trailing], 18)
-//                            .padding(.top, 12)
+                        MoversPanel(title: "Large Cap Movers")
+                            .padding([.leading, .trailing], 18)
+                            .padding(.top, 12)
                     }
                     Spacer()
                 }

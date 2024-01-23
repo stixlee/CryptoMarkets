@@ -8,9 +8,17 @@
 import SwiftUI
 
 @Observable final class LargeCapMoversState: ObservableObject {
-    var movers: [CryptoSummary]
+    var movers: [GenericPanelState]
     
-    init(movers: [CryptoSummary]) {
-        self.movers = movers
+    init(cryptoMovers: [CryptoSummary]) {
+        self.movers = []
+        for mover in cryptoMovers {
+            movers.append(GenericPanelState(with: mover))
+        }
+    }
+    
+    init() {
+        self.movers = []
+//        movers.append(GenericPanelState(isCrypto: true))
     }
 }

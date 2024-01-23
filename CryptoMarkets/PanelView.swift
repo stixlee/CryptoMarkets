@@ -33,7 +33,7 @@ struct PanelView: View {
             }
             .padding([.top, .bottom], 18)
             .background(Color.panelBG)
-                .cornerRadius(15)
+            .cornerRadius(15)
         }
     }
 }

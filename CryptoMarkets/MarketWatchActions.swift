@@ -17,7 +17,11 @@ final class MarketWatchActions {
             let largeCapMovers = try await api.largeCapMovers()
             let latestQuote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            await updateState(quote: latestQuote, movers: largeCapMovers)
+            var array = [GenericPanelState]()
+            for mover in largeCapMovers {
+                array.append(GenericPanelState(with: mover))
+            }
+            await updateState(quote: latestQuote, movers: array)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -30,7 +34,11 @@ final class MarketWatchActions {
             let largeCapMovers = try await api.largeCapMovers()
             let quote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            await updateState(quote: quote, movers: largeCapMovers)
+            var array = [GenericPanelState]()
+            for mover in largeCapMovers {
+                array.append(GenericPanelState(with: mover))
+            }
+            await updateState(quote: quote, movers: array)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -39,7 +47,7 @@ final class MarketWatchActions {
 
     }
     
-    @MainActor private func updateState(quote: Quote, movers: [CryptoSummary]) async {
+    @MainActor private func updateState(quote: Quote, movers: [GenericPanelState]) async {
         withAnimation(.easeInOut) {
             appState.latestQuote = QuoteState(from: quote)
             appState.largeCapMovers.movers = movers
@@ -47,5 +55,4 @@ final class MarketWatchActions {
         }
 
     }
-
 }

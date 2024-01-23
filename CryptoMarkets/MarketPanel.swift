@@ -28,23 +28,12 @@ struct MarketPanel: View {
                     GenericPanelCell(state: GenericPanelState(type: .volume, from: state))
                 }
             }
+            .padding([.top, .bottom], 18)
+            .background(Color.panelBackground)
+            .cornerRadius(15)
         }
-        .padding([.top, .bottom], 18)
-        .background(Color.panelBackground)
-        .cornerRadius(15)
     }
 }
-    
-//    private var lastIndex: Int {
-//        return state.count - 1
-//    }
-//    
-//    private var leadingItems: [GenericPanelState] {
-//        let original = state
-//        let array = state.filter { $0.id != state.last?.id ?? ""}
-//        return array
-//    }
-//}
 
 //#Preview {
 //    GenericPanel(title: "")

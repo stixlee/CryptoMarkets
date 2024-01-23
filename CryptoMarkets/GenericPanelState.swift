@@ -76,8 +76,28 @@ enum ValueModifier: String {
         self.subtitle = cryptoSummary.symbol
         self.image = cryptoSummary.image
         self.value = cryptoSummary.currentPrice
-        self.percentChange = cryptoSummary.percentPriceChange
+        self.percentChange = cryptoSummary.percentPriceChange / 100.0
         self.showInfo = false
+    }
+    
+    init(isCrypto: Bool) {
+        if isCrypto {
+            self.type = .largeCapMovers
+            self.title = ""
+            self.subtitle = ""
+            self.image = ""
+            self.value = 0.0
+            self.percentChange = 0.0
+            self.showInfo = false
+        } else {
+            self.type = .marketCap
+            self.title = "Market Cap"
+            self.subtitle = "Global Market Capitalization"
+            self.image = ""
+            self.value = 1234000000000
+            self.percentChange = 0.0023
+            self.showInfo = true
+        }
     }
 
 }

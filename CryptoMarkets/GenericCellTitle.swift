@@ -17,24 +17,33 @@ struct GenericCellTitle: View {
             Image(systemName: state.percentChange >= 0.0 ? "arrowtriangle.up.fill" : "arrowtriangle.down.fill")
                 .font(.caption)
                 .fontWeight(.semibold)
-                .foregroundColor(state.percentChange >= 0.0 ? Color.green : Color.red)
+                .foregroundColor(arrowColor)
             
             Text(state.title)
                 .font(.subheadline)
                 .fontWeight(.semibold)
                 .foregroundStyle(Color.primaryForeground)
             
-            Button {
-                actions.didTapInfoButton(source: state.type)
-            } label: {
-                Image(systemName: "info.circle")
-                    .font(.subheadline)
-                    .foregroundColor(.blue)
+            if state.showInfo {
+                Button {
+                    actions.didTapInfoButton(source: state.type)
+                } label: {
+                    Image(systemName: "info.circle")
+                        .font(.subheadline)
+                        .foregroundColor(.blue)
+                }
+                .offset(y: -4)
             }
-            .offset(y: -4)
-
             Spacer()
 
+        }
+    }
+    
+    var arrowColor: Color {
+        switch state.percentChange {
+        case let x where x > 0.0: return .green
+        case let x where x < 0.0: return .red
+        default: return .clear
         }
     }
 }
