@@ -9,18 +9,19 @@ import SwiftUI
 
 struct MoversPanel: View {
     
-    @ObservedObject var state = appState.largeCapMovers
+    @ObservedObject var state = appState
+    @State var showMore: Bool = true
     
     let title: String
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(title)
+            GenericPanelTitle(title: title)
                 .padding(.leading, 24)
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    if state.movers.isEmpty {
+                    if state.largeCapMovers.movers.isEmpty {
                         EmptyCell()
                     } else {
                         ForEach(leadingItems) { mover in
@@ -30,7 +31,7 @@ struct MoversPanel: View {
                                 .background(Color.gray)
                                 .padding(.leading, 24)
                         }
-                        if let lastItem = state.movers.last {
+                        if let lastItem = state.largeCapMovers.movers.last {
                             GenericPanelCell(state: lastItem)
                         }
                     }
@@ -43,13 +44,17 @@ struct MoversPanel: View {
     }
     
     private var lastIndex: Int {
-        return state.movers.count - 1
+        return items.count - 1
     }
     
     private var leadingItems: [GenericPanelState] {
-        guard state.movers.count > 1 else { return [] }
-        let totalItemsInArray = state.movers.count
-        return state.movers.first(totalItemsInArray - 1)
+        guard items.count > 1 else { return [] }
+        let totalItemsInArray = items.count
+        return items.first(totalItemsInArray - 1)
+    }
+    
+    private var items: [GenericPanelState] {
+        return state.isLargeCapMoversExpanded ? state.largeCapMovers.movers : state.largeCapMovers.movers.first(3)
     }
 
 }

@@ -19,6 +19,7 @@ enum Tabs: Int {
 let appState = AppState()
 @Observable final class AppState: ObservableObject {
     var currentTab: Tabs = .markets
+    var isLargeCapMoversExpanded: Bool = false
     var latestQuote: QuoteState = QuoteState()
     var largeCapMovers: LargeCapMoversState = LargeCapMoversState()
 }

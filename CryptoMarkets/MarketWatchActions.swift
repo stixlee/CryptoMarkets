@@ -53,6 +53,6 @@ final class MarketWatchActions {
             appState.largeCapMovers.movers = movers
             state.latestQuote.isLoaded = true
         }
-
     }
+    
 }

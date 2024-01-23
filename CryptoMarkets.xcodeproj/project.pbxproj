@@ -69,6 +69,7 @@
 		909950FB2B51BCE4000B269D /* PriceSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909950FA2B51BCE4000B269D /* PriceSectionView.swift */; };
 		909950FD2B51BE7C000B269D /* CryptoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909950FC2B51BE7C000B269D /* CryptoCellView.swift */; };
 		909950FF2B51BEBA000B269D /* SymbolSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909950FE2B51BEBA000B269D /* SymbolSectionView.swift */; };
+		90B87E872B605E8200C0B4FB /* GenericPanelTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B87E862B605E8200C0B4FB /* GenericPanelTitle.swift */; };
 		90D0D5A72B40D94900406596 /* CryptoMarketsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0D5A62B40D94900406596 /* CryptoMarketsApp.swift */; };
 		90D0D5AB2B40D94B00406596 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D0D5AA2B40D94B00406596 /* Assets.xcassets */; };
 		90D0D5AE2B40D94B00406596 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90D0D5AD2B40D94B00406596 /* Preview Assets.xcassets */; };
@@ -178,6 +179,7 @@
 		909950FA2B51BCE4000B269D /* PriceSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceSectionView.swift; sourceTree = "<group>"; };
 		909950FC2B51BE7C000B269D /* CryptoCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCellView.swift; sourceTree = "<group>"; };
 		909950FE2B51BEBA000B269D /* SymbolSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolSectionView.swift; sourceTree = "<group>"; };
+		90B87E862B605E8200C0B4FB /* GenericPanelTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPanelTitle.swift; sourceTree = "<group>"; };
 		90D0D5A32B40D94900406596 /* CryptoMarkets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoMarkets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D0D5A62B40D94900406596 /* CryptoMarketsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketsApp.swift; sourceTree = "<group>"; };
 		90D0D5AA2B40D94B00406596 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				9004C0D22B5C2196009CE1B3 /* GenericTitleSection.swift */,
 				9004C0D42B5C37FC009CE1B3 /* GenericValueSection.swift */,
 				90EEB8192B5F1339009E9813 /* MoversPanel.swift */,
+				90B87E862B605E8200C0B4FB /* GenericPanelTitle.swift */,
 			);
 			name = "Market Snapshot";
 			sourceTree = "<group>";
@@ -914,6 +917,7 @@
 				90F7C4B92B57537300F3B991 /* CoinDetailsView.swift in Sources */,
 				90D0D5F32B411B4D00406596 /* ProfileView.swift in Sources */,
 				903003502B41C6950076DD41 /* Color+Palettes.swift in Sources */,
+				90B87E872B605E8200C0B4FB /* GenericPanelTitle.swift in Sources */,
 				9004C0AD2B5AF7E2009CE1B3 /* CryptoCurrencies.swift in Sources */,
 				9004C0B62B5AFCB1009CE1B3 /* TabActions.swift in Sources */,
 				909950F42B519E41000B269D /* HeaderViewModel.swift in Sources */,

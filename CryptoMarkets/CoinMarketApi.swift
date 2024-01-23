@@ -79,7 +79,7 @@ final class CoinMarketApi {
             largeCap.sort {
                 abs($0.percentPriceChange) > abs($1.percentPriceChange)
             }
-            return largeCap.first(4)
+            return largeCap
         } catch let error {
             if let decodingError = error as? DecodingError {
                 throw NetworkingError.invalidJSON(decodingError: decodingError)
