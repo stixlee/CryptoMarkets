@@ -14,14 +14,18 @@ final class MarketWatchActions {
     func loadData() async -> Void {
         if state.latestQuote.isLoaded { return }
         do {
-            let largeCapMovers = try await api.largeCapMovers()
+            let (largeCapMovers, largeCapMostTraded) = try await api.largeCapMovers()
             let latestQuote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            var array = [GenericPanelState]()
-            for mover in largeCapMovers {
-                array.append(GenericPanelState(with: mover))
+            var moversArray = [GenericPanelState]()
+            for item in largeCapMovers {
+                moversArray.append(GenericPanelState(with: item))
             }
-            await updateState(quote: latestQuote, movers: array)
+            var mostTradedArray = [GenericPanelState]()
+            for item in largeCapMostTraded {
+                mostTradedArray.append(GenericPanelState(with: item))
+            }
+            await updateState(quote: latestQuote, movers: moversArray, mostTraded: mostTradedArray)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -31,14 +35,18 @@ final class MarketWatchActions {
     
     func refreshData() async -> Void {
         do {
-            let largeCapMovers = try await api.largeCapMovers()
+            let (largeCapMovers, largeCapMostTraded) = try await api.largeCapMovers()
             let quote = try await api.latestQuote()
             print("DEBUG: Data Loaded Successfully")
-            var array = [GenericPanelState]()
-            for mover in largeCapMovers {
-                array.append(GenericPanelState(with: mover))
+            var moversArray = [GenericPanelState]()
+            for item in largeCapMovers {
+                moversArray.append(GenericPanelState(with: item))
             }
-            await updateState(quote: quote, movers: array)
+            var mostTradedArray = [GenericPanelState]()
+            for item in largeCapMostTraded {
+                mostTradedArray.append(GenericPanelState(with: item))
+            }
+            await updateState(quote: quote, movers: moversArray, mostTraded: mostTradedArray)
         } catch (let error) {
             if let error = error as? NetworkingError {
                 print("DEBUG: Networking Error - \(error.localizedDescription)")
@@ -47,10 +55,13 @@ final class MarketWatchActions {
 
     }
     
-    @MainActor private func updateState(quote: Quote, movers: [GenericPanelState]) async {
+    @MainActor private func updateState(quote: Quote, 
+                                        movers: [GenericPanelState],
+                                        mostTraded: [GenericPanelState]) async {
         withAnimation(.easeInOut) {
             appState.latestQuote = QuoteState(from: quote)
-            appState.largeCapMovers.movers = movers
+            appState.largeCap.movers = movers
+            appState.largeCap.mostTraded = mostTraded
             state.latestQuote.isLoaded = true
         }
     }

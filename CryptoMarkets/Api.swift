@@ -13,15 +13,16 @@ final class Api {
     static fileprivate let shared = Api()
     
     private var coinMarketApi = CoinMarketApi()
-    
+    private var coinGeckoApi = CoinGeckoApi()
+
     private init() { }
     
     func latestQuote() async throws -> Quote {
         return try await coinMarketApi.latestQuote()
     }
     
-    func largeCapMovers() async throws -> [CryptoSummary] {
-        return try await coinMarketApi.largeCapMovers()
+    func largeCapMovers() async throws -> ([CryptoSummary], [CryptoSummary]) {
+        return try await coinGeckoApi.largeCap()
     }
     
     func buildQueryString(parameters: [String: String]) -> String {

@@ -21,5 +21,5 @@ let appState = AppState()
     var currentTab: Tabs = .markets
     var isLargeCapMoversExpanded: Bool = false
     var latestQuote: QuoteState = QuoteState()
-    var largeCapMovers: LargeCapMoversState = LargeCapMoversState()
+    var largeCap: LargeCapState = LargeCapState()
 }

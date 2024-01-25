@@ -21,7 +21,7 @@ struct MoversPanel: View {
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    if state.largeCapMovers.movers.isEmpty {
+                    if state.largeCap.movers.isEmpty {
                         EmptyCell()
                     } else {
                         ForEach(leadingItems) { mover in
@@ -31,7 +31,7 @@ struct MoversPanel: View {
                                 .background(Color.gray)
                                 .padding(.leading, 24)
                         }
-                        if let lastItem = state.largeCapMovers.movers.last {
+                        if let lastItem = state.largeCap.movers.last {
                             GenericPanelCell(state: lastItem)
                         }
                     }
@@ -54,7 +54,7 @@ struct MoversPanel: View {
     }
     
     private var items: [GenericPanelState] {
-        return state.isLargeCapMoversExpanded ? state.largeCapMovers.movers : state.largeCapMovers.movers.first(3)
+        return state.isLargeCapMoversExpanded ? state.largeCap.movers : state.largeCap.movers.first(3)
     }
 
 }
