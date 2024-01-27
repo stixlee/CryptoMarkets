@@ -20,12 +20,12 @@ struct MarketPanel: View {
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    GenericPanelCell(state: GenericPanelState(type: .marketCap, from: state))
+                    PanelCell(state: MarketCapState(state: state))
                     Divider()
                         .frame(minHeight: 1)
                         .background(Color.gray)
                         .padding(.leading, 24)
-                    GenericPanelCell(state: GenericPanelState(type: .volume, from: state))
+                    PanelCell(state: VolumeState(state: state))
                 }
             }
             .padding([.top, .bottom], 18)
@@ -34,7 +34,3 @@ struct MarketPanel: View {
         }
     }
 }
-
-//#Preview {
-//    GenericPanel(title: "")
-//}
