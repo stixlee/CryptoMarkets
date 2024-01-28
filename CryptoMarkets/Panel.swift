@@ -12,21 +12,25 @@ struct Panel: View {
     @ObservedObject var state = appState
     let title: String
     let type: PanelType
-    @State var isQuickLook: Bool
     
     var stateItems: [CellState] {
         if type == .market {
             return appState.latestQuote.cellState
         }
         if type == .largeCapMovers {
-            return []
+            return appState.largeCap.cellState
         }
         return []
+    }
+    
+    var isQuickLook: Bool {
+        if type == .market { return false }
+        return !appState.isLargeCapMoversExpanded
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(title)
+            GenericPanelTitle(title: title)
                 .padding(.leading, 24)
                 .font(.subheadline)
             ZStack {

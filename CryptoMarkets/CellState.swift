@@ -51,9 +51,28 @@ struct CellState: Identifiable, Hashable {
             self.percentChange = marketState.volumePercentChange
         }
     }
+    
+    init(type: CellType, moverState: GenericPanelState) {
+        self.image = moverState.image
+        self.type = type
+        self.showInfoButton = false
+        if type == .crypto {
+            self.title = moverState.title
+            self.subtitle = moverState.subtitle
+            self.value = moverState.value
+            self.percentChange = moverState.percentChange
+        } else {
+            self.title = "Trading Volume"
+            self.subtitle = "Global Trading Volume  24h"
+            self.value = 0.0
+            self.percentChange = 0.0
+        }
+    }
+
 }
 
 enum CellType {
     case marketCap
     case volume
+    case crypto
 }

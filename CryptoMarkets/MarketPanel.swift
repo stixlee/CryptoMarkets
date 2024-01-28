@@ -38,7 +38,7 @@ struct MarketPanel: View {
                         }
 
                     }
-                    if let lastItem = stateItems.lastItem(isQuickLook: false) {
+                    if let lastItem = stateItems.lastItem(isQuickLook: state.isLargeCapMoversExpanded) {
                         PanelCell(state: lastItem)
                     }
                 }

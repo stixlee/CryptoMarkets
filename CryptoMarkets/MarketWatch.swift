@@ -21,12 +21,16 @@ struct MarketWatch: View {
                     // Header View
                     Header()
                     ScrollView {
-                        Panel(title: "", type: .market, isQuickLook: false)
+                        Panel(title: "", type: .market)
                             .padding([.leading, .trailing], 18)
                             .padding(.top, 12)
-                        MoversPanel(title: "Large Cap Movers")
-                            .padding([.leading, .trailing], 18)
-                            .padding(.top, 12)
+                        if appState.largeCap.movers.isEmpty {
+                            EmptyView()
+                        } else {
+                            Panel(title: "Large Cap Movers", type: .largeCapMovers)
+                                .padding([.leading, .trailing], 18)
+                                .padding(.top, 12)
+                        }
                     }
                     Spacer()
                 }
