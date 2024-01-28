@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PanelCell: View {
     
-    @State var state: any CellBackingState
+    @State var state: CellState
     
     var body: some View {
         HStack(alignment: .center, spacing: 0) {
@@ -21,6 +21,6 @@ struct PanelCell: View {
     }
 }
 
-#Preview {
-    PanelCell(state: MarketCapState(state: QuoteState()))
-}
+//#Preview {
+//    PanelCell(state: MarketCapState(state: MarketState()))
+//}

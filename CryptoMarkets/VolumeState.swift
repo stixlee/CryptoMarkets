@@ -9,12 +9,12 @@ import Foundation
 
 struct VolumeState: CellBackingState  {
 
-    typealias BackingState = QuoteState
+    typealias BackingState = MarketState
     
     let volume: Decimal
     let volumePercentChange: Decimal
     let id = UUID().uuidString
-    let type: GenericPanelType = .volume
+    let type: PanelType = .market
     
     init(state: BackingState) {
         self.volume = state.volume

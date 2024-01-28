@@ -59,7 +59,7 @@ final class MarketWatchActions {
                                         movers: [GenericPanelState],
                                         mostTraded: [GenericPanelState]) async {
         withAnimation(.easeInOut) {
-            appState.latestQuote = QuoteState(from: quote)
+            appState.latestQuote = MarketState(from: quote)
             appState.largeCap.movers = movers
             appState.largeCap.mostTraded = mostTraded
             state.latestQuote.isLoaded = true

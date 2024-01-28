@@ -7,10 +7,9 @@
 
 import Foundation
 
-enum GenericPanelType: String {
-    case marketCap = "Market Cap"
-    case volume = "Trading Volume"
-    case largeCapMovers = "Large Cap Movers"
+enum PanelType {
+    case market
+    case largeCapMovers
 }
 
 enum ValueModifier: String {
@@ -22,7 +21,7 @@ enum ValueModifier: String {
 
 @Observable class GenericPanelState: ObservableObject, Identifiable {
     let id: String = UUID().uuidString
-    let type: GenericPanelType
+    let type: PanelType
     let title: String
     let subtitle: String
     let image: String
@@ -30,37 +29,37 @@ enum ValueModifier: String {
     let percentChange: Decimal
     let showInfo: Bool
     
-    init(type: GenericPanelType, from quote: QuoteState, image: String = "") {
-        self.type = type
-        switch type {
-        case .marketCap:
-            self.title = "Market Cap"
-            self.subtitle = "Global Market Capitalization"
-            self.image = ""
-            self.value = quote.marketCap
-            self.percentChange = quote.marketCapPercentChange
-            self.showInfo = true
-        case .volume:
-            self.title = "Trading Volume"
-            self.subtitle = "Global Trading Volume  24h"
-            self.image = ""
-            self.value = quote.volume
-            self.percentChange = quote.volumePercentChange
-            self.showInfo = true
-        case .largeCapMovers:
-            self.title = ""
-            self.subtitle = ""
-            self.image = ""
-            self.value = 0.0
-            self.percentChange = 0.0
-            self.showInfo = false
-
-        }
-        
-    }
+//    init(type: PanelType, from quote: MarketState, image: String = "") {
+//        self.type = type
+//        switch type {
+//        case .market:
+//            self.title = "Market Cap"
+//            self.subtitle = "Global Market Capitalization"
+//            self.image = ""
+//            self.value = quote.marketCap
+//            self.percentChange = quote.marketCapPercentChange
+//            self.showInfo = true
+//        case .volume:
+//            self.title = "Trading Volume"
+//            self.subtitle = "Global Trading Volume  24h"
+//            self.image = ""
+//            self.value = quote.volume
+//            self.percentChange = quote.volumePercentChange
+//            self.showInfo = true
+//        case .largeCapMovers:
+//            self.title = ""
+//            self.subtitle = ""
+//            self.image = ""
+//            self.value = 0.0
+//            self.percentChange = 0.0
+//            self.showInfo = false
+//
+//        }
+//        
+//    }
     
     init() {
-        self.type = .marketCap
+        self.type = .market
         self.title = "Market Cap"
         self.subtitle = "Global Market Capitalization"
         self.image = ""
@@ -69,7 +68,7 @@ enum ValueModifier: String {
         self.showInfo = true
     }
 
-    init(type: GenericPanelType = .largeCapMovers,
+    init(type: PanelType = .largeCapMovers,
          with cryptoSummary: CryptoSummary) {
         self.type = .largeCapMovers
         self.title = cryptoSummary.name
@@ -90,7 +89,7 @@ enum ValueModifier: String {
             self.percentChange = 0.0
             self.showInfo = false
         } else {
-            self.type = .marketCap
+            self.type = .market
             self.title = "Market Cap"
             self.subtitle = "Global Market Capitalization"
             self.image = ""

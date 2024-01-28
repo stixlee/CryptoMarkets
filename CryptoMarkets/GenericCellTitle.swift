@@ -26,7 +26,7 @@ struct GenericCellTitle: View {
             
             if state.showInfo {
                 Button {
-                    actions.didTapInfoButton(source: state.type)
+//                    actions.didTapInfoButton(source: state.type)
                 } label: {
                     Image(systemName: "info.circle")
                         .font(.subheadline)

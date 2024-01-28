@@ -9,19 +9,20 @@ import SwiftUI
 
 struct CellTitleSection: View {
     
-    let state: any CellBackingState
+    let state: CellState
     
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             CellTitle(title: state.title,
                       percentChange: state.percentChange,
                       showInfo: true,
-                      type: state.type)
+                      type: state.type
+            )
             CellSubtitle(subtitle: state.subtitle, image: state.image)
         }
     }
 }
 
-#Preview {
-    CellTitleSection(state: MarketCapState(state: QuoteState()))
-}
+//#Preview {
+//    CellTitleSection(state: MarketCapState(state: MarketState()))
+//}

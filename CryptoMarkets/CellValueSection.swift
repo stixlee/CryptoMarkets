@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CellValueSection: View {
     
-    let state: any CellBackingState
+    let state: CellState
 
     var body: some View {
         VStack(alignment: .trailing, spacing: 4) {
@@ -37,9 +37,9 @@ struct CellValueSection: View {
         .padding(.trailing, 24)    }
 }
 
-#Preview {
-    CellValueSection(state: MarketCapState(state: QuoteState()))
-}
+//#Preview {
+//    CellValueSection(state: MarketCapState(state: MarketState()))
+//}
 
 extension CellValueSection {
     

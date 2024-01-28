@@ -18,7 +18,7 @@ protocol CellBackingState {
     var value: Decimal { get }
     var percentChange: Decimal { get }
     var showInfoButton: Bool { get }
-    var type: GenericPanelType { get }
+    var type: PanelType { get }
     
     init(state: BackingState)
 }

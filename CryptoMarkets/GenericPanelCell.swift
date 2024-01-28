@@ -21,8 +21,8 @@ struct GenericPanelCell: View {
     }
 }
 
-#Preview {
-    GenericPanelCell(state: GenericPanelState(
-        type: .marketCap, from: QuoteState())
-    )
-}
+//#Preview {
+//    GenericPanelCell(state: GenericPanelState(
+//        type: .marketCap, from: MarketState())
+//    )
+//}

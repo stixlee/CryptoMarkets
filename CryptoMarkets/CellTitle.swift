@@ -12,8 +12,8 @@ struct CellTitle: View {
     let title: String
     let percentChange: Decimal
     let showInfo: Bool
-    let type: GenericPanelType
     let actions = MarketCellActions()
+    let type: CellType
     
     var body: some View {
         HStack(alignment: .center, spacing: 2) {
@@ -36,6 +36,7 @@ struct CellTitle: View {
                         .foregroundColor(.blue)
                 }
                 .offset(y: -4)
+
             }
             Spacer()
             
@@ -51,10 +52,8 @@ struct CellTitle: View {
     }
 }
 
-#Preview {
-    CellTitle(title: "Market Cap",
-              percentChange: 0.00234,
-              showInfo: true,
-              type: .marketCap
-    )
-}
+//#Preview {
+//    CellTitle(title: "Market Cap",
+//              percentChange: 0.00234,
+//              showInfo: true)
+//}

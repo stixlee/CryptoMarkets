@@ -1,24 +1,27 @@
 //
-//  MarketPanel.swift
+//  Panel.swift
 //  CryptoMarkets
 //
-//  Created by Michael Lee on 1/20/24.
+//  Created by Michael Lee on 1/28/24.
 //
 
 import SwiftUI
 
-struct MarketPanel: View {
+struct Panel: View {
     
     @ObservedObject var state = appState
     let title: String
     let type: PanelType
+    @State var isQuickLook: Bool
     
     var stateItems: [CellState] {
         if type == .market {
             return appState.latestQuote.cellState
-        } else {
+        }
+        if type == .largeCapMovers {
             return []
         }
+        return []
     }
 
     var body: some View {
@@ -28,7 +31,7 @@ struct MarketPanel: View {
                 .font(.subheadline)
             ZStack {
                 VStack(alignment: .leading, spacing: 18) {
-                    if let items = stateItems.primaryBlock(isQuickLook: false) {
+                    if let items = stateItems.primaryBlock(isQuickLook: isQuickLook) {
                         ForEach(items, id: \.self) { item in
                             PanelCell(state: item)
                             Divider()
@@ -38,7 +41,7 @@ struct MarketPanel: View {
                         }
 
                     }
-                    if let lastItem = stateItems.lastItem(isQuickLook: false) {
+                    if let lastItem = stateItems.lastItem(isQuickLook: isQuickLook) {
                         PanelCell(state: lastItem)
                     }
                 }
@@ -49,3 +52,7 @@ struct MarketPanel: View {
         }
     }
 }
+
+//#Preview {
+//    Panel()
+//}

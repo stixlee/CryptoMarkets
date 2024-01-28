@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class QuoteState: ObservableObject {
+final class MarketState: ObservableObject {
     
     let marketCap: Decimal
     let marketCapPercentChange: Decimal
@@ -28,5 +28,12 @@ final class QuoteState: ObservableObject {
         self.marketCapPercentChange = 0.0023
         self.volume = 52345000000
         self.volumePercentChange = 0.0243
+    }
+    
+    var cellState: [CellState] {
+        return [
+            CellState(type: .marketCap, marketState: self),
+            CellState(type: .volume, marketState: self)
+        ]
     }
 }

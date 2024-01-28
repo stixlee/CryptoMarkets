@@ -21,7 +21,7 @@ struct MarketWatch: View {
                     // Header View
                     Header()
                     ScrollView {
-                        MarketPanel(title: "")
+                        Panel(title: "", type: .market, isQuickLook: false)
                             .padding([.leading, .trailing], 18)
                             .padding(.top, 12)
                         MoversPanel(title: "Large Cap Movers")

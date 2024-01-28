@@ -9,12 +9,12 @@ import Foundation
 
 struct MarketCapState: CellBackingState  {
 
-    typealias BackingState = QuoteState
+    typealias BackingState = MarketState
     
     let marketCap: Decimal
     let marketCapPercentChange: Decimal
     let id = UUID().uuidString
-    let type: GenericPanelType = .marketCap
+    let type: PanelType = .market
     
     init(state: BackingState) {
         self.marketCap = state.marketCap

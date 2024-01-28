@@ -38,7 +38,7 @@ struct MoversPanel: View {
                }
             }
             .padding([.top, .bottom], 18)
-            .background(Color.panelBackground)
+            .background(state.largeCap.movers.isEmpty ? Color.clear : Color.panelBackground)
             .cornerRadius(15)
         }
     }

@@ -25,7 +25,7 @@
 		9004C0BE2B5B39E7009CE1B3 /* CoinMarketApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0BD2B5B39E7009CE1B3 /* CoinMarketApi.swift */; };
 		9004C0C12B5B3ABC009CE1B3 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C02B5B3ABC009CE1B3 /* Quote.swift */; };
 		9004C0C32B5B3D25009CE1B3 /* MarketWatchActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C22B5B3D25009CE1B3 /* MarketWatchActions.swift */; };
-		9004C0C52B5B3F09009CE1B3 /* QuoteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C42B5B3F09009CE1B3 /* QuoteState.swift */; };
+		9004C0C52B5B3F09009CE1B3 /* MarketState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C42B5B3F09009CE1B3 /* MarketState.swift */; };
 		9004C0C72B5C11E6009CE1B3 /* MarketPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C62B5C11E6009CE1B3 /* MarketPanel.swift */; };
 		9004C0C92B5C125E009CE1B3 /* GenericPanelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0C82B5C125E009CE1B3 /* GenericPanelCell.swift */; };
 		9004C0CB2B5C1339009CE1B3 /* GenericCellTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9004C0CA2B5C1339009CE1B3 /* GenericCellTitle.swift */; };
@@ -57,6 +57,8 @@
 		906EBB992B657E9200237B16 /* CellSubtitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906EBB982B657E9200237B16 /* CellSubtitle.swift */; };
 		906EBB9B2B65806000237B16 /* CellTitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906EBB9A2B65806000237B16 /* CellTitleSection.swift */; };
 		906EBB9D2B65828900237B16 /* CellValueSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906EBB9C2B65828900237B16 /* CellValueSection.swift */; };
+		906EBBA12B65CF0900237B16 /* CellState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906EBBA02B65CF0900237B16 /* CellState.swift */; };
+		906EBBA32B66BFA100237B16 /* Panel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906EBBA22B66BFA100237B16 /* Panel.swift */; };
 		9074A3FE2B4367A80061DBAF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A3FD2B4367A70061DBAF /* Api.swift */; };
 		9074A40B2B43718A0061DBAF /* MarketDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A40A2B43718A0061DBAF /* MarketDataService.swift */; };
 		9074A40D2B4371FC0061DBAF /* MarketDataService+MarketCap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9074A40C2B4371FC0061DBAF /* MarketDataService+MarketCap.swift */; };
@@ -145,7 +147,7 @@
 		9004C0BD2B5B39E7009CE1B3 /* CoinMarketApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinMarketApi.swift; sourceTree = "<group>"; };
 		9004C0C02B5B3ABC009CE1B3 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		9004C0C22B5B3D25009CE1B3 /* MarketWatchActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketWatchActions.swift; sourceTree = "<group>"; };
-		9004C0C42B5B3F09009CE1B3 /* QuoteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteState.swift; sourceTree = "<group>"; };
+		9004C0C42B5B3F09009CE1B3 /* MarketState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketState.swift; sourceTree = "<group>"; };
 		9004C0C62B5C11E6009CE1B3 /* MarketPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPanel.swift; sourceTree = "<group>"; };
 		9004C0C82B5C125E009CE1B3 /* GenericPanelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPanelCell.swift; sourceTree = "<group>"; };
 		9004C0CA2B5C1339009CE1B3 /* GenericCellTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCellTitle.swift; sourceTree = "<group>"; };
@@ -177,6 +179,8 @@
 		906EBB982B657E9200237B16 /* CellSubtitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSubtitle.swift; sourceTree = "<group>"; };
 		906EBB9A2B65806000237B16 /* CellTitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTitleSection.swift; sourceTree = "<group>"; };
 		906EBB9C2B65828900237B16 /* CellValueSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellValueSection.swift; sourceTree = "<group>"; };
+		906EBBA02B65CF0900237B16 /* CellState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellState.swift; sourceTree = "<group>"; };
+		906EBBA22B66BFA100237B16 /* Panel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Panel.swift; sourceTree = "<group>"; };
 		9074A3FD2B4367A70061DBAF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		9074A40A2B43718A0061DBAF /* MarketDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketDataService.swift; sourceTree = "<group>"; };
 		9074A40C2B4371FC0061DBAF /* MarketDataService+MarketCap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MarketDataService+MarketCap.swift"; sourceTree = "<group>"; };
@@ -296,11 +300,12 @@
 			children = (
 				90F6E2C62B4329E20048E98A /* AppState.swift */,
 				9004C0BB2B5B2393009CE1B3 /* AppState+Header.swift */,
-				9004C0C42B5B3F09009CE1B3 /* QuoteState.swift */,
+				9004C0C42B5B3F09009CE1B3 /* MarketState.swift */,
 				9004C0D02B5C18D8009CE1B3 /* GenericPanelState.swift */,
 				90EEB8172B5F0E1E009E9813 /* LargeCapState.swift */,
 				906EBB8E2B65770F00237B16 /* MarketCapState.swift */,
 				906EBB922B657B5D00237B16 /* VolumeState.swift */,
+				906EBBA02B65CF0900237B16 /* CellState.swift */,
 			);
 			name = State;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				906EBB982B657E9200237B16 /* CellSubtitle.swift */,
 				906EBB9A2B65806000237B16 /* CellTitleSection.swift */,
 				906EBB9C2B65828900237B16 /* CellValueSection.swift */,
+				906EBBA22B66BFA100237B16 /* Panel.swift */,
 			);
 			name = "Market Snapshot";
 			sourceTree = "<group>";
@@ -936,12 +942,13 @@
 				909950FB2B51BCE4000B269D /* PriceSectionView.swift in Sources */,
 				9004C0B82B5AFF99009CE1B3 /* Binding+Extensions.swift in Sources */,
 				901F476B2B47251F00C49C64 /* Api+CoinGecko+Markets.swift in Sources */,
+				906EBBA32B66BFA100237B16 /* Panel.swift in Sources */,
 				906EBB972B657CDC00237B16 /* CellTitle.swift in Sources */,
 				90F7C4C42B58331600F3B991 /* SummaryPanelView.swift in Sources */,
 				909950F92B51B70E000B269D /* DeltaSectionView.swift in Sources */,
 				9004C0BA2B5B168A009CE1B3 /* Header.swift in Sources */,
 				906EBB932B657B5D00237B16 /* VolumeState.swift in Sources */,
-				9004C0C52B5B3F09009CE1B3 /* QuoteState.swift in Sources */,
+				9004C0C52B5B3F09009CE1B3 /* MarketState.swift in Sources */,
 				9004C0C72B5C11E6009CE1B3 /* MarketPanel.swift in Sources */,
 				906EBB952B657C1900237B16 /* PanelCell.swift in Sources */,
 				902486552B50CC7D004218DD /* PanelItemView.swift in Sources */,
@@ -971,6 +978,7 @@
 				908B87282B45DF2A007927CE /* TrendingViewModel.swift in Sources */,
 				90F7C4792B543E0000F3B991 /* NetworkingError.swift in Sources */,
 				9004C0CD2B5C1578009CE1B3 /* MarketCellActions.swift in Sources */,
+				906EBBA12B65CF0900237B16 /* CellState.swift in Sources */,
 				909950FF2B51BEBA000B269D /* SymbolSectionView.swift in Sources */,
 				90D0D5E32B40E04500406596 /* HomeView.swift in Sources */,
 				14DBBBC62B4869A9001A7321 /* CryptoMarketsViewModel.swift in Sources */,
