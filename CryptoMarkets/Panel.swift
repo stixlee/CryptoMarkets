@@ -18,19 +18,25 @@ struct Panel: View {
             return appState.latestQuote.cellState
         }
         if type == .largeCapMovers {
-            return appState.largeCap.cellState
+            return appState.largeCap.moversState
+        }
+        if type == .mostTraded {
+            return appState.largeCap.volumeState
         }
         return []
     }
     
     var isQuickLook: Bool {
         if type == .market { return false }
-        return !appState.isLargeCapMoversExpanded
+        
+        if type == .largeCapMovers { return !appState.isLargeCapMoversExpanded }
+        
+        return !appState.isLargeCapMostTradedExpanded
     }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            GenericPanelTitle(title: title)
+            GenericPanelTitle(type: type, title: title)
                 .padding(.leading, 24)
                 .font(.subheadline)
             ZStack {

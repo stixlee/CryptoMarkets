@@ -10,6 +10,7 @@ import Foundation
 enum PanelType {
     case market
     case largeCapMovers
+    case mostTraded
 }
 
 enum ValueModifier: String {

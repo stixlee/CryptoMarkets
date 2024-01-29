@@ -31,6 +31,14 @@ struct MarketWatch: View {
                                 .padding([.leading, .trailing], 18)
                                 .padding(.top, 12)
                         }
+                        if appState.largeCap.mostTraded.isEmpty {
+                            EmptyView()
+                        } else {
+                            Panel(title: "Large Cap Most Traded", type: .mostTraded)
+                                .padding([.leading, .trailing], 18)
+                                .padding(.top, 12)
+                        }
+
                     }
                     Spacer()
                 }

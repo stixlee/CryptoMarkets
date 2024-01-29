@@ -28,12 +28,21 @@ import SwiftUI
         self.mostTraded = []
     }
     
-    var cellState: [CellState] {
+    var moversState: [CellState] {
         var items: [CellState] = []
         for mover in self.movers {
             items.append(CellState(type: .crypto, moverState: mover))
         }
         return items
+    }
+    
+    var volumeState: [CellState] {
+        var items: [CellState] = []
+        for item in self.mostTraded {
+            items.append(CellState(type: .crypto, moverState: item))
+        }
+        return items
+
     }
 
 }

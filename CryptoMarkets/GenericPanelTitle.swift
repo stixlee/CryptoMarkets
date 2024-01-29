@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GenericPanelTitle: View {
     
+    var type: PanelType
     @State var title: String
     @ObservedObject var state = appState
     
@@ -25,7 +26,8 @@ struct GenericPanelTitle: View {
             Button("", systemImage: chevron) {
                 print("Show More = \(state.isLargeCapMoversExpanded)")
                 withAnimation {
-                    state.isLargeCapMoversExpanded.toggle()
+                    if type == .largeCapMovers { state.isLargeCapMoversExpanded.toggle() }
+                    if type == .mostTraded { state.isLargeCapMostTradedExpanded.toggle() }
                 }
             }
             .font(.subheadline)
@@ -35,6 +37,6 @@ struct GenericPanelTitle: View {
     }
 }
 
-#Preview {
-    GenericPanelTitle(title: "Large Cap Movers")
-}
+//#Preview {
+//    GenericPanelTitle(title: "Large Cap Movers")
+//}

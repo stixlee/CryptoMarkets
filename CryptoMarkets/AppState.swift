@@ -20,6 +20,7 @@ let appState = AppState()
 @Observable final class AppState: ObservableObject {
     var currentTab: Tabs = .markets
     var isLargeCapMoversExpanded: Bool = false
+    var isLargeCapMostTradedExpanded: Bool = false
     var latestQuote: MarketState = MarketState()
     var largeCap: LargeCapState = LargeCapState()
 }
